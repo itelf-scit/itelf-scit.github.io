@@ -1021,6 +1021,17 @@
                 font-size: clamp(2.5rem, 15vw, 4rem)
             }
         }
+
+        /* DOMAIN INTEREST — FINAL FIX */
+        .domain-section,.domain-section fieldset{height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important}
+        .domain-section fieldset{display:block!important;margin:2.5rem 0 0!important}
+        .domain-section .choice-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:.75rem!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin-top:1rem!important;overflow:visible!important;opacity:1!important;visibility:visible!important}
+        .domain-section .choice-grid label{display:flex!important;align-items:center!important;gap:.7rem!important;width:100%!important;min-height:56px!important;height:auto!important;margin:0!important;padding:1rem!important;border:1px solid rgba(255,255,255,.18)!important;background:rgba(255,255,255,.025)!important;color:var(--paper)!important;opacity:1!important;visibility:visible!important;overflow:visible!important;cursor:pointer!important}
+        .domain-section input[type="radio"],.domain-section input[type="checkbox"]{appearance:auto!important;-webkit-appearance:auto!important;position:static!important;display:inline-block!important;width:18px!important;height:18px!important;min-width:18px!important;margin:0!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;accent-color:var(--acid)!important;flex:0 0 18px!important}
+        .domain-section .choice-grid label span{display:inline!important;color:var(--paper)!important;opacity:1!important;visibility:visible!important}
+        .domain-section .choice-grid label:has(input:checked){border-color:var(--pink)!important;background:rgba(255,59,112,.10)!important}
+        @media(max-width:600px){.domain-section .choice-grid{grid-template-columns:1fr!important}.domain-section fieldset{margin-top:2rem!important}.domain-section .choice-grid label{min-height:52px!important;padding:.9rem 1rem!important}}
+
     </style>
 
 </head>
@@ -1185,23 +1196,53 @@
                             </label>
                         </div>
 
-                        <div class="form-section">
+                        <div class="form-section domain-section" id="domainInterest">
                             <span class="section-kicker">// 04 · DOMAIN INTEREST</span>
                             <fieldset>
                                 <legend>Preference 1 <b>*</b></legend>
-                                <div class="choice-grid domain-options"></div>
+                                <div class="choice-grid domain-options">
+                                    <label><input type="radio" name="preference1" value="Speaker/Investor Collaborations" required><span>Speaker/Investor Collaborations</span></label>
+                                    <label><input type="radio" name="preference1" value="Web and Media"><span>Web and Media</span></label>
+                                    <label><input type="radio" name="preference1" value="Events"><span>Events</span></label>
+                                    <label><input type="radio" name="preference1" value="Sponsorship"><span>Sponsorship</span></label>
+                                </div>
                             </fieldset>
                             <fieldset>
                                 <legend>Preference 2 <b>*</b></legend>
-                                <div class="choice-grid domain-options"></div>
+                                <div class="choice-grid domain-options">
+                                    <label><input type="radio" name="preference2" value="Speaker/Investor Collaborations" required><span>Speaker/Investor Collaborations</span></label>
+                                    <label><input type="radio" name="preference2" value="Web and Media"><span>Web and Media</span></label>
+                                    <label><input type="radio" name="preference2" value="Events"><span>Events</span></label>
+                                    <label><input type="radio" name="preference2" value="Sponsorship"><span>Sponsorship</span></label>
+                                </div>
                             </fieldset>
                             <fieldset>
                                 <legend>Preference 3</legend>
-                                <div class="choice-grid domain-options"></div>
+                                <div class="choice-grid domain-options">
+                                    <label><input type="radio" name="preference3" value="Speaker/Investor Collaborations"><span>Speaker/Investor Collaborations</span></label>
+                                    <label><input type="radio" name="preference3" value="Web and Media"><span>Web and Media</span></label>
+                                    <label><input type="radio" name="preference3" value="Events"><span>Events</span></label>
+                                    <label><input type="radio" name="preference3" value="Sponsorship"><span>Sponsorship</span></label>
+                                </div>
                             </fieldset>
                             <fieldset>
                                 <legend>Which other committee(s) have applied for? <b>*</b></legend>
-                                <div class="choice-grid committee-options"></div>
+                                <div class="choice-grid committee-options">
+                                    <label><input type="checkbox" name="committees" value="Team Matrix"><span>Team Matrix</span></label>
+                                    <label><input type="checkbox" name="committees" value="Guest Lecture Committee"><span>Guest Lecture Committee</span></label>
+                                    <label><input type="checkbox" name="committees" value="Alumni Committee"><span>Alumni Committee</span></label>
+                                    <label><input type="checkbox" name="committees" value="Web & Media Committee"><span>Web & Media Committee</span></label>
+                                    <label><input type="checkbox" name="committees" value="Admissions Committee"><span>Admissions Committee</span></label>
+                                    <label><input type="checkbox" name="committees" value="Team ISR"><span>Team ISR</span></label>
+                                    <label><input type="checkbox" name="committees" value="Sports Committee"><span>Sports Committee</span></label>
+                                    <label><input type="checkbox" name="committees" value="Cultural Committee"><span>Cultural Committee</span></label>
+                                    <label><input type="checkbox" name="committees" value="Drishtikon Committee"><span>Drishtikon Committee</span></label>
+                                    <label><input type="checkbox" name="committees" value="Symbeats"><span>Symbeats</span></label>
+                                    <label><input type="checkbox" name="committees" value="Konnect"><span>Konnect</span></label>
+                                    <label><input type="checkbox" name="committees" value="Team Reflections"><span>Team Reflections</span></label>
+                                    <label><input type="checkbox" name="committees" value="Eklavya"><span>Eklavya</span></label>
+                                    <label><input type="checkbox" name="committees" value="N/A"><span>N/A</span></label>
+                                </div>
                             </fieldset>
                         </div>
 
@@ -1275,7 +1316,7 @@
         ========================================================= */
 
         const form =
-            document.getElementById("applicationForm");
+            document.getElementById("itelfForm");
 
         const btn =
             form.querySelector('button[type="submit"]');
@@ -1736,6 +1777,23 @@
         /* =========================================================
            COMMITTEE VALUES
         ========================================================= */
+
+        const committeeInputs =
+            Array.from(document.querySelectorAll('input[name="committees"]'));
+
+        committeeInputs.forEach(input => {
+            input.addEventListener("change", () => {
+                if (!input.checked) return;
+                if (input.value === "N/A") {
+                    committeeInputs.forEach(other => {
+                        if (other !== input) other.checked = false;
+                    });
+                } else {
+                    const naOption = committeeInputs.find(other => other.value === "N/A");
+                    if (naOption) naOption.checked = false;
+                }
+            });
+        });
 
         function getCommitteeValues() {
 
