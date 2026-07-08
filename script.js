@@ -107,3 +107,33 @@
     });
   }
 })();
+/* =========================================================
+   DOMAIN ACCORDION
+========================================================= */
+
+const domainRows = document.querySelectorAll(".domain-row");
+
+domainRows.forEach((row) => {
+  const trigger = row.querySelector(".domain-trigger");
+
+  trigger.setAttribute("aria-expanded", "false");
+
+  trigger.addEventListener("click", () => {
+    const isOpen = row.classList.contains("is-open");
+
+    domainRows.forEach((item) => {
+      item.classList.remove("is-open");
+
+      const itemTrigger = item.querySelector(".domain-trigger");
+
+      if (itemTrigger) {
+        itemTrigger.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    if (!isOpen) {
+      row.classList.add("is-open");
+      trigger.setAttribute("aria-expanded", "true");
+    }
+  });
+});

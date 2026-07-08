@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Apply to join iTELF, the Entrepreneurship Cell of SCIT Pune. Find your domain and start building.">
+
+    <title>Join iTELF · SCIT Pune</title>
+
+    <!-- =====================================================
+       FONTS
+  ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./src/images/browser-icon.svg" type="image/svg+xml">
+    <link rel="icon" href="/src/images/browser-icon.png" type="image/png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        /* =========================================================
+       ROOT
+    ========================================================= */
+
+        :root {
+            --void: #08090d;
+            --paper: #f5f5f2;
+
+            --chalk: rgba(255, 255, 255, 0.7);
+
+            --blue: #3355ff;
+            --pink: #ff3b70;
+            --acid: #e8ff47;
+
+            --font-display: "Space Grotesk", sans-serif;
+            --font-mono: "DM Mono", monospace;
+
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+
+        /* =========================================================
+       RESET
+    ========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            min-height: 100vh;
+
+            background-color: var(--void);
+
+            background-image: url("https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/site-bg-landscape.jpg");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            color: var(--paper);
+
+            font-family: var(--font-display);
+
+            -webkit-font-smoothing: antialiased;
+
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =========================================================
+       GIANT BACKGROUND TEXT
+    ========================================================= */
+
+        body::before {
+            content: "WHAT IF?";
+
+            position: fixed;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%) rotate(-6deg);
+
+            font-family: var(--font-display);
+
+            font-size: clamp(9rem, 27vw, 32rem);
+            font-weight: 700;
+
+            line-height: 0.8;
+            letter-spacing: -0.09em;
+
+            white-space: nowrap;
+
+            color: rgba(255, 255, 255, 0.018);
+
+            pointer-events: none;
+        }
+
+
+        /* =========================================================
+       PAGE
+    ========================================================= */
+
+        .apply-page {
+            position: relative;
+
+            z-index: 2;
+
+            width: min(100% - 3rem, 1500px);
+
+            margin: 0 auto;
+        }
+
+
+        /* =========================================================
+       HEADER
+    ========================================================= */
+
+        .apply-header {
+            min-height: 100px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.25);
+        }
+
+
+        /* =========================================================
+       LOGO
+    ========================================================= */
+
+        .apply-logo-link {
+            display: inline-block;
+
+            width: fit-content;
+        }
+
+        .apply-logo {
+            display: block;
+
+            width: clamp(140px, 13vw, 210px);
+
+            height: auto;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================================================
+       BACK LINK
+    ========================================================= */
+
+        .back-link {
+            font-family: var(--font-mono);
+
+            font-size: 0.72rem;
+
+            letter-spacing: 0.05em;
+
+            color: rgba(255, 255, 255, 0.65);
+
+            text-decoration: none;
+
+            transition:
+                color 200ms ease,
+                transform 200ms ease;
+        }
+
+        .back-link:hover {
+            color: var(--acid);
+
+            transform: translateX(-5px);
+        }
+
+
+        /* =========================================================
+       HERO
+    ========================================================= */
+
+        .apply-hero {
+            padding-top: 7rem;
+            padding-bottom: 6rem;
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .apply-eyebrow {
+            display: block;
+
+            margin-bottom: 2.5rem;
+
+            font-family: var(--font-mono);
+
+            font-size: 0.75rem;
+
+            letter-spacing: 0.06em;
+
+            color: var(--pink);
+        }
+
+        .apply-heading {
+            margin: 0;
+
+            max-width: 1100px;
+
+            font-size:
+                clamp(4.5rem, 10vw, 11rem);
+
+            font-weight: 600;
+
+            line-height: 0.78;
+
+            letter-spacing: -0.075em;
+        }
+
+        .apply-heading span {
+            display: block;
+
+            color: var(--acid);
+
+            font-family: var(--font-mono);
+
+            font-style: italic;
+
+            font-size: 0.62em;
+
+            font-weight: 500;
+        }
+
+        .apply-lead {
+            max-width: 720px;
+
+            margin-top: 4rem;
+
+            font-size:
+                clamp(1.15rem, 1.8vw, 1.55rem);
+
+            line-height: 1.65;
+
+            color: var(--chalk);
+        }
+
+        .apply-lead strong {
+            color: var(--paper);
+
+            font-weight: 500;
+        }
+
+
+        /* =========================================================
+       APPLICATION SECTION
+    ========================================================= */
+
+        .application-section {
+            padding-top: 6rem;
+            padding-bottom: 7rem;
+        }
+
+
+        /* =========================================================
+       APPLICATION INTRO
+    ========================================================= */
+
+        .application-intro {
+            display: flex;
+
+            align-items: flex-end;
+            justify-content: space-between;
+
+            gap: 3rem;
+
+            margin-bottom: 3rem;
+        }
+
+        .application-title {
+            margin: 0;
+
+            font-size:
+                clamp(2.8rem, 5vw, 6rem);
+
+            font-weight: 600;
+
+            line-height: 0.9;
+
+            letter-spacing: -0.055em;
+        }
+
+        .application-note {
+            max-width: 400px;
+
+            margin: 0;
+
+            font-family: var(--font-mono);
+
+            font-size: 0.72rem;
+
+            line-height: 1.7;
+
+            color: rgba(255, 255, 255, 0.48);
+        }
+
+
+        /* =========================================================
+       FORM WRAPPER
+    ========================================================= */
+
+        .application-form-wrap {
+            position: relative;
+
+            width: 100%;
+
+            min-width: 0;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.3);
+
+            background:
+                rgba(8, 18, 42, 0.78);
+
+            backdrop-filter: blur(18px);
+
+            -webkit-backdrop-filter: blur(18px);
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================================
+       FORM TOP
+    ========================================================= */
+
+        .form-top {
+            min-height: 75px;
+
+            padding: 0 1.5rem;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 1rem;
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-number {
+            font-family: var(--font-mono);
+
+            font-size: 0.7rem;
+
+            letter-spacing: 0.04em;
+
+            color: var(--pink);
+        }
+
+        .form-status {
+            font-family: var(--font-mono);
+
+            font-size: 0.65rem;
+
+            letter-spacing: 0.04em;
+
+            color: rgba(255, 255, 255, 0.45);
+
+            text-align: right;
+        }
+
+
+        /* =========================================================
+       GOOGLE FORM
+    ========================================================= */
+
+        .google-form-frame {
+            position: relative;
+
+            width: 100%;
+
+            height: 1050px;
+
+            overflow: hidden;
+
+            background: #f5f5f5;
+        }
+
+        .google-form-frame iframe {
+            display: block;
+
+            width: 100%;
+
+            height: 100%;
+
+            border: 0;
+        }
+
+
+        /* =========================================================
+       FORM BOTTOM
+    ========================================================= */
+
+        .form-bottom {
+            min-height: 65px;
+
+            padding: 0 1.5rem;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 1rem;
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.2);
+
+            font-family: var(--font-mono);
+
+            font-size: 0.65rem;
+
+            color: rgba(255, 255, 255, 0.42);
+        }
+
+        .form-bottom span:last-child {
+            color: var(--acid);
+        }
+
+
+        /* =========================================================
+       FOOTER
+    ========================================================= */
+
+        .apply-footer {
+            min-height: 90px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.08em;
+
+            color: rgba(255, 255, 255, 0.45);
+
+            text-align: center;
+        }
+
+
+        /* =========================================================
+       TABLET
+    ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .apply-page {
+                width: min(100% - 2rem, 1500px);
+            }
+
+            .apply-header {
+                min-height: 85px;
+            }
+
+            .apply-logo {
+                width: 145px;
+            }
+
+            .apply-hero {
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+            }
+
+            .apply-heading {
+                font-size:
+                    clamp(4rem, 17vw, 7rem);
+            }
+
+            .apply-lead {
+                margin-top: 3rem;
+            }
+
+            .application-intro {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 1.5rem;
+            }
+
+            .application-note {
+                max-width: 600px;
+            }
+
+            .google-form-frame {
+                height: 1100px;
+            }
+
+        }
+
+
+        /* =========================================================
+       MOBILE
+    ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .apply-page {
+                width: min(100% - 1.5rem, 1500px);
+            }
+
+            .apply-header {
+                min-height: 80px;
+            }
+
+            .apply-logo {
+                width: 130px;
+            }
+
+            .back-link {
+                font-size: 0.62rem;
+            }
+
+            .apply-hero {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+
+            .apply-eyebrow {
+                margin-bottom: 2rem;
+            }
+
+            .apply-heading {
+                font-size:
+                    clamp(3.8rem, 19vw, 5.8rem);
+
+                line-height: 0.82;
+            }
+
+            .apply-lead {
+                margin-top: 2.5rem;
+
+                font-size: 1.05rem;
+            }
+
+            .application-section {
+                padding-top: 4rem;
+                padding-bottom: 5rem;
+            }
+
+            .application-title {
+                font-size:
+                    clamp(2.7rem, 14vw, 4.5rem);
+            }
+
+            .form-top {
+                min-height: 70px;
+
+                padding: 0 1rem;
+            }
+
+            .form-status {
+                max-width: 170px;
+
+                font-size: 0.58rem;
+            }
+
+            .google-form-frame {
+                height: 1150px;
+            }
+
+            .form-bottom {
+                min-height: 90px;
+
+                padding: 1rem;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+                justify-content: center;
+
+                gap: 0.5rem;
+            }
+
+            .apply-footer {
+                min-height: 120px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+                justify-content: center;
+
+                gap: 0.7rem;
+            }
+
+            .apply-footer span:last-child {
+                text-align: left;
+            }
+
+            body {
+                background-image: url("https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/site-bg-portrait.jpg");
+                background-size: cover;
+                background-position: center top;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+            }
+
+        }
+    
+        /* NATIVE ITELF FORM */
+        .google-form-frame { display:none; }
+        .native-form { padding: clamp(1rem, 3vw, 3rem); }
+        .form-section { padding: 2.5rem 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+        .form-section:first-child { padding-top: 0; }
+        .section-kicker, .section-note, .word-count, .file-note { font-family: var(--font-mono); }
+        .section-kicker { color: var(--pink); font-size:.72rem; letter-spacing:.06em; }
+        .section-note, .file-note, .word-count { color: rgba(255,255,255,.48); font-size:.68rem; }
+        .native-form label, .native-form legend { display:block; font-size: clamp(1rem, 1.5vw, 1.2rem); }
+        .native-form label { margin-top: 2rem; }
+        .native-form small { display:block; margin-top:.4rem; color:rgba(255,255,255,.5); font-family:var(--font-mono); font-size:.68rem; }
+        .native-form b { color:var(--pink); }
+        .native-form input:not([type="radio"]):not([type="checkbox"]):not([type="file"]),
+        .native-form textarea {
+            width:100%; margin-top:1rem; padding:1rem 0; border:0; border-bottom:1px solid rgba(255,255,255,.35);
+            outline:0; background:transparent; color:var(--paper); font:inherit; border-radius:0;
+        }
+        .native-form textarea { min-height:140px; resize:vertical; }
+        .native-form input:focus, .native-form textarea:focus { border-color:var(--acid)!important; }
+        .native-form fieldset { margin:2rem 0 0; padding:0; border:0; }
+        .choice-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; margin-top:1rem; }
+        .choice-grid label { margin:0; display:flex; align-items:center; gap:.7rem; padding:1rem; border:1px solid rgba(255,255,255,.18); cursor:pointer; }
+        .choice-grid input { accent-color:var(--acid); }
+        input[type="file"] { display:block; width:100%; margin-top:1rem; padding:1rem; border:1px dashed rgba(255,255,255,.35); color:var(--chalk); font-family:var(--font-mono); }
+        .word-count { display:block; margin-top:.6rem; text-align:right; }
+        .submit-application { width:100%; min-height:100px; margin-top:2.5rem; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; border:0; background:var(--acid); color:var(--void); font:700 clamp(1.4rem,3vw,2.5rem) var(--font-display); cursor:pointer; }
+        .submit-application:disabled { opacity:.5; cursor:wait; }
+        .form-message { font-family:var(--font-mono); color:var(--acid); }
+        @media(max-width:600px){ .native-form{padding:1.25rem}.choice-grid{grid-template-columns:1fr}.form-section{padding:2rem 0}.submit-application{min-height:82px;padding:0 1.25rem} }
+
+    
+        /* SECURITY / VALIDATION UI */
+        .hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
+        .form-message{min-height:1.5rem;margin-top:1rem}
+        .form-message.is-error{color:var(--pink)}
+        .form-message.is-success{color:var(--acid)}
+        .native-form input[aria-invalid="true"],.native-form textarea[aria-invalid="true"]{border-color:var(--pink)!important}
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="apply-page">
+
+
+        <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+        <header class="apply-header">
+
+            <a href="index.html" class="apply-logo-link" aria-label="Back to iTELF home">
+
+                <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/iTELF-logo.png"
+                    alt="iTELF Logo" class="apply-logo">
+
+            </a>
+
+
+            <a href="index.html" class="back-link">
+                ← BACK TO THE CHAOS
+            </a>
+
+        </header>
+
+
+        <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+        <main>
+
+            <section class="apply-hero">
+
+                <h1 class="apply-heading">
+                    YOUR MOVE.
+                    <span>Make it count.</span>
+                </h1>
+
+                <p class="apply-lead">
+                    You've seen what we build. You've explored the domains.
+                    Now we're curious about <strong>you</strong> — what you think,
+                    what you want to learn and what you might bring to the chaos.
+                </p>
+
+            </section>
+
+
+            <!-- =====================================================
+           APPLICATION
+      ====================================================== -->
+
+            <section class="application-section">
+
+                <div class="application-intro">
+
+                    <h2 class="application-title">
+                        READY<br>
+                        WHEN YOU ARE.
+                    </h2>
+
+                    <p class="application-note">
+                        // take your time. give us the real answers,
+                        not the interview ones. yes, we will actually
+                        read what you write.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+             EMBEDDED GOOGLE FORM
+        ================================================== -->
+
+                <div class="application-form-wrap">
+
+                    <div class="form-top">
+
+                        <span class="card-number">
+                            APPLICATION
+                        </span>
+
+                        <span class="form-status">
+                            TAKE YOUR TIME. WE'RE READING.
+                        </span>
+
+                    </div>
+
+
+                    
+                    <form id="itelfForm" class="native-form" autocomplete="on" novalidate>
+                        <div class="hp-field" aria-hidden="true">
+                            <label>Leave empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                        </div>
+                        <input type="hidden" name="formStartedAt" id="formStartedAt">
+                        <div class="form-section">
+                            <span class="section-kicker">// 01 · YOUR DETAILS</span>
+                            <label>Full Name <b>*</b><input name="fullName" autocomplete="name" minlength="2" maxlength="100" required></label>
+                            <label>PRN No. <small>(Enter your correct 11 digit PRN)</small> <b>*</b><input name="prn" inputmode="numeric" autocomplete="off" pattern="[0-9]{11}" minlength="11" maxlength="11" required></label>
+                            <label>Email (Associates ID) <b>*</b><input name="email" type="email" autocomplete="email" maxlength="150" required></label>
+                            <label>Contact Number <b>*</b><input name="contact" type="tel" inputmode="numeric" autocomplete="tel" pattern="[0-9]{10}" minlength="10" maxlength="10" required></label>
+                            <fieldset><legend>Division <b>*</b></legend>
+                                <div class="choice-grid">
+                                    <label><input type="radio" name="division" value="A" required><span>A</span></label>
+                                    <label><input type="radio" name="division" value="B"><span>B</span></label>
+                                    <label><input type="radio" name="division" value="C"><span>C</span></label>
+                                    <label><input type="radio" name="division" value="D"><span>D</span></label>
+                                    <label><input type="radio" name="division" value="DSDA"><span>DSDA</span></label>
+                                </div>
+                            </fieldset>
+                            <label>Please provide your LinkedIn profile link <small>(Add N/A if you don't have one)</small> <b>*</b><input name="linkedin" maxlength="300" required></label>
+                        </div>
+
+                        <div class="form-section">
+                            <span class="section-kicker">// 02 · THE IDEA</span>
+                            <fieldset><legend>Any Project/Startup Idea that you have in mind, or already in the works? <small>(Not mandatory for your selection)</small> <b>*</b></legend>
+                                <div class="choice-grid">
+                                    <label><input type="radio" name="hasIdea" value="Yes" required><span>Yes</span></label>
+                                    <label><input type="radio" name="hasIdea" value="No"><span>No</span></label>
+                                </div>
+                            </fieldset>
+                            <label>If your answer was "Yes", mention your idea in a few lines; otherwise mention N/A. <b>*</b><textarea name="ideaDetails" maxlength="2000" required></textarea></label>
+                        </div>
+
+                        <div class="form-section">
+                            <span class="section-kicker">// 03 · TELL US ABOUT YOU</span>
+                            <p class="section-note">Please answer the following questions in 50–100 words.</p>
+                            <label>Why do you want to join iTELF? <small>(Max 100 Words)</small> <b>*</b><textarea name="whyJoin" data-maxwords="100" maxlength="1500" required></textarea><span class="word-count">0 / 100 words</span></label>
+                            <label>What skills do you possess that would make you a great candidate for iTELF? <b>*</b><textarea name="skills" maxlength="2000" required></textarea></label>
+                            <label>Have you ever been involved in entrepreneurial activities or been a part of any similar committees or Organisations before? <small>(Mention the details in 50 words, otherwise mention N/A)</small> <b>*</b><textarea name="experience" maxlength="1500" required></textarea></label>
+                            <label>Upload Proof of Previous Work (if any)
+                                <input name="proof" type="file" accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
+                                <span class="file-note">// optional · PDF / image / document</span>
+                            </label>
+                        </div>
+
+                        <div class="form-section">
+                            <span class="section-kicker">// 04 · DOMAIN INTEREST</span>
+                            <fieldset><legend>Preference 1 <b>*</b></legend><div class="choice-grid domain-options"></div></fieldset>
+                            <fieldset><legend>Preference 2 <b>*</b></legend><div class="choice-grid domain-options"></div></fieldset>
+                            <fieldset><legend>Preference 3</legend><div class="choice-grid domain-options"></div></fieldset>
+                            <fieldset><legend>Which other committee(s) have applied for? <b>*</b></legend>
+                                <div class="choice-grid committee-options"></div>
+                            </fieldset>
+                        </div>
+
+                        <button class="submit-application" type="submit"><span>SUBMIT APPLICATION</span><span>→</span></button>
+                        <p id="formMessage" class="form-message" aria-live="polite"></p>
+                    </form>
+
+                    <div class="form-bottom">
+
+                        <span>
+                            No perfect résumé required.
+                        </span>
+
+                        <span>
+                            CURIOSITY HELPS.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+        <footer class="apply-footer">
+            <span>
+                iTELF · SCIT PUNE
+            </span>
+        </footer>
+
+
+    </div>
+
+
+<script>
+"use strict";
+
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzKuPhf-3lw9h2-8lMLWjSZOm4HoT2nZ4z3F-3xclBaf7xHcoZexqKe0i8skSXjm3xPfg/exec";
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
+const ALLOWED_FILE_TYPES = new Set([
+  "application/pdf","image/png","image/jpeg","application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+]);
+
+const domains = ["Speaker/Investor Collaborations","Web and Media","Events","Sponsorship"];
+const committees = ["Team Matrix","Guest Lecture Committee","Alumni Committee","Web & Media Committee","Admissions Committee","Team ISR","Sports Committee","Cultural Committee","Drishtikon Committee","Symbeats","Konnect","Team Reflections","Eklavya","N/A"];
+
+const form = document.getElementById("itelfForm");
+const msg = document.getElementById("formMessage");
+const btn = form.querySelector('button[type="submit"]');
+let startedAt = Date.now();
+document.getElementById("formStartedAt").value = String(startedAt);
+
+document.querySelectorAll(".domain-options").forEach((box,i)=>{
+  const name=`preference${i+1}`;
+  box.innerHTML=domains.map(d=>`<label><input type="radio" name="${name}" value="${d}" ${i<2?"required":""}><span>${d}</span></label>`).join("");
+});
+document.querySelector(".committee-options").innerHTML=committees.map(c=>`<label><input type="checkbox" name="committees" value="${c}"><span>${c}</span></label>`).join("");
+
+document.querySelectorAll("[data-maxwords]").forEach(el=>{
+  const counter=el.nextElementSibling,max=Number(el.dataset.maxwords);
+  el.addEventListener("input",()=>{
+    let words=el.value.trim()?el.value.trim().split(/\s+/):[];
+    if(words.length>max){words=words.slice(0,max);el.value=words.join(" ");}
+    counter.textContent=`${words.length} / ${max} words`;
+  });
+});
+
+/* N/A cannot be selected with another committee. */
+form.addEventListener("change",e=>{
+  if(e.target.name!=="committees") return;
+  const boxes=[...form.querySelectorAll('input[name="committees"]')];
+  const na=boxes.find(x=>x.value==="N/A");
+  if(e.target===na && na.checked) boxes.forEach(x=>{if(x!==na)x.checked=false;});
+  else if(e.target.checked && na) na.checked=false;
+});
+
+function show(text,type=""){
+  msg.textContent=text;
+  msg.className=`form-message ${type?`is-${type}`:""}`;
+}
+function invalid(field,text){
+  field?.setAttribute("aria-invalid","true");
+  field?.focus();
+  show(text,"error");
+  return false;
+}
+function validate(){
+  form.querySelectorAll('[aria-invalid="true"]').forEach(x=>x.removeAttribute("aria-invalid"));
+  if(!form.checkValidity()) return invalid(form.querySelector(":invalid"),"// CHECK THE REQUIRED FIELDS AND FORMATS.");
+  if(!/^\d{11}$/.test(form.elements.prn.value.trim())) return invalid(form.elements.prn,"// PRN MUST CONTAIN EXACTLY 11 DIGITS.");
+  if(!/^\d{10}$/.test(form.elements.contact.value.trim())) return invalid(form.elements.contact,"// CONTACT NUMBER MUST CONTAIN EXACTLY 10 DIGITS.");
+
+  const prefs=[form.elements.preference1?.value,form.elements.preference2?.value,form.elements.preference3?.value].filter(Boolean);
+  if(new Set(prefs).size!==prefs.length){show("// DOMAIN PREFERENCES MUST BE DIFFERENT.","error");return false;}
+
+  if(!form.querySelectorAll('input[name="committees"]:checked').length){show("// SELECT AT LEAST ONE OTHER COMMITTEE OR N/A.","error");return false;}
+
+  const file=form.elements.proof.files[0];
+  if(file && file.size>MAX_FILE_SIZE){form.elements.proof.value="";show("// FILE TOO LARGE. MAXIMUM SIZE IS 5 MB.","error");return false;}
+  if(file && !ALLOWED_FILE_TYPES.has(file.type)){form.elements.proof.value="";show("// FILE TYPE NOT ALLOWED.","error");return false;}
+  return true;
+}
+function toBase64(file){
+  return new Promise((resolve,reject)=>{
+    const r=new FileReader();
+    r.onload=()=>resolve(String(r.result).split(",")[1]);
+    r.onerror=()=>reject(new Error("FILE_READ_FAILED"));
+    r.readAsDataURL(file);
+  });
+}
+
+form.addEventListener("submit",async e=>{
+  e.preventDefault();
+  show("");
+  if(!validate()) return;
+
+  /* Abuse filters; Code.gs must independently enforce these. */
+  if(form.elements.website.value){show("// SUBMISSION REJECTED.","error");return;}
+  if(Date.now()-startedAt<3000){show("// PLEASE REVIEW YOUR APPLICATION BEFORE SUBMITTING.","error");return;}
+  if(SCRIPT_URL.includes("PASTE_")){show("// ADD YOUR APPS SCRIPT WEB APP URL FIRST.","error");return;}
+
+  btn.disabled=true;
+  show("// SENDING APPLICATION...");
+
+  try{
+    const fd=new FormData(form), file=form.elements.proof.files[0], payload={};
+    for(const [k,v] of fd.entries()){
+      if(k==="proof") continue;
+      payload[k]=k==="committees"?(payload[k]?`${payload[k]}, ${v}`:v):String(v).trim();
+    }
+
+    payload.origin=window.location.origin;
+    payload.formStartedAt=String(startedAt);
+    payload.submittedAt=String(Date.now());
+
+    if(file){
+      payload.fileName=file.name;
+      payload.mimeType=file.type;
+      payload.fileSize=file.size;
+      payload.fileData=await toBase64(file);
+    }
+
+    const endpoint=`${SCRIPT_URL}?origin=${encodeURIComponent(window.location.origin)}`;
+    const res=await fetch(endpoint,{method:"POST",body:JSON.stringify(payload),redirect:"follow"});
+    if(!res.ok) throw new Error(`HTTP_${res.status}`);
+
+    const result=await res.json();
+    if(!result.ok) throw new Error(result.error||"SUBMISSION_REJECTED");
+
+    form.reset();
+    startedAt=Date.now();
+    document.getElementById("formStartedAt").value=String(startedAt);
+    document.querySelectorAll(".word-count").forEach(x=>x.textContent="0 / 100 words");
+    show("// APPLICATION RECEIVED. SEE YOU ON THE OTHER SIDE.","success");
+    window.scrollTo({top:form.offsetTop-120,behavior:"smooth"});
+  }catch(err){
+    console.error("Application submission failed:",err);
+    const known={
+      ORIGIN_NOT_ALLOWED:"// SUBMISSION ORIGIN NOT ALLOWED.",
+      APPLICATION_ALREADY_EXISTS:"// AN APPLICATION ALREADY EXISTS FOR THIS PRN OR EMAIL.",
+      INVALID_PRN:"// INVALID PRN.",
+      INVALID_EMAIL:"// INVALID EMAIL ADDRESS.",
+      INVALID_CONTACT:"// INVALID CONTACT NUMBER.",
+      INVALID_FILE_TYPE:"// FILE TYPE NOT ALLOWED.",
+      FILE_TOO_LARGE:"// FILE TOO LARGE. MAXIMUM SIZE IS 5 MB."
+    };
+    show(known[err.message]||"// SOMETHING BROKE. YOUR APPLICATION WAS NOT CONFIRMED. PLEASE TRY AGAIN.","error");
+  }finally{
+    btn.disabled=false;
+  }
+});
+</script>
+
+</body>
+
+</html>

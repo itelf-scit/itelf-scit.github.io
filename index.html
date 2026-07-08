@@ -1,274 +1,919 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iTELF — SCIT Pune Entrepreneurship Cell</title>
-<meta name="description" content="iTELF is SCIT Pune's entrepreneurship cell. Placeholder description — replace with official copy.">
 
-<!-- =========================================================
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iTELF — SCIT Pune Entrepreneurship Cell</title>
+  <meta name="description"
+    content="iTELF is SCIT Pune's entrepreneurship cell. Placeholder description — replace with official copy.">
+
+  <!-- =========================================================
      FONTS
      Display: Space Grotesk / Body: Inter / Mono: JetBrains Mono
 ========================================================== -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="./src/images/browser-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/src/images/browser-icon.png" type="image/png">
+
 </head>
+
 <body>
 
-<!-- =========================================================
+  <!-- =========================================================
      NAV
      EDITABLE: nav links, brand mark
 ========================================================== -->
-<header class="site-nav">
-  <div class="nav-inner">
-    <a href="#top" class="nav-brand">iTELF</a>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-brand" aria-label="iTELF Home">
+        <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/iTELF-logo.png"
+          alt="iTELF Logo" class="nav-logo">
+      </a>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
-      <span></span><span></span><span></span>
-    </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
 
-    <nav class="nav-links" id="navMenu">
-      <a href="#what-we-do">What We Do</a>
-      <a href="#initiatives">Initiatives</a>
-      <a href="#community">Community</a>
-      <a href="#join" class="nav-cta">Join</a>
-    </nav>
-  </div>
-</header>
+      <nav class="nav-links" id="navMenu">
+        <a href="#about">About</a>
+        <a href="#initiatives">What We Conduct</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#domains">Domains</a>
+        <a href="#join" class="nav-cta">Join</a>
+      </nav>
+    </div>
+  </header>
 
-<main id="top">
+  <main id="top">
 
-  <!-- =========================================================
+    <!-- =========================================================
        HERO
        EDITABLE: HERO COPY — headline + subhead + CTA label
        The Board (signature element) is markup further down this block.
   ========================================================== -->
-  <section class="hero">
-    <div class="hero-inner">
+    <section class="hero">
+      <div class="hero-inner">
 
-      <div class="hero-copy">
-        <!-- EDITABLE: HERO HEADLINE -->
-        <h1 class="hero-headline">
-          The idea in your notes app<br>
-          is not a startup yet.
-        </h1>
-        <!-- EDITABLE: HERO SUBHEAD -->
-        <p class="hero-subhead">
-          We're the people who help you find out if it should be. [Placeholder subhead — replace with official iTELF positioning line.]
-        </p>
-        <!-- EDITABLE: HERO CTA LABEL -->
-        <a href="#join" class="btn-primary">Join the board <span aria-hidden="true">→</span></a>
-      </div>
+        <div class="hero-copy">
+          <!-- EDITABLE: HERO HEADLINE -->
+          <h1 class="hero-headline">
+            We make<br>
+            “What if?”<br>
+            look <span class="hero-punch">inevitable.</span>
+          </h1>
+          <!-- EDITABLE: HERO SUBHEAD -->
+          <p class="hero-subhead">
+            There is always a moment before something remarkable exists — when it's nothing more than a wild question,
+            a rough sketch, or an idea nobody quite understands yet.
+            <span class="hero-subhead-punch">
+              That's the moment we live for. The rest? We make inevitable.
+            </span>
+          </p>
+          <!-- EDITABLE: HERO CTA LABEL -->
+          <a href="#about" class="btn-primary">Explore iTELF <span aria-hidden="true">→</span></a>
+        </div>
 
-      <!-- =========================================================
+        <!-- =========================================================
            SIGNATURE ELEMENT: THE BOARD
            EDITABLE: card text (id="board-card-*"), keep tags short.
            These are DEMO / PLACEHOLDER notes, not real iTELF activities.
            Threads (SVG paths) are decorative and connect card pairs.
       ========================================================== -->
-      <div class="board" id="board" aria-hidden="true">
-        <svg class="board-threads" viewBox="0 0 560 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path class="thread" data-pair="1-2" d="M120,90 C200,60 260,140 300,150" />
-          <path class="thread" data-pair="2-3" d="M300,150 C340,220 260,260 210,300" />
-          <path class="thread" data-pair="1-4" d="M120,90 C80,180 120,260 150,340" />
-          <path class="thread" data-pair="3-4" d="M210,300 C200,330 180,340 150,340" />
-          <path class="thread" data-pair="4-5" d="M150,340 C220,380 320,370 380,330" />
-          <path class="thread" data-pair="2-5" d="M300,150 C360,200 400,260 380,330" />
-        </svg>
+        <div class="board-neon-frame">
+          <div class="board" id="board" aria-hidden="true">
+            <svg class="board-threads" viewBox="0 0 560 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="thread" data-pair="1-2" d="M120,90 C200,60 260,140 300,150" />
+              <path class="thread" data-pair="2-3" d="M300,150 C340,220 260,260 210,300" />
+              <path class="thread" data-pair="1-4" d="M120,90 C80,180 120,260 150,340" />
+              <path class="thread" data-pair="3-4" d="M210,300 C200,330 180,340 150,340" />
+              <path class="thread" data-pair="4-5" d="M150,340 C220,380 320,370 380,330" />
+              <path class="thread" data-pair="2-5" d="M300,150 C360,200 400,260 380,330" />
+            </svg>
 
-        <!-- PLACEHOLDER card copy — swap for real founder notes / prompts if desired -->
-        <div class="board-card" data-card="1" style="--rot: -4deg; top: 4%; left: 2%;">
-          <span class="card-pin"></span>
-          <p id="board-card-1">Cold DM 50 people<br>before Friday</p>
-          <span class="card-tag">// note-01</span>
-        </div>
+            <!-- PLACEHOLDER card copy — swap for real founder notes / prompts if desired -->
+            <div class="board-card note-white" data-card="1" style="--rot: -4deg; top: 18%; left: 2%;">
+              <span class="card-pin"></span>
+              <p id="board-card-1">
+                what if<br>
+                we actually<br>
+                did this?
+              </p>
+              <span class="card-tag">// thought-01</span>
+            </div>
 
-        <div class="board-card" data-card="2" style="--rot: 3deg; top: 18%; left: 44%;">
-          <span class="card-pin"></span>
-          <p id="board-card-2">Is this a vitamin<br>or a painkiller</p>
-          <span class="card-tag">// note-02</span>
-        </div>
+            <div class="board-card note-yellow" data-card="2" style="--rot: 3deg; top: 10%; left: 45%;">
+              <span class="card-pin"></span>
+              <p id="board-card-2">
+                okay.<br><br>
+                hear me<br>
+                out.
+              </p>
+              <span class="card-tag">// spark-02</span>
+            </div>
 
-        <div class="board-card" data-card="3" style="--rot: -2deg; top: 44%; left: 30%;">
-          <span class="card-pin"></span>
-          <p id="board-card-3">MVP ≠ prototype</p>
-          <span class="card-tag">// note-03</span>
-        </div>
+            <div class="board-card note-white" data-card="3" style="--rot: -2deg; top: 44%; left: 30%;">
+              <span class="card-pin"></span>
+              <p id="board-card-3">
+                this is<br>
+                getting a little<br>
+                too real.
+              </p>
+              <span class="card-tag">// build-03</span>
+            </div>
 
-        <div class="board-card" data-card="4" style="--rot: 5deg; top: 58%; left: 4%;">
-          <span class="card-pin"></span>
-          <p id="board-card-4">Who's actually<br>paying for this</p>
-          <span class="card-tag">// note-04</span>
-        </div>
+            <div class="board-card note-pink" data-card="4" style="--rot: 5deg; top: 65%; left: 4%;">
+              <span class="card-pin"></span>
+              <p id="board-card-4">
+                wait—<br><br>
+                people are<br>
+                actually coming.
+              </p>
+              <span class="card-tag">// moment-04</span>
+            </div>
 
-        <div class="board-card" data-card="5" style="--rot: -3deg; top: 62%; left: 54%;">
-          <span class="card-pin"></span>
-          <p id="board-card-5">Talk to 10 users<br>before you build</p>
-          <span class="card-tag">// note-05</span>
+            <div class="board-card note-yellow" data-card="5" style="--rot: -3deg; top: 62%; left: 54%;">
+              <span class="card-pin"></span>
+              <p id="board-card-5">
+                look at that.<br><br>
+                we made<br>
+                it happen.
+              </p>
+              <span class="card-tag">// inevitable-05</span>
+            </div>
+          </div>
         </div>
+        <!-- END SIGNATURE ELEMENT -->
+
       </div>
-      <!-- END SIGNATURE ELEMENT -->
+    </section>
 
-    </div>
-  </section>
-
-  <!-- =========================================================
+    <!-- =========================================================
        ABOUT ITELF
        EDITABLE: ABOUT COPY — manifesto-style paragraph
   ========================================================== -->
-  <section class="about" id="about">
-    <div class="section-inner about-grid">
-      <span class="eyebrow">// what itelf is</span>
-      <div class="about-copy">
-        <!-- EDITABLE: ABOUT PARAGRAPH — replace with official description -->
-        <p>
-          Placeholder copy: iTELF exists to sit between a half-formed idea and a real venture — the pressure-testing,
-          the connections, the pushing. This paragraph is a stand-in and should be replaced with SCIT Pune's
-          official description of the cell before launch.
+    <section class="about" id="about">
+      <div class="section-inner about-simple">
+
+        <span class="eyebrow">// About iTELF</span>
+
+        <p class="about-manifesto">
+          Entrepreneurship begins
+          <span class="pink-text">long before a company does.</span>
+
+          It begins with <span class="yellow-text">curiosity</span> —
+          the courage to question what exists and the drive to
+          <span class="cyan-text">imagine what could.</span>
+
+          At <strong>iTELF</strong>, we bring together ideas, people and
+          perspectives through experiences that inspire conversations,
+          challenge thinking and encourage students to
+          <span class="underline-text">create something of their own.</span>
         </p>
+
       </div>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       WHAT WE DO
-       EDITABLE: WHAT WE DO ITEMS — this is a sequence ONLY if the
-       real activities are an actual ordered process. If not, remove
-       the numbers and treat as an unordered list.
-       ⚠️ Items below are PLACEHOLDERS — not confirmed iTELF programmes.
-  ========================================================== -->
-  <section class="what-we-do" id="what-we-do">
-    <div class="section-inner">
-      <span class="eyebrow">// what we do</span>
-
-      <ul class="wwd-list">
-        <li class="wwd-item">
-          <span class="wwd-index">01</span>
-          <span class="wwd-title">[Placeholder activity — e.g. structured build sessions]</span>
-          <span class="wwd-desc">One line describing this activity. Replace with confirmed programme details.</span>
-        </li>
-        <li class="wwd-item">
-          <span class="wwd-index">02</span>
-          <span class="wwd-title">[Placeholder activity — e.g. one-on-one guidance sessions]</span>
-          <span class="wwd-desc">One line describing this activity. Replace with confirmed programme details.</span>
-        </li>
-        <li class="wwd-item">
-          <span class="wwd-index">03</span>
-          <span class="wwd-title">[Placeholder activity — e.g. pitch practice sessions]</span>
-          <span class="wwd-desc">One line describing this activity. Replace with confirmed programme details.</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- =========================================================
+    </section>
+    <!-- =========================================================
        INITIATIVES / EVENTS
        EDITABLE: INITIATIVE / EVENT ENTRIES
        ⚠️ Cards below are structural PLACEHOLDERS ("Initiative 01" etc.)
        Do not treat as real iTELF events until confirmed and replaced.
   ========================================================== -->
-  <section class="initiatives" id="initiatives">
-    <div class="section-inner">
-      <span class="eyebrow">// initiatives</span>
+    <section class="initiatives merged-initiatives" id="initiatives">
+      <div class="section-inner">
 
-      <div class="initiative-strip">
-        <article class="init-card">
-          <span class="card-pin small"></span>
-          <span class="card-tag">// slot-01</span>
-          <h3>[Initiative name placeholder]</h3>
-          <p>Short placeholder description. Replace with real initiative details, dates, and outcomes.</p>
-        </article>
+        <div class="initiatives-intro">
+          <span class="eyebrow">// what we conduct</span>
 
-        <article class="init-card">
-          <span class="card-pin small"></span>
-          <span class="card-tag">// slot-02</span>
-          <h3>[Initiative name placeholder]</h3>
-          <p>Short placeholder description. Replace with real initiative details, dates, and outcomes.</p>
-        </article>
+          <h2 class="initiatives-heading">
+            Three distinct platforms.<br>
+            <span>One committee behind them.</span>
+          </h2>
 
-        <article class="init-card">
-          <span class="card-pin small"></span>
-          <span class="card-tag">// slot-03</span>
-          <h3>[Initiative name placeholder]</h3>
-          <p>Short placeholder description. Replace with real initiative details, dates, and outcomes.</p>
-        </article>
+          <p class="initiatives-lead">
+            Ideas, people and execution come together differently every time.
+            These are the spaces where we make it happen.
+          </p>
+        </div>
+
+        <div class="initiative-strip">
+
+          <!-- SPROUTIT -->
+          <article class="init-card init-sprout">
+
+            <span class="initiative-line">
+              // 01 · entrepreneurship
+            </span>
+
+            <h3>SPROUT'IT</h3>
+
+            <p>
+              Plan and execute an entrepreneurship fest where ideas, innovation
+              and business come together. Build real experience in leadership,
+              event management and stakeholder coordination while creating
+              memorable entrepreneurial experiences.
+            </p>
+
+            <span class="initiative-tag">
+              IDEAS → CONVERSATIONS → ACTION
+            </span>
+
+          </article>
+
+
+          <!-- STREAMS -->
+          <article class="init-card init-streams">
+
+            <span class="initiative-line">
+              // 02 · conversations
+            </span>
+
+            <h3>STREAMS</h3>
+
+            <p>
+              Get a front-row seat to how founders and industry leaders think.
+              Help shape their stories, drive meaningful conversations and connect
+              with the people shaping business today.
+            </p>
+
+            <span class="initiative-tag">
+              LISTEN → QUESTION → LEARN
+            </span>
+
+          </article>
+
+
+          <!-- TEDxSIUHINJEWADI -->
+          <article class="init-card init-tedx">
+
+            <span class="initiative-line">
+              // 03 · ideas worth spreading
+            </span>
+
+            <h3>TEDxSIUHinjewadi</h3>
+
+            <p>
+              Transform powerful ideas into an unforgettable TEDx experience.
+              From shaping speaker journeys to executing every detail behind the
+              scenes, create an impact that lasts beyond the stage.
+            </p>
+
+            <span class="initiative-tag">
+              IDEAS → STORIES → IMPACT
+            </span>
+
+          </article>
+
+        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- =========================================================
+     MOMENTS / PHOTO GALLERY
+========================================================= -->
+
+    <section class="gallery" id="gallery">
+
+      <div class="section-inner">
+
+        <span class="eyebrow">
+          // moments from the board
+        </span>
+
+        <h2 class="section-display">
+          Ideas happened.<br>
+          People showed up.<br>
+          Things got built.
+        </h2>
+
+
+        <div class="gallery-grid">
+
+          <!-- SPROUTIT / 01 -->
+
+          <figure class="gallery-tile gallery-sprout-main">
+
+            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/SproutIT_1.jpg"
+              alt="SproutIT event" loading="lazy">
+
+            <figcaption>
+              SPROUTIT / 01
+            </figcaption>
+
+          </figure>
+
+
+          <!-- SPROUTIT / 02 -->
+
+          <figure class="gallery-tile gallery-sprout-group">
+
+            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/SproutIT_2.jpg"
+              alt="SproutIT group photograph" loading="lazy">
+
+            <figcaption>
+              SPROUTIT / 02
+            </figcaption>
+
+          </figure>
+
+
+          <!-- STREAMS / 01 -->
+
+          <figure class="gallery-tile gallery-streams-group">
+
+            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/streams_1.jpg"
+              alt="Streams event" loading="lazy">
+
+            <figcaption>
+              STREAMS / 01
+            </figcaption>
+
+          </figure>
+
+
+          <!-- STREAMS / 02 -->
+
+          <figure class="gallery-tile gallery-streams-feature">
+
+            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/streams_2.jpg"
+              alt="Streams by iTELF" loading="lazy">
+
+            <figcaption>
+              STREAMS / 02
+            </figcaption>
+
+          </figure>
+
+
+          <!-- TEDX / 01 -->
+
+          <figure class="gallery-tile gallery-tedx-installation">
+
+            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/tedx_1.jpg"
+              alt="TEDx SIU Hinjewadi installation" loading="lazy">
+
+            <figcaption>
+              TEDX / 01
+            </figcaption>
+
+          </figure>
+
+
+          <!-- TEDX / 02 -->
+
+          <figure class="gallery-tile gallery-tedx-team">
+
+            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/tedx_2.jpeg"
+              alt="TEDx SIU Hinjewadi team" loading="lazy">
+
+            <figcaption>
+              TEDX / 02
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+
+        <p class="gallery-note">
+          // a few frames from ideas that escaped the board
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================================
+        DOMAINS / TEAMS
+    ========================================================= -->
+
+    <section class="domains domain-directory" id="domains">
+      <div class="section-inner">
+
+        <div class="domain-intro">
+
+          <span class="eyebrow">// find your place</span>
+
+          <h2 class="domain-heading">
+            Find your domain.<br>
+            <span>Then make it yours.</span>
+          </h2>
+
+          <p class="domain-lead">
+            Different skills. Different interests. Different ways to make an impact.
+            Explore the teams behind iTELF and find the work that pulls you in.
+          </p>
+
+        </div>
+
+
+        <div class="domain-list">
+
+
+          <!-- SPONSORSHIP -->
+
+          <article class="domain-row" style="--domain-accent: #00d9ff;">
+
+            <button class="domain-trigger" type="button">
+
+              <span class="domain-number">01</span>
+
+              <span class="domain-name">
+                SPONSORSHIP
+              </span>
+
+              <span class="domain-hook">
+                FACE THE WORLD.
+              </span>
+
+              <span class="domain-arrow">↗</span>
+
+            </button>
+
+            <div class="domain-details">
+
+              <div class="domain-details-inner">
+
+                <p>
+                  Sponsorship is where you become the face of the committee
+                  to the outside world. You'll interact with real clients,
+                  sharpen your marketing and persuasion skills, and apply your
+                  MBA learnings in a live, high-impact setting — no textbooks,
+                  just real experience.
+                </p>
+
+                <div class="domain-skills">
+                  <span>CLIENT RELATIONS</span>
+                  <span>PERSUASION</span>
+                  <span>MARKETING</span>
+                  <span>NEGOTIATION</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- CREATIVES -->
+
+          <article class="domain-row" style="--domain-accent: #ff3b70;">
+
+            <button class="domain-trigger" type="button">
+
+              <span class="domain-number">02</span>
+
+              <span class="domain-name">
+                CREATIVES
+              </span>
+
+              <span class="domain-hook">
+                MAKE IT SEEN.
+              </span>
+
+              <span class="domain-arrow">↗</span>
+
+            </button>
+
+            <div class="domain-details">
+
+              <div class="domain-details-inner">
+
+                <p>
+                  Design creative visuals, event materials and turn ideas into
+                  something people can actually see. Learn to collaborate,
+                  divide responsibilities, manage deadlines and confidently solve
+                  the last-minute creative challenges that come with live events.
+                </p>
+
+                <div class="domain-skills">
+                  <span>DESIGN</span>
+                  <span>VISUAL THINKING</span>
+                  <span>COLLABORATION</span>
+                  <span>CREATIVE PROBLEM SOLVING</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PR -->
+
+          <article class="domain-row" style="--domain-accent: #ff8a3d;">
+
+            <button class="domain-trigger" type="button">
+
+              <span class="domain-number">03</span>
+
+              <span class="domain-name">
+                PR
+              </span>
+
+              <span class="domain-hook">
+                MAKE THEM CARE.
+              </span>
+
+              <span class="domain-arrow">↗</span>
+
+            </button>
+
+            <div class="domain-details">
+
+              <div class="domain-details-inner">
+
+                <p>
+                  Be the voice behind the brand. From crafting high-impact
+                  campaigns and creating buzz to managing digital outreach and
+                  audience engagement, gain hands-on experience in branding,
+                  marketing strategy, storytelling and event publicity.
+                </p>
+
+                <div class="domain-skills">
+                  <span>BRANDING</span>
+                  <span>CAMPAIGNS</span>
+                  <span>STORYTELLING</span>
+                  <span>AUDIENCE ENGAGEMENT</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- PERFORMERS -->
+
+          <article class="domain-row" style="--domain-accent: #b36cff;">
+
+            <button class="domain-trigger" type="button">
+
+              <span class="domain-number">04</span>
+
+              <span class="domain-name">
+                PERFORMERS
+              </span>
+
+              <span class="domain-hook">
+                OWN THE MOMENT.
+              </span>
+
+              <span class="domain-arrow">↗</span>
+
+            </button>
+
+            <div class="domain-details">
+
+              <div class="domain-details-inner">
+
+                <p>
+                  Be the force behind performances that captivate the audience
+                  and elevate the TEDx stage. Work closely with artists from
+                  onboarding to showtime while gaining hands-on experience in
+                  artist relations, coordination and live event management.
+                </p>
+
+                <div class="domain-skills">
+                  <span>ARTIST RELATIONS</span>
+                  <span>COORDINATION</span>
+                  <span>LIVE EVENTS</span>
+                  <span>STAGE MANAGEMENT</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- SPEAKERS & INVESTORS -->
+
+          <article class="domain-row" style="--domain-accent: #ff3b70;">
+
+            <button class="domain-trigger" type="button">
+
+              <span class="domain-number">05</span>
+
+              <span class="domain-name">
+                SPEAKERS & INVESTORS
+              </span>
+
+              <span class="domain-hook">
+                BRING MINDS TOGETHER.
+              </span>
+
+              <span class="domain-arrow">↗</span>
+
+            </button>
+
+            <div class="domain-details">
+
+              <div class="domain-details-inner">
+
+                <p>
+                  Curate impactful speakers for SproutIT and TEDx while connecting
+                  promising startups and collaborating with investors at Biznovator.
+                  Build meaningful networks through outreach and create experiences
+                  that connect students with industry leaders and investors.
+                </p>
+
+                <div class="domain-skills">
+                  <span>NETWORKING</span>
+                  <span>OUTREACH</span>
+                  <span>SPEAKER RELATIONS</span>
+                  <span>INVESTOR CONNECT</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- EVENTS -->
+
+          <article class="domain-row" style="--domain-accent: #e8ff47;">
+
+            <button class="domain-trigger" type="button">
+
+              <span class="domain-number">06</span>
+
+              <span class="domain-name">
+                EVENTS
+              </span>
+
+              <span class="domain-hook">
+                MAKE IT HAPPEN.
+              </span>
+
+              <span class="domain-arrow">↗</span>
+
+            </button>
+
+            <div class="domain-details">
+
+              <div class="domain-details-inner">
+
+                <p>
+                  Design, plan and execute entrepreneurial events that challenge
+                  participants through innovation, strategy and teamwork. Build
+                  leadership and event management skills while turning competition
+                  concepts into experiences people remember.
+                </p>
+
+                <div class="domain-skills">
+                  <span>EVENT DESIGN</span>
+                  <span>PLANNING</span>
+                  <span>EXECUTION</span>
+                  <span>LEADERSHIP</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- WEB N MEDIA -->
+
+          <article class="domain-row domain-featured" style="--domain-accent: #3355ff;">
+
+            <button class="domain-trigger" type="button">
+
+              <span class="domain-number">07</span>
+
+              <span class="domain-name">
+                WEB N MEDIA
+              </span>
+
+              <span class="domain-hook">
+                BUILD THE DIGITAL WORLD.
+              </span>
+
+              <span class="domain-arrow">↗</span>
+
+            </button>
+
+            <div class="domain-details">
+
+              <div class="domain-details-inner">
+
+                <p>
+                  Be the creative powerhouse behind our digital presence and
+                  visual identity. Design graphics, edit cinematic videos, create
+                  animations, develop websites and shape social media, photography
+                  and content strategy. Turn ideas into compelling digital
+                  experiences through real projects that leave a lasting impact.
+                </p>
+
+                <div class="domain-skills">
+                  <span>WEB DEVELOPMENT</span>
+                  <span>UI / UX</span>
+                  <span>MOTION GRAPHICS</span>
+                  <span>VIDEO EDITING</span>
+                  <span>PHOTOGRAPHY</span>
+                  <span>DIGITAL MARKETING</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- JOIN CTA -->
+    <section class="join join-cta-section" id="join">
+
+      <div class="section-inner join-cta-inner">
+
+        <div class="join-top">
+          <span class="eyebrow">// your move</span>
+
+          <span class="join-status">
+            DIFFERENT DOMAINS · ONE DECISION
+          </span>
+        </div>
+
+        <div class="join-main">
+
+          <h2 class="join-heading">
+            You've seen<br>
+            what <span>we build.</span>
+          </h2>
+
+          <p class="join-question">
+            Now tell us —
+            <em>what will you build?</em>
+          </p>
+
+        </div>
+
+        <div class="join-action">
+
+          <a href="apply.html" class="join-now">
+            <span class="join-button-text">JOIN iTELF</span>
+
+            <span class="join-button-arrow" aria-hidden="true">
+              →
+            </span>
+          </a>
+
+          <p class="join-note">
+            // no perfect résumé required. curiosity helps.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
 
   <!-- =========================================================
-       COMMUNITY / TEAM
-       EDITABLE: COMMUNITY / TEAM CONTENT
-       Typographic, credits-style list — no invented names by default.
-       ⚠️ Replace placeholder rows with real names/roles when available.
-  ========================================================== -->
-  <section class="community" id="community">
-    <div class="section-inner">
-      <span class="eyebrow">// community</span>
-
-      <ul class="community-list">
-        <li><span class="c-role">[Role placeholder]</span><span class="c-name">[Name placeholder]</span></li>
-        <li><span class="c-role">[Role placeholder]</span><span class="c-name">[Name placeholder]</span></li>
-        <li><span class="c-role">[Role placeholder]</span><span class="c-name">[Name placeholder]</span></li>
-        <li><span class="c-role">[Role placeholder]</span><span class="c-name">[Name placeholder]</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       JOIN — GOOGLE FORM EMBED
-       EDITABLE: GOOGLE FORM EMBED URL — see comment on the iframe src below.
-       EDITABLE: fallback link href
-  ========================================================== -->
-  <section class="join" id="join">
-    <div class="section-inner">
-      <span class="eyebrow">// join the board</span>
-      <h2 class="join-heading">Pin your idea to the board.</h2>
-
-      <div class="form-frame">
-        <!--
-          ▼▼▼ REPLACE GOOGLE_FORM_EMBED_URL BELOW WITH THE REAL EMBED URL ▼▼▼
-          Get this from Google Forms: Send → Embed (<>) → copy the src URL only.
-          It should look like: https://docs.google.com/forms/d/e/XXXXXXXX/viewform?embedded=true
-        -->
-        <iframe
-          class="gform-iframe"
-          src="GOOGLE_FORM_EMBED_URL"
-          title="iTELF join form"
-          loading="lazy">
-          Loading…
-        </iframe>
-      </div>
-
-      <!-- EDITABLE: fallback link — point to the same form's normal (non-embed) URL -->
-      <p class="form-fallback">
-        Form not loading? <a href="GOOGLE_FORM_EMBED_URL" target="_blank" rel="noopener">Open the form in a new tab →</a>
-      </p>
-    </div>
-  </section>
-
-</main>
-
-<!-- =========================================================
      FOOTER
      EDITABLE: SOCIAL LINKS, footer copy
 ========================================================== -->
-<footer class="site-footer">
-  <div class="section-inner footer-inner">
-    <span>iTELF · SCIT Pune</span>
+  <footer class="site-footer">
 
-    <!-- EDITABLE: SOCIAL LINKS — replace # with real profile URLs -->
-    <nav class="social-links" aria-label="Social links">
-      <a href="#" target="_blank" rel="noopener">Instagram</a>
-      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#" target="_blank" rel="noopener">Email</a>
-    </nav>
-  </div>
-</footer>
+    <div class="section-inner footer-inner">
 
-<script src="js/script.js"></script>
+      <div class="footer-brand">
+
+        <a href="#top" class="footer-logo-link" aria-label="iTELF Home">
+          <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/iTELF-logo.png"
+            alt="iTELF Logo" class="footer-logo">
+        </a>
+
+        <p class="footer-line">
+          Ideas start messy.<br>
+          <span>We like them that way.</span>
+        </p>
+
+      </div>
+
+
+      <div class="footer-connect">
+
+        <span class="footer-label">// find us</span>
+
+        <nav class="social-links" aria-label="Social links">
+
+          <a href="https://www.instagram.com/itelf_scit/" target="_blank" rel="noopener">
+            <span>Instagram</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/itelf-ecell/" target="_blank" rel="noopener">
+            <span>LinkedIn</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a href="mailto:itelf@scit.edu">
+            <span>Email</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+        </nav>
+
+      </div>
+
+    </div>
+
+
+    <div class="section-inner footer-bottom">
+
+      <span>
+        iTELF · SCIT PUNE
+      </span>
+
+      <span class="footer-build">
+        BUILT ON “WHAT IF?” &amp; “BRO, FINAL HAI NA?”
+      </span>
+
+      <a href="#" class="footer-top">
+        BACK TO TOP ↑
+      </a>
+
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    const domainData = {
+      events: {
+        title: "EVENTS", lead: "Build the experience — from the first idea to the last person leaving the room.",
+        roles: [
+          ["Event Planning", "Shape event concepts, timelines and the execution plan."],
+          ["Operations", "Coordinate venues, logistics, schedules and on-ground requirements."],
+          ["Speaker & Stakeholder Coordination", "Work with speakers, guests, partners and internal teams."],
+          ["On-ground Execution", "Own the details that turn a plan into a live experience."]
+        ]
+      },
+      web: {
+        title: "WEB DEVELOPMENT", lead: "Build and maintain the digital presence of iTELF and its initiatives.",
+        roles: [
+          ["Frontend Development", "Build responsive event and committee websites using HTML, CSS and JavaScript."],
+          ["UI / UX", "Translate event identities and ideas into clear, usable interfaces."],
+          ["Deployment & Hosting", "Work with Git, GitHub, GitHub Pages, cPanel and deployment workflows."],
+          ["Website Maintenance", "Maintain live websites, fix issues and ship updates when the committee needs them."]
+        ]
+      },
+      design: {
+        title: "DESIGN", lead: "Build the visual language people associate with our events and ideas.",
+        roles: [
+          ["Visual Design", "Create event creatives, campaign assets and communication material."],
+          ["Brand Identity", "Help define the visual direction of initiatives and event themes."],
+          ["Digital Creatives", "Design content for websites, social media and digital campaigns."],
+          ["Event Collateral", "Take visual systems into physical spaces and on-ground experiences."]
+        ]
+      },
+      social: {
+        title: "SOCIAL MEDIA", lead: "Build the conversation before, during and after every initiative.",
+        roles: [
+          ["Content Strategy", "Plan what we say, when we say it and how a campaign unfolds."],
+          ["Copy & Storytelling", "Turn events, speakers and ideas into content people want to read."],
+          ["Platform Management", "Publish, coordinate and maintain the committee's social presence."],
+          ["Campaign Execution", "Work with design and event teams to take campaigns from plan to post."]
+        ]
+      }
+    };
+    const modal = document.getElementById("domainModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalLead = document.getElementById("modalLead");
+    const modalContent = document.getElementById("modalContent");
+    document.querySelectorAll(".domain-card").forEach(card => card.addEventListener("click", () => {
+      const data = domainData[card.dataset.domain];
+      modalTitle.textContent = data.title;
+      modalLead.textContent = data.lead;
+      modalContent.innerHTML = data.roles.map(([title, copy]) => `<div class="role-block"><h4>${title}</h4><p>${copy}</p></div>`).join("");
+      modal.classList.add("is-open"); modal.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden";
+    }));
+    function closeDomainModal() { modal.classList.remove("is-open"); modal.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; }
+    document.getElementById("modalClose").addEventListener("click", closeDomainModal);
+    modal.addEventListener("click", e => { if (e.target === modal) closeDomainModal(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeDomainModal(); });
+  </script>
+
 </body>
+
 </html>
