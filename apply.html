@@ -1293,7 +1293,6 @@
             <p id="submissionCopy" class="submission-copy">Your application is moving from the board to our side. Please
                 don't close this page.</p>
             <div id="submissionLoader" class="submission-loader" aria-label="Submitting application"></div>
-            <div id="submissionId" class="submission-id"></div>
             <button id="submissionClose" class="submission-close" type="button">BACK TO THE BOARD →</button>
         </div>
     </div>
@@ -1346,9 +1345,6 @@
 
         const submissionLoader =
             document.getElementById("submissionLoader");
-
-        const submissionId =
-            document.getElementById("submissionId");
 
         const submissionClose =
             document.getElementById("submissionClose");
@@ -1481,42 +1477,7 @@
                 "is-visible",
                 state !== "loading"
             );
-
-
-            /*
-             * SHOW APPLICATION ID
-             */
-
-            if (
-                (
-                    state === "success" ||
-                    state === "duplicate"
-                ) &&
-                options.applicationId
-            ) {
-
-                submissionId.textContent =
-                    `APPLICATION ID // ${options.applicationId}`;
-
-
-                submissionId.classList.add(
-                    "is-visible"
-                );
-
-            } else {
-
-                submissionId.textContent =
-                    "";
-
-
-                submissionId.classList.remove(
-                    "is-visible"
-                );
-
-            }
-
-
-            overlay.classList.add(
+overlay.classList.add(
                 "is-visible"
             );
 
@@ -2316,19 +2277,7 @@
                         );
 
 
-                        openSubmissionModal(
-
-                            "duplicate",
-
-                            {
-
-                                applicationId:
-                                    result.applicationId ||
-                                    ""
-
-                            }
-
-                        );
+                        openSubmissionModal("duplicate");
 
 
                         return;
@@ -2353,11 +2302,6 @@
                             );
 
 
-                        apiError.applicationId =
-                            result.applicationId ||
-                            "";
-
-
                         throw apiError;
 
                     }
@@ -2377,18 +2321,13 @@
 
 
                     openSubmissionModal(
-
-                        "success",
-
-                        {
-
-                            applicationId:
-                                result.applicationId ||
-                                ""
-
-                        }
-
-                    );
+                "success",
+                {
+                    message: result.emailAccepted === false
+                        ? "We've received your application. The confirmation email could not be queued, but your application is safely recorded."
+                        : "We've received your application. Check your Associates inbox for the confirmation mail."
+                }
+            );
 
 
                     form.reset();
