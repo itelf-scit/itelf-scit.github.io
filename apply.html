@@ -1155,7 +1155,8 @@
                             <span class="section-kicker">// 02 · THE IDEA</span>
                             <fieldset>
                                 <legend>Any Project/Startup Idea that you have in mind, or already in the works?
-                                    <small>(Not mandatory for your selection)</small> <b>*</b></legend>
+                                    <small>(Not mandatory for your selection)</small> <b>*</b>
+                                </legend>
                                 <div class="choice-grid">
                                     <label><input type="radio" name="hasIdea" value="Yes"
                                             required><span>Yes</span></label>
@@ -1313,29 +1314,123 @@
             msg.className = `form-message ${type ? `is-${type}` : ""}`;
         }
         function openSubmissionModal(state, options = {}) {
+
             const states = {
-                loading: { kicker: "// TRANSMITTING APPLICATION", title: "HOLD TIGHT.", copy: "Your application is moving from the board to our side. Please don't close this page." },
-                success: { kicker: "// APPLICATION RECEIVED", title: "YOU'RE ON THE BOARD.", copy: "We've received your application. Check your inbox for the confirmation mail and keep your Application ID safe." },
-                error: { kicker: "// TRANSMISSION FAILED", title: "SOMETHING BROKE.", copy: options.message || "Your application was not confirmed. Please try again." }
+
+                loading: {
+                    kicker: "// TRANSMITTING APPLICATION",
+                    title: "HOLD TIGHT.",
+                    copy:
+                        "Your application is moving from the board to our side. Please don't close this page."
+                },
+
+                success: {
+                    kicker: "// APPLICATION RECEIVED",
+                    title: "YOU'RE ON THE BOARD.",
+                    copy:
+                        "We've received your application. Check your inbox for the confirmation mail and keep your Application ID safe."
+                },
+
+                duplicate: {
+                    kicker: "// ALREADY ON THE BOARD",
+                    title: "WE'VE GOT YOU.",
+                    copy:
+                        "Your application has already been received. No need to submit again — your original application is safely on the board."
+                },
+
+                error: {
+                    kicker: "// TRANSMISSION FAILED",
+                    title: "SOMETHING BROKE.",
+                    copy:
+                        options.message ||
+                        "Your application was not confirmed. Please try again."
+                }
+
             };
+
+
             const content = states[state];
-            submissionModal.className = `submission-modal is-${state}`;
-            submissionKicker.textContent = content.kicker;
-            submissionTitle.textContent = content.title;
-            submissionCopy.textContent = content.copy;
-            submissionLoader.classList.toggle("is-hidden", state !== "loading");
-            submissionClose.classList.toggle("is-visible", state !== "loading");
-            if (state === "success" && options.applicationId) {
-                submissionId.textContent = `APPLICATION ID // ${options.applicationId}`;
-                submissionId.classList.add("is-visible");
+
+
+            submissionModal.className =
+                `submission-modal is-${state}`;
+
+
+            submissionKicker.textContent =
+                content.kicker;
+
+
+            submissionTitle.textContent =
+                content.title;
+
+
+            submissionCopy.textContent =
+                content.copy;
+
+
+            submissionLoader.classList.toggle(
+                "is-hidden",
+                state !== "loading"
+            );
+
+
+            submissionClose.classList.toggle(
+                "is-visible",
+                state !== "loading"
+            );
+
+
+            if (
+                (state === "success" ||
+                    state === "duplicate") &&
+                options.applicationId
+            ) {
+
+                submissionId.textContent =
+                    `APPLICATION ID // ${options.applicationId}`;
+
+
+                submissionId.classList.add(
+                    "is-visible"
+                );
+
             } else {
+
                 submissionId.textContent = "";
-                submissionId.classList.remove("is-visible");
+
+
+                submissionId.classList.remove(
+                    "is-visible"
+                );
+
             }
-            overlay.classList.add("is-visible");
-            overlay.setAttribute("aria-hidden", "false");
-            document.body.classList.add("modal-open");
-            if (state !== "loading") setTimeout(() => submissionClose.focus(), 100);
+
+
+            overlay.classList.add(
+                "is-visible"
+            );
+
+
+            overlay.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            document.body.classList.add(
+                "modal-open"
+            );
+
+
+            if (state !== "loading") {
+
+                setTimeout(
+                    () => submissionClose.focus(),
+                    100
+                );
+
+            }
+
         }
         function closeSubmissionModal() {
             overlay.classList.remove("is-visible");
