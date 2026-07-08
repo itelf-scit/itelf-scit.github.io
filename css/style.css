@@ -2954,3 +2954,181 @@ body::before {
   }
 
 }
+
+/* =========================================================
+   INITIATIVE CARDS — ALIGNMENT + WEBSITE LINKS
+========================================================= */
+
+.init-card {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  box-sizing: border-box;
+}
+
+
+/* CARD HEADER */
+
+.init-card .initiative-line {
+  display: block;
+
+  margin-bottom: 2rem;
+}
+
+
+/* TITLE */
+
+.init-card h3 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+
+/* DESCRIPTION */
+
+.init-card > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   WEBSITE LINK AREA
+========================================================= */
+
+.initiative-link {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+
+  padding-bottom: 0.3rem;
+
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+
+  color: var(--cyan);
+
+  text-decoration: none;
+
+  border-bottom:
+    1px solid rgba(0, 229, 255, 0.55);
+
+  transition:
+    color 220ms ease,
+    border-color 220ms ease,
+    transform 220ms var(--ease);
+}
+
+
+.initiative-link:hover {
+  color: var(--pink);
+
+  border-color: var(--pink);
+
+  transform: translateX(5px);
+}
+
+
+.initiative-link:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 5px;
+}
+
+
+/* =========================================================
+   STREAMS PLACEHOLDER
+   Keeps all three cards aligned even though Streams
+   has no website CTA.
+========================================================= */
+
+.init-streams::after {
+  content: "";
+
+  display: block;
+
+  height: 2.1rem;
+
+  margin-top: 1.5rem;
+}
+
+
+/* =========================================================
+   BOTTOM TAG — FORCE SAME BASELINE
+========================================================= */
+
+.initiative-tag {
+  display: block;
+
+  margin-top: auto;
+
+  padding-top: 2rem;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .init-card {
+    height: auto;
+    min-height: 560px;
+  }
+
+
+  .initiative-tag {
+    margin-top: auto;
+
+    padding-top: 2rem;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .init-card {
+    min-height: 0;
+  }
+
+
+  .init-card .initiative-line {
+    margin-bottom: 1.5rem;
+  }
+
+
+  .init-card h3 {
+    margin-bottom: 1.5rem;
+  }
+
+
+  .initiative-link {
+    margin-top: 1.25rem;
+
+    font-size: 0.68rem;
+  }
+
+
+  .init-streams::after {
+    display: none;
+  }
+
+
+  .initiative-tag {
+    margin-top: 2.5rem;
+
+    padding-top: 0;
+  }
+
+}
