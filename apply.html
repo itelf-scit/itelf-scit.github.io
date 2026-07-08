@@ -1258,98 +1258,160 @@
     </div>
 
     <script>
-        "use strict";
+        /* =========================================================
+           iTELF APPLICATION FORM
+           Frontend Controller
+        ========================================================= */
 
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzKuPhf-3lw9h2-8lMLWjSZOm4HoT2nZ4z3F-3xclBaf7xHcoZexqKe0i8skSXjm3xPfg/exec";
-        const MAX_FILE_SIZE = 5 * 1024 * 1024;
-        const ALLOWED_FILE_TYPES = new Set([
-            "application/pdf", "image/png", "image/jpeg", "application/msword",
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-        ]);
+        const SCRIPT_URL =
+            "https://script.google.com/macros/s/AKfycbzKuPhf-3lw9h2-8lMLWjSZOm4HoT2nZ4z3F-3xclBaf7xHcoZexqKe0i8skSXjm3xPfg/exec";
 
-        const domains = ["Speaker/Investor Collaborations", "Web and Media", "Events", "Sponsorship"];
-        const committees = ["Team Matrix", "Guest Lecture Committee", "Alumni Committee", "Web & Media Committee", "Admissions Committee", "Team ISR", "Sports Committee", "Cultural Committee", "Drishtikon Committee", "Symbeats", "Konnect", "Team Reflections", "Eklavya", "N/A"];
+        const ALLOWED_ORIGIN =
+            "https://itelf-scit.github.io";
 
-        const form = document.getElementById("itelfForm");
-        const msg = document.getElementById("formMessage");
-        const btn = form.querySelector('button[type="submit"]');
-        let startedAt = Date.now();
-        document.getElementById("formStartedAt").value = String(startedAt);
 
-        document.querySelectorAll(".domain-options").forEach((box, i) => {
-            const name = `preference${i + 1}`;
-            box.innerHTML = domains.map(d => `<label><input type="radio" name="${name}" value="${d}" ${i < 2 ? "required" : ""}><span>${d}</span></label>`).join("");
-        });
-        document.querySelector(".committee-options").innerHTML = committees.map(c => `<label><input type="checkbox" name="committees" value="${c}"><span>${c}</span></label>`).join("");
+        /* =========================================================
+           FORM ELEMENTS
+        ========================================================= */
 
-        document.querySelectorAll("[data-maxwords]").forEach(el => {
-            const counter = el.nextElementSibling, max = Number(el.dataset.maxwords);
-            el.addEventListener("input", () => {
-                let words = el.value.trim() ? el.value.trim().split(/\s+/) : [];
-                if (words.length > max) { words = words.slice(0, max); el.value = words.join(" "); }
-                counter.textContent = `${words.length} / ${max} words`;
-            });
-        });
+        const form =
+            document.getElementById("applicationForm");
 
-        /* N/A cannot be selected with another committee. */
-        form.addEventListener("change", e => {
-            if (e.target.name !== "committees") return;
-            const boxes = [...form.querySelectorAll('input[name="committees"]')];
-            const na = boxes.find(x => x.value === "N/A");
-            if (e.target === na && na.checked) boxes.forEach(x => { if (x !== na) x.checked = false; });
-            else if (e.target.checked && na) na.checked = false;
-        });
+        const btn =
+            form.querySelector('button[type="submit"]');
 
-        const overlay = document.getElementById("submissionOverlay");
-        const submissionModal = document.getElementById("submissionModal");
-        const submissionKicker = document.getElementById("submissionKicker");
-        const submissionTitle = document.getElementById("submissionTitle");
-        const submissionCopy = document.getElementById("submissionCopy");
-        const submissionLoader = document.getElementById("submissionLoader");
-        const submissionId = document.getElementById("submissionId");
-        const submissionClose = document.getElementById("submissionClose");
+        const msg =
+            document.getElementById("formMessage");
+
+
+        /* =========================================================
+           SUBMISSION MODAL ELEMENTS
+        ========================================================= */
+
+        const overlay =
+            document.getElementById("submissionOverlay");
+
+        const submissionModal =
+            document.getElementById("submissionModal");
+
+        const submissionKicker =
+            document.getElementById("submissionKicker");
+
+        const submissionTitle =
+            document.getElementById("submissionTitle");
+
+        const submissionCopy =
+            document.getElementById("submissionCopy");
+
+        const submissionLoader =
+            document.getElementById("submissionLoader");
+
+        const submissionId =
+            document.getElementById("submissionId");
+
+        const submissionClose =
+            document.getElementById("submissionClose");
+
+
+        /* =========================================================
+           FORM START TIME
+        ========================================================= */
+
+        let formStartedAt =
+            Date.now();
+
+
+        /* =========================================================
+           FORM MESSAGE
+        ========================================================= */
 
         function show(text, type = "") {
-            msg.textContent = text;
-            msg.className = `form-message ${type ? `is-${type}` : ""}`;
+
+            msg.textContent =
+                text;
+
+            msg.className =
+                `form-message ${type
+                    ? `is-${type}`
+                    : ""
+                }`;
+
         }
-        function openSubmissionModal(state, options = {}) {
+
+
+        /* =========================================================
+           SUBMISSION MODAL
+        ========================================================= */
+
+        function openSubmissionModal(
+            state,
+            options = {}
+        ) {
 
             const states = {
 
                 loading: {
-                    kicker: "// TRANSMITTING APPLICATION",
-                    title: "HOLD TIGHT.",
+
+                    kicker:
+                        "// TRANSMITTING APPLICATION",
+
+                    title:
+                        "HOLD TIGHT.",
+
                     copy:
                         "Your application is moving from the board to our side. Please don't close this page."
+
                 },
+
 
                 success: {
-                    kicker: "// APPLICATION RECEIVED",
-                    title: "YOU'RE ON THE BOARD.",
+
+                    kicker:
+                        "// APPLICATION RECEIVED",
+
+                    title:
+                        "YOU'RE ON THE BOARD.",
+
                     copy:
                         "We've received your application. Check your inbox for the confirmation mail and keep your Application ID safe."
+
                 },
+
 
                 duplicate: {
-                    kicker: "// ALREADY ON THE BOARD",
-                    title: "WE'VE GOT YOU.",
+
+                    kicker:
+                        "// ALREADY ON THE BOARD",
+
+                    title:
+                        "WE'VE GOT YOU.",
+
                     copy:
                         "Your application has already been received. No need to submit again — your original application is safely on the board."
+
                 },
 
+
                 error: {
-                    kicker: "// TRANSMISSION FAILED",
-                    title: "SOMETHING BROKE.",
+
+                    kicker:
+                        "// TRANSMISSION FAILED",
+
+                    title:
+                        "SOMETHING BROKE.",
+
                     copy:
                         options.message ||
                         "Your application was not confirmed. Please try again."
+
                 }
 
             };
 
 
-            const content = states[state];
+            const content =
+                states[state] ||
+                states.error;
 
 
             submissionModal.className =
@@ -1380,9 +1442,15 @@
             );
 
 
+            /*
+             * SHOW APPLICATION ID
+             */
+
             if (
-                (state === "success" ||
-                    state === "duplicate") &&
+                (
+                    state === "success" ||
+                    state === "duplicate"
+                ) &&
                 options.applicationId
             ) {
 
@@ -1396,7 +1464,8 @@
 
             } else {
 
-                submissionId.textContent = "";
+                submissionId.textContent =
+                    "";
 
 
                 submissionId.classList.remove(
@@ -1422,129 +1491,972 @@
             );
 
 
-            if (state !== "loading") {
+            if (
+                state !== "loading"
+            ) {
 
                 setTimeout(
-                    () => submissionClose.focus(),
+                    () =>
+                        submissionClose.focus(),
                     100
                 );
 
             }
 
         }
+
+
+        /* =========================================================
+           CLOSE SUBMISSION MODAL
+        ========================================================= */
+
         function closeSubmissionModal() {
-            overlay.classList.remove("is-visible");
-            overlay.setAttribute("aria-hidden", "true");
-            document.body.classList.remove("modal-open");
+
+            overlay.classList.remove(
+                "is-visible"
+            );
+
+
+            overlay.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+
+            document.body.classList.remove(
+                "modal-open"
+            );
+
         }
-        submissionClose.addEventListener("click", closeSubmissionModal);
-        document.addEventListener("keydown", e => {
-            if (e.key === "Escape" && overlay.classList.contains("is-visible") && submissionLoader.classList.contains("is-hidden")) closeSubmissionModal();
-        });
-        function invalid(field, text) {
-            field?.setAttribute("aria-invalid", "true");
-            field?.focus();
-            show(text, "error");
+
+
+        submissionClose.addEventListener(
+            "click",
+            closeSubmissionModal
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Escape" &&
+                    overlay.classList.contains(
+                        "is-visible"
+                    ) &&
+                    submissionLoader.classList.contains(
+                        "is-hidden"
+                    )
+                ) {
+
+                    closeSubmissionModal();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           INVALID FIELD HANDLER
+        ========================================================= */
+
+        function invalid(
+            field,
+            message
+        ) {
+
+            show(
+                message,
+                "error"
+            );
+
+
+            if (field) {
+
+                field.focus();
+
+
+                field.scrollIntoView({
+
+                    behavior:
+                        "smooth",
+
+                    block:
+                        "center"
+
+                });
+
+            }
+
+
             return false;
+
         }
-        function validate() {
-            form.querySelectorAll('[aria-invalid="true"]').forEach(x => x.removeAttribute("aria-invalid"));
-            if (!form.checkValidity()) {
-                const badField = form.querySelector(":invalid");
-                if (badField === form.elements.email) return invalid(form.elements.email, "// USE YOUR @ASSOCIATES.SCIT.EDU EMAIL ID.");
-                return invalid(badField, "// CHECK THE REQUIRED FIELDS AND FORMATS.");
-            }
-            if (!/^[A-Za-z0-9._%+\-]+@associates\.scit\.edu$/i.test(form.elements.email.value.trim())) return invalid(form.elements.email, "// USE YOUR @ASSOCIATES.SCIT.EDU EMAIL ID.");
-            if (!/^2603024[12](?!000)\d{3}$/.test(form.elements.prn.value.trim())) return invalid(form.elements.prn, "// ENTER A VALID JUNIOR BATCH PRN (26030241XXX / 26030242XXX, 001–999).");
-            if (!/^\d{10}$/.test(form.elements.contact.value.trim())) return invalid(form.elements.contact, "// CONTACT NUMBER MUST CONTAIN EXACTLY 10 DIGITS.");
 
-            const prefs = [form.elements.preference1?.value, form.elements.preference2?.value, form.elements.preference3?.value].filter(Boolean);
-            if (new Set(prefs).size !== prefs.length) { show("// DOMAIN PREFERENCES MUST BE DIFFERENT.", "error"); return false; }
 
-            if (!form.querySelectorAll('input[name="committees"]:checked').length) { show("// SELECT AT LEAST ONE OTHER COMMITTEE OR N/A.", "error"); return false; }
+        /* =========================================================
+           WORD COUNTERS
+        ========================================================= */
 
-            const file = form.elements.proof.files[0];
-            if (file && file.size > MAX_FILE_SIZE) { form.elements.proof.value = ""; show("// FILE TOO LARGE. MAXIMUM SIZE IS 5 MB.", "error"); return false; }
-            if (file && !ALLOWED_FILE_TYPES.has(file.type)) { form.elements.proof.value = ""; show("// FILE TYPE NOT ALLOWED.", "error"); return false; }
-            return true;
-        }
-        function toBase64(file) {
-            return new Promise((resolve, reject) => {
-                const r = new FileReader();
-                r.onload = () => resolve(String(r.result).split(",")[1]);
-                r.onerror = () => reject(new Error("FILE_READ_FAILED"));
-                r.readAsDataURL(file);
+        document
+            .querySelectorAll(
+                "[data-maxwords]"
+            )
+            .forEach(field => {
+
+                const maxWords =
+                    Number(
+                        field.dataset.maxwords
+                    );
+
+
+                const counter =
+                    field.nextElementSibling;
+
+
+                function updateWordCount() {
+
+                    let words =
+                        field.value
+                            .trim()
+                            .split(/\s+/)
+                            .filter(Boolean);
+
+
+                    if (
+                        words.length >
+                        maxWords
+                    ) {
+
+                        words =
+                            words.slice(
+                                0,
+                                maxWords
+                            );
+
+
+                        field.value =
+                            words.join(" ");
+
+                    }
+
+
+                    const currentWords =
+                        field.value
+                            .trim()
+                            .split(/\s+/)
+                            .filter(Boolean)
+                            .length;
+
+
+                    if (
+                        counter &&
+                        counter.classList.contains(
+                            "word-count"
+                        )
+                    ) {
+
+                        counter.textContent =
+                            `${currentWords} / ${maxWords} words`;
+
+                    }
+
+                }
+
+
+                field.addEventListener(
+                    "input",
+                    updateWordCount
+                );
+
+
+                updateWordCount();
+
             });
+
+
+        /* =========================================================
+           FILE TO BASE64
+        ========================================================= */
+
+        function fileToBase64(file) {
+
+            return new Promise(
+                (
+                    resolve,
+                    reject
+                ) => {
+
+                    const reader =
+                        new FileReader();
+
+
+                    reader.onload =
+                        () => {
+
+                            const result =
+                                String(
+                                    reader.result ||
+                                    ""
+                                );
+
+
+                            const base64 =
+                                result.includes(",")
+                                    ? result.split(",")[1]
+                                    : result;
+
+
+                            resolve(base64);
+
+                        };
+
+
+                    reader.onerror =
+                        () =>
+                            reject(
+                                new Error(
+                                    "FILE_READ_FAILED"
+                                )
+                            );
+
+
+                    reader.readAsDataURL(
+                        file
+                    );
+
+                }
+            );
+
         }
 
-        form.addEventListener("submit", async e => {
-            e.preventDefault();
-            show("");
-            if (!validate()) return;
 
-            /* Abuse filters; Code.gs must independently enforce these. */
-            if (form.elements.website.value) { show("// SUBMISSION REJECTED.", "error"); return; }
-            if (Date.now() - startedAt < 3000) { show("// PLEASE REVIEW YOUR APPLICATION BEFORE SUBMITTING.", "error"); return; }
-            if (SCRIPT_URL.includes("PASTE_")) { show("// ADD YOUR APPS SCRIPT WEB APP URL FIRST.", "error"); return; }
+        /* =========================================================
+           COMMITTEE VALUES
+        ========================================================= */
 
-            btn.disabled = true;
-            show("// SENDING APPLICATION...");
-            openSubmissionModal("loading");
+        function getCommitteeValues() {
 
-            try {
-                const fd = new FormData(form), file = form.elements.proof.files[0], payload = {};
-                for (const [k, v] of fd.entries()) {
-                    if (k === "proof") continue;
-                    payload[k] = k === "committees" ? (payload[k] ? `${payload[k]}, ${v}` : v) : String(v).trim();
+            return Array.from(
+
+                form.querySelectorAll(
+                    'input[name="committees"]:checked'
+                )
+
+            ).map(
+                input =>
+                    input.value
+            );
+
+        }
+
+
+        /* =========================================================
+           FORM SUBMISSION
+        ========================================================= */
+
+        form.addEventListener(
+            "submit",
+            async event => {
+
+                event.preventDefault();
+
+
+                /* =====================================================
+                   HTML VALIDATION
+                ===================================================== */
+
+                if (
+                    !form.checkValidity()
+                ) {
+
+                    const badField =
+                        form.querySelector(
+                            ":invalid"
+                        );
+
+
+                    if (
+                        badField ===
+                        form.elements.email
+                    ) {
+
+                        return invalid(
+
+                            form.elements.email,
+
+                            "// USE YOUR @ASSOCIATES.SCIT.EDU EMAIL ID."
+
+                        );
+
+                    }
+
+
+                    return invalid(
+
+                        badField,
+
+                        "// CHECK THE REQUIRED FIELDS AND FORMATS."
+
+                    );
+
                 }
 
-                payload.origin = window.location.origin;
-                payload.formStartedAt = String(startedAt);
-                payload.submittedAt = String(Date.now());
 
-                if (file) {
-                    payload.fileName = file.name;
-                    payload.mimeType = file.type;
-                    payload.fileSize = file.size;
-                    payload.fileData = await toBase64(file);
+                /* =====================================================
+                   PRN VALIDATION
+            
+                   Valid:
+                   26030241001 - 26030241999
+                   26030242001 - 26030242999
+                ===================================================== */
+
+                const prn =
+                    form.elements.prn
+                        .value
+                        .trim();
+
+
+                if (
+                    !/^2603024[12](?!000)\d{3}$/
+                        .test(prn)
+                ) {
+
+                    return invalid(
+
+                        form.elements.prn,
+
+                        "// ENTER A VALID JUNIOR BATCH PRN."
+
+                    );
+
                 }
 
-                const endpoint = `${SCRIPT_URL}?origin=${encodeURIComponent(window.location.origin)}`;
-                const res = await fetch(endpoint, { method: "POST", body: JSON.stringify(payload), redirect: "follow" });
-                if (!res.ok) throw new Error(`HTTP_${res.status}`);
 
-                const result = await res.json();
-                if (!result.ok) throw new Error(result.error || "SUBMISSION_REJECTED");
+                /* =====================================================
+                   ASSOCIATES EMAIL VALIDATION
+                ===================================================== */
 
-                form.reset();
-                startedAt = Date.now();
-                document.getElementById("formStartedAt").value = String(startedAt);
-                document.querySelectorAll("[data-maxwords]").forEach(el => {
-                    const counter = el.nextElementSibling;
-                    counter.textContent = `0 / ${el.dataset.maxwords} words`;
-                });
-                show("// APPLICATION RECEIVED. SEE YOU ON THE OTHER SIDE.", "success");
-                openSubmissionModal("success", { applicationId: result.applicationId });
-            } catch (err) {
-                console.error("Application submission failed:", err);
-                const known = {
-                    ORIGIN_NOT_ALLOWED: "// SUBMISSION ORIGIN NOT ALLOWED.",
-                    APPLICATION_ALREADY_EXISTS: "// AN APPLICATION ALREADY EXISTS FOR THIS PRN OR EMAIL.",
-                    INVALID_PRN: "// INVALID PRN.",
-                    INVALID_EMAIL: "// INVALID EMAIL ADDRESS.",
-                    INVALID_CONTACT: "// INVALID CONTACT NUMBER.",
-                    INVALID_FILE_TYPE: "// FILE TYPE NOT ALLOWED.",
-                    FILE_TOO_LARGE: "// FILE TOO LARGE. MAXIMUM SIZE IS 5 MB."
-                };
-                const errorMessage = known[err.message] || "// SOMETHING BROKE. YOUR APPLICATION WAS NOT CONFIRMED. PLEASE TRY AGAIN.";
-                show(errorMessage, "error");
-                openSubmissionModal("error", {
-                    message: errorMessage.replace(/^\/\/\s*/, "")
-                });
-            } finally {
-                btn.disabled = false;
+                const email =
+                    form.elements.email
+                        .value
+                        .trim()
+                        .toLowerCase();
+
+
+                if (
+                    !/^[A-Za-z0-9._%+-]+@associates\.scit\.edu$/i
+                        .test(email)
+                ) {
+
+                    return invalid(
+
+                        form.elements.email,
+
+                        "// USE YOUR @ASSOCIATES.SCIT.EDU EMAIL ID."
+
+                    );
+
+                }
+
+
+                /* =====================================================
+                   CONTACT VALIDATION
+                ===================================================== */
+
+                const contact =
+                    form.elements.contact
+                        .value
+                        .trim();
+
+
+                if (
+                    !/^\d{10}$/
+                        .test(contact)
+                ) {
+
+                    return invalid(
+
+                        form.elements.contact,
+
+                        "// ENTER A VALID 10 DIGIT CONTACT NUMBER."
+
+                    );
+
+                }
+
+
+                /* =====================================================
+                   DOMAIN PREFERENCE VALIDATION
+                ===================================================== */
+
+                const preference1 =
+                    form.elements.preference1
+                        ?.value ||
+                    "";
+
+
+                const preference2 =
+                    form.elements.preference2
+                        ?.value ||
+                    "";
+
+
+                const preference3 =
+                    form.elements.preference3
+                        ?.value ||
+                    "";
+
+
+                if (
+                    !preference1 ||
+                    !preference2
+                ) {
+
+                    return invalid(
+
+                        null,
+
+                        "// SELECT YOUR REQUIRED DOMAIN PREFERENCES."
+
+                    );
+
+                }
+
+
+                const preferences = [
+
+                    preference1,
+
+                    preference2,
+
+                    preference3
+
+                ].filter(Boolean);
+
+
+                if (
+                    new Set(
+                        preferences
+                    ).size !==
+                    preferences.length
+                ) {
+
+                    return invalid(
+
+                        null,
+
+                        "// DOMAIN PREFERENCES MUST BE DIFFERENT."
+
+                    );
+
+                }
+
+
+                /* =====================================================
+                   COMMITTEE VALIDATION
+                ===================================================== */
+
+                const committees =
+                    getCommitteeValues();
+
+
+                if (
+                    committees.length === 0
+                ) {
+
+                    return invalid(
+
+                        null,
+
+                        "// SELECT AT LEAST ONE COMMITTEE OR N/A."
+
+                    );
+
+                }
+
+
+                /* =====================================================
+                   FILE VALIDATION
+                ===================================================== */
+
+                const fileInput =
+                    form.elements.proof;
+
+
+                const file =
+                    fileInput &&
+                        fileInput.files
+                        ? fileInput.files[0]
+                        : null;
+
+
+                const allowedMimeTypes = [
+
+                    "application/pdf",
+
+                    "image/png",
+
+                    "image/jpeg",
+
+                    "application/msword",
+
+                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+                ];
+
+
+                if (
+                    file &&
+                    !allowedMimeTypes.includes(
+                        file.type
+                    )
+                ) {
+
+                    return invalid(
+
+                        fileInput,
+
+                        "// FILE TYPE NOT ALLOWED."
+
+                    );
+
+                }
+
+
+                if (
+                    file &&
+                    file.size >
+                    5 * 1024 * 1024
+                ) {
+
+                    return invalid(
+
+                        fileInput,
+
+                        "// FILE IS LARGER THAN 5 MB."
+
+                    );
+
+                }
+
+
+                /* =====================================================
+                   START SUBMISSION
+                ===================================================== */
+
+                btn.disabled =
+                    true;
+
+
+                show(
+                    "// SENDING APPLICATION..."
+                );
+
+
+                openSubmissionModal(
+                    "loading"
+                );
+
+
+                try {
+
+                    /* ===================================================
+                       FILE ENCODING
+                    =================================================== */
+
+                    let fileData =
+                        "";
+
+
+                    let fileName =
+                        "";
+
+
+                    let mimeType =
+                        "";
+
+
+                    if (file) {
+
+                        fileData =
+                            await fileToBase64(
+                                file
+                            );
+
+
+                        fileName =
+                            file.name;
+
+
+                        mimeType =
+                            file.type;
+
+                    }
+
+
+                    /* ===================================================
+                       PAYLOAD
+                    =================================================== */
+
+                    const payload = {
+
+                        origin:
+                            ALLOWED_ORIGIN,
+
+                        website:
+                            form.elements.website
+                                ?.value ||
+                            "",
+
+                        formStartedAt:
+                            formStartedAt,
+
+                        fullName:
+                            form.elements.fullName
+                                .value
+                                .trim(),
+
+                        prn:
+                            prn,
+
+                        email:
+                            email,
+
+                        contact:
+                            contact,
+
+                        division:
+                            form.elements.division
+                                .value,
+
+                        linkedin:
+                            form.elements.linkedin
+                                .value
+                                .trim(),
+
+                        hasIdea:
+                            form.elements.hasIdea
+                                .value,
+
+                        ideaDetails:
+                            form.elements.ideaDetails
+                                .value
+                                .trim(),
+
+                        whyJoin:
+                            form.elements.whyJoin
+                                .value
+                                .trim(),
+
+                        skills:
+                            form.elements.skills
+                                .value
+                                .trim(),
+
+                        experience:
+                            form.elements.experience
+                                .value
+                                .trim(),
+
+                        preference1:
+                            preference1,
+
+                        preference2:
+                            preference2,
+
+                        preference3:
+                            preference3,
+
+                        committees:
+                            committees,
+
+                        fileData:
+                            fileData,
+
+                        fileName:
+                            fileName,
+
+                        mimeType:
+                            mimeType
+
+                    };
+
+
+                    /* ===================================================
+                       API REQUEST
+                    =================================================== */
+
+                    const requestUrl =
+
+                        SCRIPT_URL +
+
+                        "?origin=" +
+
+                        encodeURIComponent(
+                            ALLOWED_ORIGIN
+                        );
+
+
+                    const apiResponse =
+                        await fetch(
+                            requestUrl,
+                            {
+
+                                method:
+                                    "POST",
+
+                                headers: {
+
+                                    "Content-Type":
+                                        "text/plain;charset=utf-8"
+
+                                },
+
+                                body:
+                                    JSON.stringify(
+                                        payload
+                                    )
+
+                            }
+                        );
+
+
+                    if (
+                        !apiResponse.ok
+                    ) {
+
+                        throw new Error(
+                            "NETWORK_ERROR"
+                        );
+
+                    }
+
+
+                    const result =
+                        await apiResponse.json();
+
+
+                    /* ===================================================
+                       DUPLICATE APPLICATION
+                    =================================================== */
+
+                    if (
+                        !result.ok &&
+                        result.error ===
+                        "APPLICATION_ALREADY_EXISTS"
+                    ) {
+
+                        show(
+
+                            "// APPLICATION ALREADY RECEIVED.",
+
+                            "success"
+
+                        );
+
+
+                        openSubmissionModal(
+
+                            "duplicate",
+
+                            {
+
+                                applicationId:
+                                    result.applicationId ||
+                                    ""
+
+                            }
+
+                        );
+
+
+                        return;
+
+                    }
+
+
+                    /* ===================================================
+                       OTHER API ERROR
+                    =================================================== */
+
+                    if (
+                        !result.ok
+                    ) {
+
+                        const apiError =
+                            new Error(
+
+                                result.error ||
+                                "SERVER_ERROR"
+
+                            );
+
+
+                        apiError.applicationId =
+                            result.applicationId ||
+                            "";
+
+
+                        throw apiError;
+
+                    }
+
+
+                    /* ===================================================
+                       SUCCESS
+                    =================================================== */
+
+                    show(
+
+                        "// APPLICATION RECEIVED. SEE YOU ON THE OTHER SIDE.",
+
+                        "success"
+
+                    );
+
+
+                    openSubmissionModal(
+
+                        "success",
+
+                        {
+
+                            applicationId:
+                                result.applicationId ||
+                                ""
+
+                        }
+
+                    );
+
+
+                    form.reset();
+
+
+                    formStartedAt =
+                        Date.now();
+
+
+                    document
+                        .querySelectorAll(
+                            "[data-maxwords]"
+                        )
+                        .forEach(field => {
+
+                            const counter =
+                                field.nextElementSibling;
+
+
+                            if (
+                                counter &&
+                                counter.classList.contains(
+                                    "word-count"
+                                )
+                            ) {
+
+                                counter.textContent =
+                                    `0 / ${field.dataset.maxwords} words`;
+
+                            }
+
+                        });
+
+
+                } catch (error) {
+
+                    /* ===================================================
+                       ACTUAL ERRORS
+                    =================================================== */
+
+                    const known = {
+
+                        INVALID_FILE_TYPE:
+                            "// FILE TYPE NOT ALLOWED.",
+
+                        FILE_TOO_LARGE:
+                            "// FILE IS LARGER THAN 5 MB.",
+
+                        INVALID_FILE_DATA:
+                            "// FILE COULD NOT BE PROCESSED.",
+
+                        INVALID_PRN:
+                            "// ENTER A VALID JUNIOR BATCH PRN.",
+
+                        INVALID_EMAIL:
+                            "// USE YOUR @ASSOCIATES.SCIT.EDU EMAIL ID.",
+
+                        INVALID_CONTACT:
+                            "// ENTER A VALID 10 DIGIT CONTACT NUMBER.",
+
+                        INVALID_DOMAIN_PREFERENCES:
+                            "// SELECT YOUR REQUIRED DOMAIN PREFERENCES.",
+
+                        DOMAIN_PREFERENCES_MUST_BE_DIFFERENT:
+                            "// DOMAIN PREFERENCES MUST BE DIFFERENT.",
+
+                        ORIGIN_NOT_ALLOWED:
+                            "// THIS FORM CAN ONLY BE SUBMITTED FROM THE iTELF WEBSITE.",
+
+                        BOT_DETECTED:
+                            "// SUBMISSION COULD NOT BE VERIFIED.",
+
+                        INVALID_SUBMISSION_TIME:
+                            "// SUBMISSION COULD NOT BE VERIFIED.",
+
+                        NETWORK_ERROR:
+                            "// NETWORK ERROR. CHECK YOUR CONNECTION AND TRY AGAIN.",
+
+                        SERVER_ERROR:
+                            "// SERVER ERROR. YOUR APPLICATION WAS NOT CONFIRMED."
+
+                    };
+
+
+                    const errorMessage =
+
+                        known[error.message] ||
+
+                        "// SOMETHING BROKE. YOUR APPLICATION WAS NOT CONFIRMED. PLEASE TRY AGAIN.";
+
+
+                    show(
+
+                        errorMessage,
+
+                        "error"
+
+                    );
+
+
+                    openSubmissionModal(
+
+                        "error",
+
+                        {
+
+                            message:
+                                errorMessage.replace(
+                                    /^\/\/\s*/,
+                                    ""
+                                )
+
+                        }
+
+                    );
+
+
+                } finally {
+
+                    btn.disabled =
+                        false;
+
+                }
+
             }
-        });
+        );
     </script>
 
 </body>
