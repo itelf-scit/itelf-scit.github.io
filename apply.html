@@ -7,27 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Apply to join iTELF, the Entrepreneurship Cell of SCIT Pune. Find your domain and start building.">
+        content="iTELF applications at SCIT Pune are now closed.">
 
     <title>Join iTELF · SCIT Pune</title>
 
     <!-- =====================================================
-       FONTS
-  ====================================================== -->
+         FONTS
+    ====================================================== -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="icon" href="./src/images/browser-icon.svg" type="image/svg+xml">
-    <link rel="icon" href="/src/images/browser-icon.png" type="image/png">
+    <link rel="icon" href="./src/images/browser-icon.png" type="image/png">
+
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
 
     <style>
+
         /* =========================================================
-       ROOT
-    ========================================================= */
+           ROOT
+        ========================================================= */
 
         :root {
             --void: #08090d;
@@ -47,8 +50,8 @@
 
 
         /* =========================================================
-       RESET
-    ========================================================= */
+           RESET
+        ========================================================= */
 
         * {
             box-sizing: border-box;
@@ -65,7 +68,9 @@
 
             background-color: var(--void);
 
-            background-image: url("https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/site-bg-landscape.jpg");
+            background-image:
+                url("https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/site-bg-landscape.jpg");
+
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -86,39 +91,8 @@
 
 
         /* =========================================================
-       GIANT BACKGROUND TEXT
-    ========================================================= */
-
-        body::before {
-            content: "WHAT IF?";
-
-            position: fixed;
-
-            left: 50%;
-            top: 50%;
-
-            transform:
-                translate(-50%, -50%) rotate(-6deg);
-
-            font-family: var(--font-display);
-
-            font-size: clamp(9rem, 27vw, 32rem);
-            font-weight: 700;
-
-            line-height: 0.8;
-            letter-spacing: -0.09em;
-
-            white-space: nowrap;
-
-            color: rgba(255, 255, 255, 0.018);
-
-            pointer-events: none;
-        }
-
-
-        /* =========================================================
-       PAGE
-    ========================================================= */
+           PAGE
+        ========================================================= */
 
         .apply-page {
             position: relative;
@@ -127,13 +101,18 @@
 
             width: min(100% - 3rem, 1500px);
 
+            min-height: 100vh;
+
             margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
         }
 
 
         /* =========================================================
-       HEADER
-    ========================================================= */
+           HEADER
+        ========================================================= */
 
         .apply-header {
             min-height: 100px;
@@ -149,8 +128,8 @@
 
 
         /* =========================================================
-       LOGO
-    ========================================================= */
+           LOGO
+        ========================================================= */
 
         .apply-logo-link {
             display: inline-block;
@@ -170,8 +149,8 @@
 
 
         /* =========================================================
-       BACK LINK
-    ========================================================= */
+           BACK LINK
+        ========================================================= */
 
         .back-link {
             font-family: var(--font-mono);
@@ -197,8 +176,8 @@
 
 
         /* =========================================================
-       HERO
-    ========================================================= */
+           HERO
+        ========================================================= */
 
         .apply-hero {
             padding-top: 7rem;
@@ -206,20 +185,6 @@
 
             border-bottom:
                 1px solid rgba(255, 255, 255, 0.25);
-        }
-
-        .apply-eyebrow {
-            display: block;
-
-            margin-bottom: 2.5rem;
-
-            font-family: var(--font-mono);
-
-            font-size: 0.75rem;
-
-            letter-spacing: 0.06em;
-
-            color: var(--pink);
         }
 
         .apply-heading {
@@ -272,8 +237,8 @@
 
 
         /* =========================================================
-       APPLICATION SECTION
-    ========================================================= */
+           APPLICATION SECTION
+        ========================================================= */
 
         .application-section {
             padding-top: 6rem;
@@ -282,8 +247,8 @@
 
 
         /* =========================================================
-       APPLICATION INTRO
-    ========================================================= */
+           APPLICATION INTRO
+        ========================================================= */
 
         .application-intro {
             display: flex;
@@ -325,8 +290,8 @@
 
 
         /* =========================================================
-       FORM WRAPPER
-    ========================================================= */
+           APPLICATION WRAPPER
+        ========================================================= */
 
         .application-form-wrap {
             position: relative;
@@ -342,7 +307,6 @@
                 rgba(8, 18, 42, 0.78);
 
             backdrop-filter: blur(18px);
-
             -webkit-backdrop-filter: blur(18px);
 
             overflow: hidden;
@@ -350,8 +314,8 @@
 
 
         /* =========================================================
-       FORM TOP
-    ========================================================= */
+           STATUS TOP
+        ========================================================= */
 
         .form-top {
             min-height: 75px;
@@ -393,35 +357,197 @@
 
 
         /* =========================================================
-       GOOGLE FORM
-    ========================================================= */
+           APPLICATIONS CLOSED
+        ========================================================= */
 
-        .google-form-frame {
+        .applications-closed {
             position: relative;
 
-            width: 100%;
+            min-height: 620px;
 
-            height: 1050px;
+            padding:
+                clamp(3rem, 7vw, 7rem);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
             overflow: hidden;
-
-            background: #f5f5f5;
         }
 
-        .google-form-frame iframe {
-            display: block;
 
-            width: 100%;
+        /* GIANT CLOSED BACKGROUND */
 
-            height: 100%;
+        .applications-closed::before {
+            content: "CLOSED";
 
-            border: 0;
+            position: absolute;
+
+            right: -0.05em;
+            top: 50%;
+
+            transform:
+                translateY(-50%)
+                rotate(-7deg);
+
+            font-family: var(--font-display);
+
+            font-size:
+                clamp(8rem, 22vw, 25rem);
+
+            font-weight: 700;
+
+            line-height: 0.8;
+
+            letter-spacing: -0.08em;
+
+            color:
+                rgba(255, 255, 255, 0.025);
+
+            pointer-events: none;
         }
 
 
         /* =========================================================
-       FORM BOTTOM
-    ========================================================= */
+           CLOSED CONTENT
+        ========================================================= */
+
+        .closed-kicker {
+            position: relative;
+
+            z-index: 2;
+
+            margin-bottom: 2rem;
+
+            font-family: var(--font-mono);
+
+            font-size: 0.72rem;
+
+            letter-spacing: 0.07em;
+
+            color: var(--pink);
+        }
+
+        .closed-title {
+            position: relative;
+
+            z-index: 2;
+
+            margin: 0;
+
+            font-family: var(--font-display);
+
+            font-size:
+                clamp(4.5rem, 10vw, 10rem);
+
+            font-weight: 600;
+
+            line-height: 0.76;
+
+            letter-spacing: -0.075em;
+
+            color: var(--paper);
+        }
+
+        .closed-copy {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 680px;
+
+            margin: 3rem 0 0;
+
+            font-size:
+                clamp(1.1rem, 1.8vw, 1.5rem);
+
+            line-height: 1.65;
+
+            color: var(--chalk);
+        }
+
+        .closed-copy strong {
+            color: var(--paper);
+
+            font-weight: 500;
+        }
+
+
+        /* =========================================================
+           CLOSED STATUS
+        ========================================================= */
+
+        .closed-status {
+            position: relative;
+
+            z-index: 2;
+
+            width: fit-content;
+
+            margin-top: 3rem;
+
+            padding: 1rem 1.3rem;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 0.8rem;
+
+            border:
+                1px solid rgba(255, 59, 112, 0.55);
+
+            background:
+                rgba(255, 59, 112, 0.08);
+
+            font-family: var(--font-mono);
+
+            font-size: 0.72rem;
+
+            letter-spacing: 0.06em;
+
+            color: var(--pink);
+        }
+
+        .closed-dot {
+            width: 8px;
+            height: 8px;
+
+            flex: 0 0 8px;
+
+            border-radius: 50%;
+
+            background: var(--pink);
+        }
+
+
+        /* =========================================================
+           CLOSED NOTE
+        ========================================================= */
+
+        .closed-note {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 520px;
+
+            margin: 2rem 0 0;
+
+            font-family: var(--font-mono);
+
+            font-size: 0.7rem;
+
+            line-height: 1.8;
+
+            color:
+                rgba(255, 255, 255, 0.45);
+        }
+
+
+        /* =========================================================
+           FORM BOTTOM
+        ========================================================= */
 
         .form-bottom {
             min-height: 65px;
@@ -442,7 +568,8 @@
 
             font-size: 0.65rem;
 
-            color: rgba(255, 255, 255, 0.42);
+            color:
+                rgba(255, 255, 255, 0.42);
         }
 
         .form-bottom span:last-child {
@@ -451,36 +578,44 @@
 
 
         /* =========================================================
-       FOOTER
-    ========================================================= */
+           FOOTER
+        ========================================================= */
 
         .apply-footer {
             min-height: 90px;
 
+            margin-top: auto;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
 
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-top:
+                1px solid rgba(255, 255, 255, 0.25);
 
             font-family: var(--font-mono);
+
             font-size: 0.65rem;
+
             letter-spacing: 0.08em;
 
-            color: rgba(255, 255, 255, 0.45);
+            color:
+                rgba(255, 255, 255, 0.45);
 
             text-align: center;
         }
 
 
         /* =========================================================
-       TABLET
-    ========================================================= */
+           TABLET
+        ========================================================= */
 
         @media (max-width: 900px) {
 
             .apply-page {
-                width: min(100% - 2rem, 1500px);
+                width:
+                    min(100% - 2rem, 1500px);
             }
 
             .apply-header {
@@ -517,22 +652,36 @@
                 max-width: 600px;
             }
 
-            .google-form-frame {
-                height: 1100px;
-            }
-
         }
 
 
         /* =========================================================
-       MOBILE
-    ========================================================= */
+           MOBILE
+        ========================================================= */
 
         @media (max-width: 600px) {
 
-            .apply-page {
-                width: min(100% - 1.5rem, 1500px);
+            body {
+                background-image:
+                    url("https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/site-bg-portrait.jpg");
+
+                background-size: cover;
+
+                background-position: center top;
+
+                background-repeat: no-repeat;
+
+                background-attachment: scroll;
             }
+
+
+            .apply-page {
+                width:
+                    min(100% - 1.5rem, 1500px);
+            }
+
+
+            /* HEADER */
 
             .apply-header {
                 min-height: 80px;
@@ -546,13 +695,12 @@
                 font-size: 0.62rem;
             }
 
+
+            /* HERO */
+
             .apply-hero {
                 padding-top: 4rem;
                 padding-bottom: 4rem;
-            }
-
-            .apply-eyebrow {
-                margin-bottom: 2rem;
             }
 
             .apply-heading {
@@ -568,6 +716,9 @@
                 font-size: 1.05rem;
             }
 
+
+            /* APPLICATION */
+
             .application-section {
                 padding-top: 4rem;
                 padding-bottom: 5rem;
@@ -577,6 +728,9 @@
                 font-size:
                     clamp(2.7rem, 14vw, 4.5rem);
             }
+
+
+            /* STATUS BAR */
 
             .form-top {
                 min-height: 70px;
@@ -590,9 +744,45 @@
                 font-size: 0.58rem;
             }
 
-            .google-form-frame {
-                height: 1150px;
+
+            /* CLOSED */
+
+            .applications-closed {
+                min-height: 580px;
+
+                padding:
+                    3.5rem 1.5rem;
             }
+
+            .applications-closed::before {
+                top: 38%;
+
+                right: -0.2em;
+
+                font-size: 45vw;
+            }
+
+            .closed-title {
+                font-size:
+                    clamp(4rem, 20vw, 6rem);
+
+                line-height: 0.8;
+            }
+
+            .closed-copy {
+                margin-top: 2.5rem;
+
+                font-size: 1.05rem;
+            }
+
+            .closed-status {
+                margin-top: 2.5rem;
+
+                padding: 0.9rem 1rem;
+            }
+
+
+            /* BOTTOM */
 
             .form-bottom {
                 min-height: 90px;
@@ -607,430 +797,14 @@
                 gap: 0.5rem;
             }
 
+
+            /* FOOTER */
+
             .apply-footer {
-                min-height: 120px;
-
-                flex-direction: column;
-
-                align-items: flex-start;
-                justify-content: center;
-
-                gap: 0.7rem;
-            }
-
-            .apply-footer span:last-child {
-                text-align: left;
-            }
-
-            body {
-                background-image: url("https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/site-bg-portrait.jpg");
-                background-size: cover;
-                background-position: center top;
-                background-repeat: no-repeat;
-                background-attachment: scroll;
+                min-height: 100px;
             }
 
         }
-
-        /* NATIVE ITELF FORM */
-        .google-form-frame {
-            display: none;
-        }
-
-        .native-form {
-            padding: clamp(1rem, 3vw, 3rem);
-        }
-
-        .form-section {
-            padding: 2.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, .16);
-        }
-
-        .form-section:first-child {
-            padding-top: 0;
-        }
-
-        .section-kicker,
-        .section-note,
-        .word-count,
-        .file-note {
-            font-family: var(--font-mono);
-        }
-
-        .section-kicker {
-            color: var(--pink);
-            font-size: .72rem;
-            letter-spacing: .06em;
-        }
-
-        .section-note,
-        .file-note,
-        .word-count {
-            color: rgba(255, 255, 255, .48);
-            font-size: .68rem;
-        }
-
-        .native-form label,
-        .native-form legend {
-            display: block;
-            font-size: clamp(1rem, 1.5vw, 1.2rem);
-        }
-
-        .native-form label {
-            margin-top: 2rem;
-        }
-
-        .native-form small {
-            display: block;
-            margin-top: .4rem;
-            color: rgba(255, 255, 255, .5);
-            font-family: var(--font-mono);
-            font-size: .68rem;
-        }
-
-        .native-form b {
-            color: var(--pink);
-        }
-
-        .native-form input:not([type="radio"]):not([type="checkbox"]):not([type="file"]),
-        .native-form textarea {
-            width: 100%;
-            margin-top: 1rem;
-            padding: 1rem 0;
-            border: 0;
-            border-bottom: 1px solid rgba(255, 255, 255, .35);
-            outline: 0;
-            background: transparent;
-            color: var(--paper);
-            font: inherit;
-            border-radius: 0;
-        }
-
-        .native-form textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        .native-form input:focus,
-        .native-form textarea:focus {
-            border-color: var(--acid) !important;
-        }
-
-        .native-form fieldset {
-            margin: 2rem 0 0;
-            padding: 0;
-            border: 0;
-        }
-
-        .choice-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: .75rem;
-            margin-top: 1rem;
-        }
-
-        .choice-grid label {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: .7rem;
-            padding: 1rem;
-            border: 1px solid rgba(255, 255, 255, .18);
-            cursor: pointer;
-        }
-
-        .choice-grid input {
-            accent-color: var(--acid);
-        }
-
-        input[type="file"] {
-            display: block;
-            width: 100%;
-            margin-top: 1rem;
-            padding: 1rem;
-            border: 1px dashed rgba(255, 255, 255, .35);
-            color: var(--chalk);
-            font-family: var(--font-mono);
-        }
-
-        .word-count {
-            display: block;
-            margin-top: .6rem;
-            text-align: right;
-        }
-
-        .submit-application {
-            width: 100%;
-            min-height: 100px;
-            margin-top: 2.5rem;
-            padding: 0 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border: 0;
-            background: var(--acid);
-            color: var(--void);
-            font: 700 clamp(1.4rem, 3vw, 2.5rem) var(--font-display);
-            cursor: pointer;
-        }
-
-        .submit-application:disabled {
-            opacity: .5;
-            cursor: wait;
-        }
-
-        .form-message {
-            font-family: var(--font-mono);
-            color: var(--acid);
-        }
-
-        @media(max-width:600px) {
-            .native-form {
-                padding: 1.25rem
-            }
-
-            .choice-grid {
-                grid-template-columns: 1fr
-            }
-
-            .form-section {
-                padding: 2rem 0
-            }
-
-            .submit-application {
-                min-height: 82px;
-                padding: 0 1.25rem
-            }
-        }
-
-
-        /* SECURITY / VALIDATION UI */
-        .hp-field {
-            position: absolute !important;
-            left: -9999px !important;
-            width: 1px !important;
-            height: 1px !important;
-            overflow: hidden !important;
-            opacity: 0 !important;
-            pointer-events: none !important
-        }
-
-        .form-message {
-            min-height: 1.5rem;
-            margin-top: 1rem
-        }
-
-        .form-message.is-error {
-            color: var(--pink)
-        }
-
-        .form-message.is-success {
-            color: var(--acid)
-        }
-
-        .native-form input[aria-invalid="true"],
-        .native-form textarea[aria-invalid="true"] {
-            border-color: var(--pink) !important
-        }
-
-        /* SUBMISSION LOADER + RESULT MODAL */
-        body.modal-open {
-            overflow: hidden
-        }
-
-        .submission-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.25rem;
-            background: rgba(4, 5, 8, .86);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: opacity 220ms ease, visibility 220ms ease
-        }
-
-        .submission-overlay.is-visible {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto
-        }
-
-        .submission-modal {
-            position: relative;
-            width: min(100%, 560px);
-            padding: clamp(2rem, 5vw, 3.5rem);
-            border: 1px solid rgba(255, 255, 255, .28);
-            background: linear-gradient(145deg, rgba(8, 18, 42, .98), rgba(8, 9, 13, .98));
-            box-shadow: 0 0 0 1px rgba(51, 85, 255, .12), 0 24px 80px rgba(0, 0, 0, .58);
-            transform: translateY(18px) scale(.98);
-            transition: transform 280ms var(--ease)
-        }
-
-        .submission-overlay.is-visible .submission-modal {
-            transform: translateY(0) scale(1)
-        }
-
-        .submission-modal::before,
-        .submission-modal::after {
-            content: "";
-            position: absolute;
-            width: 72px;
-            height: 3px
-        }
-
-        .submission-modal::before {
-            top: -1px;
-            left: -1px;
-            background: var(--pink)
-        }
-
-        .submission-modal::after {
-            right: -1px;
-            bottom: -1px;
-            background: var(--acid)
-        }
-
-        .submission-kicker {
-            display: block;
-            margin-bottom: 1.5rem;
-            font-family: var(--font-mono);
-            font-size: .7rem;
-            letter-spacing: .07em;
-            color: var(--pink)
-        }
-
-        .submission-title {
-            margin: 0;
-            font-size: clamp(2.3rem, 7vw, 4.8rem);
-            font-weight: 600;
-            line-height: .88;
-            letter-spacing: -.055em
-        }
-
-        .submission-copy {
-            margin: 1.8rem 0 0;
-            font-family: var(--font-mono);
-            font-size: .78rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, .62)
-        }
-
-        .submission-id {
-            display: none;
-            margin-top: 1.5rem;
-            padding: 1rem 1.1rem;
-            border-left: 2px solid var(--acid);
-            background: rgba(232, 255, 71, .055);
-            font-family: var(--font-mono);
-            font-size: .72rem;
-            line-height: 1.6;
-            color: var(--acid);
-            overflow-wrap: anywhere
-        }
-
-        .submission-id.is-visible {
-            display: block
-        }
-
-        .submission-close {
-            display: none;
-            width: 100%;
-            margin-top: 2rem;
-            padding: 1rem 1.25rem;
-            border: 0;
-            background: var(--acid);
-            color: var(--void);
-            font: 700 .78rem var(--font-mono);
-            letter-spacing: .06em;
-            cursor: pointer
-        }
-
-        .submission-close.is-visible {
-            display: block
-        }
-
-        .submission-loader {
-            width: 62px;
-            height: 62px;
-            margin: 2.2rem 0 0;
-            border: 2px solid rgba(255, 255, 255, .12);
-            border-top-color: var(--acid);
-            border-right-color: var(--pink);
-            border-radius: 50%;
-            animation: submission-spin .8s linear infinite
-        }
-
-        .submission-loader.is-hidden {
-            display: none
-        }
-
-        .submission-modal.is-success {
-            border-color: rgba(232, 255, 71, .48)
-        }
-
-        .submission-modal.is-success .submission-kicker {
-            color: var(--acid)
-        }
-
-        .submission-modal.is-error {
-            border-color: rgba(255, 59, 112, .58)
-        }
-
-        .submission-modal.is-error .submission-title {
-            color: var(--pink)
-        }
-
-        @keyframes submission-spin {
-            to {
-                transform: rotate(360deg)
-            }
-        }
-
-        @media(prefers-reduced-motion:reduce) {
-            .submission-loader {
-                animation-duration: 1.8s
-            }
-
-            .submission-overlay,
-            .submission-modal {
-                transition: none
-            }
-        }
-
-        @media(max-width:600px) {
-            .submission-overlay {
-                align-items: flex-end;
-                padding: 0
-            }
-
-            .submission-modal {
-                width: 100%;
-                padding: 2rem 1.5rem 1.5rem;
-                border-left: 0;
-                border-right: 0;
-                border-bottom: 0
-            }
-
-            .submission-title {
-                font-size: clamp(2.5rem, 15vw, 4rem)
-            }
-        }
-
-        /* DOMAIN INTEREST — FINAL FIX */
-        .domain-section,.domain-section fieldset{height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important}
-        .domain-section fieldset{display:block!important;margin:2.5rem 0 0!important}
-        .domain-section .choice-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:.75rem!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin-top:1rem!important;overflow:visible!important;opacity:1!important;visibility:visible!important}
-        .domain-section .choice-grid label{display:flex!important;align-items:center!important;gap:.7rem!important;width:100%!important;min-height:56px!important;height:auto!important;margin:0!important;padding:1rem!important;border:1px solid rgba(255,255,255,.18)!important;background:rgba(255,255,255,.025)!important;color:var(--paper)!important;opacity:1!important;visibility:visible!important;overflow:visible!important;cursor:pointer!important}
-        .domain-section input[type="radio"],.domain-section input[type="checkbox"]{appearance:auto!important;-webkit-appearance:auto!important;position:static!important;display:inline-block!important;width:18px!important;height:18px!important;min-width:18px!important;margin:0!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important;accent-color:var(--acid)!important;flex:0 0 18px!important}
-        .domain-section .choice-grid label span{display:inline!important;color:var(--paper)!important;opacity:1!important;visibility:visible!important}
-        .domain-section .choice-grid label:has(input:checked){border-color:var(--pink)!important;background:rgba(255,59,112,.10)!important}
-        @media(max-width:600px){.domain-section .choice-grid{grid-template-columns:1fr!important}.domain-section fieldset{margin-top:2rem!important}.domain-section .choice-grid label{min-height:52px!important;padding:.9rem 1rem!important}}
 
     </style>
 
@@ -1043,20 +817,30 @@
 
 
         <!-- =====================================================
-         HEADER
-    ====================================================== -->
+             HEADER
+        ====================================================== -->
 
         <header class="apply-header">
 
-            <a href="index.html" class="apply-logo-link" aria-label="Back to iTELF home">
+            <a
+                href="index.html"
+                class="apply-logo-link"
+                aria-label="Back to iTELF home"
+            >
 
-                <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/iTELF-logo.png"
-                    alt="iTELF Logo" class="apply-logo">
+                <img
+                    src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/iTELF-logo.png"
+                    alt="iTELF Logo"
+                    class="apply-logo"
+                >
 
             </a>
 
 
-            <a href="index.html" class="back-link">
+            <a
+                href="index.html"
+                class="back-link"
+            >
                 ← BACK TO THE CHAOS
             </a>
 
@@ -1064,10 +848,15 @@
 
 
         <!-- =====================================================
-         HERO
-    ====================================================== -->
+             MAIN
+        ====================================================== -->
 
         <main>
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
 
             <section class="apply-hero">
 
@@ -1077,1385 +866,58 @@
                 </h1>
 
                 <p class="apply-lead">
-                    You've seen what we build. You've explored the domains.
-                    Now we're curious about <strong>you</strong> — what you think,
-                    what you want to learn and what you might bring to the chaos.
+                    You've seen what we build.
+                    You've explored the domains.
+                    Now we're curious about <strong>you</strong> —
+                    what you think, what you want to learn and
+                    what you might bring to the chaos.
                 </p>
 
             </section>
 
 
-            <!-- =====================================================
-           APPLICATION
-      ====================================================== -->
+            <!-- =================================================
+                 APPLICATION STATUS
+            ================================================== -->
 
             <section class="application-section">
 
                 <div class="application-intro">
 
                     <h2 class="application-title">
-                        READY<br>
-                        WHEN YOU ARE.
+                        WELL.<br>
+                        THAT WAS FAST.
                     </h2>
 
                     <p class="application-note">
-                        // take your time. give us the real answers,
-                        not the interview ones. yes, we will actually
-                        read what you write.
+                        // the applications are in.
+                        the form has officially clocked out.
+                        now it's our turn.
                     </p>
 
                 </div>
 
 
                 <!-- =================================================
-             EMBEDDED GOOGLE FORM
-        ================================================== -->
+                     CLOSED CARD
+                ================================================== -->
 
                 <div class="application-form-wrap">
+
+
+                    <!-- STATUS BAR -->
 
                     <div class="form-top">
 
                         <span class="card-number">
-                            APPLICATION
+                            APPLICATION STATUS
                         </span>
 
                         <span class="form-status">
-                            TAKE YOUR TIME. WE'RE READING.
+                            INTAKE CLOSED.
                         </span>
 
                     </div>
 
 
-
-                    <form id="itelfForm" class="native-form" autocomplete="on" novalidate>
-                        <div class="hp-field" aria-hidden="true">
-                            <label>Leave empty<input type="text" name="website" tabindex="-1"
-                                    autocomplete="off"></label>
-                        </div>
-                        <input type="hidden" name="formStartedAt" id="formStartedAt">
-                        <div class="form-section">
-                            <span class="section-kicker">// 01 · YOUR DETAILS</span>
-                            <label>Full Name <b>*</b><input name="fullName" autocomplete="name" minlength="2"
-                                    maxlength="100" required></label>
-                            <label>PRN No. <small>(Junior batch PRN: 26030241XXX / 26030242XXX)</small> <b>*</b><input
-                                    name="prn" type="text" inputmode="numeric" autocomplete="off"
-                                    pattern="2603024[12][0-9]{3}" minlength="11" maxlength="11"
-                                    placeholder="26030241XXX / 26030242XXX" required></label>
-                            <label>Email (Associates ID) <small>(Use your @associates.scit.edu email ID)</small>
-                                <b>*</b><input name="email" type="email" autocomplete="email" maxlength="150"
-                                    pattern="[A-Za-z0-9._%+\-]+@associates\.scit\.edu"
-                                    placeholder="name@associates.scit.edu" required></label>
-                            <label>Contact Number <b>*</b><input name="contact" type="tel" inputmode="numeric"
-                                    autocomplete="tel" pattern="[0-9]{10}" minlength="10" maxlength="10"
-                                    required></label>
-                            <fieldset>
-                                <legend>Division <b>*</b></legend>
-                                <div class="choice-grid">
-                                    <label><input type="radio" name="division" value="A" required><span>A</span></label>
-                                    <label><input type="radio" name="division" value="B"><span>B</span></label>
-                                    <label><input type="radio" name="division" value="C"><span>C</span></label>
-                                    <label><input type="radio" name="division" value="D"><span>D</span></label>
-                                    <label><input type="radio" name="division" value="DSDA"><span>DSDA</span></label>
-                                </div>
-                            </fieldset>
-                            <label>Please provide your LinkedIn profile link <small>(Add N/A if you don't have
-                                    one)</small> <b>*</b><input name="linkedin" maxlength="300" required></label>
-                        </div>
-
-                        <div class="form-section">
-                            <span class="section-kicker">// 02 · THE IDEA</span>
-                            <fieldset>
-                                <legend>Any Project/Startup Idea that you have in mind, or already in the works?
-                                    <small>(Not mandatory for your selection)</small> <b>*</b>
-                                </legend>
-                                <div class="choice-grid">
-                                    <label><input type="radio" name="hasIdea" value="Yes"
-                                            required><span>Yes</span></label>
-                                    <label><input type="radio" name="hasIdea" value="No"><span>No</span></label>
-                                </div>
-                            </fieldset>
-                            <label>If your answer was "Yes", mention your idea in a few lines; otherwise mention N/A.
-                                <b>*</b><textarea name="ideaDetails" maxlength="2000" required></textarea></label>
-                        </div>
-
-                        <div class="form-section">
-                            <span class="section-kicker">// 03 · TELL US ABOUT YOU</span>
-                            <p class="section-note">Please answer the following questions in 50–100 words.</p>
-                            <label>Why do you want to join iTELF? <small>(Max 50 Words)</small> <b>*</b><textarea
-                                    name="whyJoin" data-maxwords="50" maxlength="750" required></textarea><span
-                                    class="word-count">0 / 50 words</span></label>
-                            <label>What skills do you possess that would make you a great candidate for iTELF?
-                                <b>*</b><textarea name="skills" maxlength="2000" required></textarea></label>
-                            <label>Have you ever been involved in entrepreneurial activities or been a part of any
-                                similar committees or Organisations before? <small>(Mention the details in 50 words,
-                                    otherwise mention N/A)</small> <b>*</b><textarea name="experience" maxlength="1500"
-                                    required></textarea></label>
-                            <label>Upload Proof of Previous Work (if any)
-                                <input name="proof" type="file" accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
-                                <span class="file-note">// optional · PDF / image / document</span>
-                            </label>
-                        </div>
-
-                        <div class="form-section domain-section" id="domainInterest">
-                            <span class="section-kicker">// 04 · DOMAIN INTEREST</span>
-                            <fieldset>
-                                <legend>Preference 1 <b>*</b></legend>
-                                <div class="choice-grid domain-options">
-                                    <label><input type="radio" name="preference1" value="Speaker/Investor Collaborations" required><span>Speaker/Investor Collaborations</span></label>
-                                    <label><input type="radio" name="preference1" value="Web and Media"><span>Web and Media</span></label>
-                                    <label><input type="radio" name="preference1" value="Events"><span>Events</span></label>
-                                    <label><input type="radio" name="preference1" value="Sponsorship"><span>Sponsorship</span></label>
-                                </div>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Preference 2 <b>*</b></legend>
-                                <div class="choice-grid domain-options">
-                                    <label><input type="radio" name="preference2" value="Speaker/Investor Collaborations" required><span>Speaker/Investor Collaborations</span></label>
-                                    <label><input type="radio" name="preference2" value="Web and Media"><span>Web and Media</span></label>
-                                    <label><input type="radio" name="preference2" value="Events"><span>Events</span></label>
-                                    <label><input type="radio" name="preference2" value="Sponsorship"><span>Sponsorship</span></label>
-                                </div>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Preference 3</legend>
-                                <div class="choice-grid domain-options">
-                                    <label><input type="radio" name="preference3" value="Speaker/Investor Collaborations"><span>Speaker/Investor Collaborations</span></label>
-                                    <label><input type="radio" name="preference3" value="Web and Media"><span>Web and Media</span></label>
-                                    <label><input type="radio" name="preference3" value="Events"><span>Events</span></label>
-                                    <label><input type="radio" name="preference3" value="Sponsorship"><span>Sponsorship</span></label>
-                                </div>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Which other committee(s) have applied for? <b>*</b></legend>
-                                <div class="choice-grid committee-options">
-                                    <label><input type="checkbox" name="committees" value="Team Matrix"><span>Team Matrix</span></label>
-                                    <label><input type="checkbox" name="committees" value="Guest Lecture Committee"><span>Guest Lecture Committee</span></label>
-                                    <label><input type="checkbox" name="committees" value="Alumni Committee"><span>Alumni Committee</span></label>
-                                    <label><input type="checkbox" name="committees" value="Web & Media Committee"><span>Web & Media Committee</span></label>
-                                    <label><input type="checkbox" name="committees" value="Admissions Committee"><span>Admissions Committee</span></label>
-                                    <label><input type="checkbox" name="committees" value="Team ISR"><span>Team ISR</span></label>
-                                    <label><input type="checkbox" name="committees" value="Sports Committee"><span>Sports Committee</span></label>
-                                    <label><input type="checkbox" name="committees" value="Cultural Committee"><span>Cultural Committee</span></label>
-                                    <label><input type="checkbox" name="committees" value="Drishtikon Committee"><span>Drishtikon Committee</span></label>
-                                    <label><input type="checkbox" name="committees" value="Symbeats"><span>Symbeats</span></label>
-                                    <label><input type="checkbox" name="committees" value="Konnect"><span>Konnect</span></label>
-                                    <label><input type="checkbox" name="committees" value="Team Reflections"><span>Team Reflections</span></label>
-                                    <label><input type="checkbox" name="committees" value="Eklavya"><span>Eklavya</span></label>
-                                    <label><input type="checkbox" name="committees" value="N/A"><span>N/A</span></label>
-                                </div>
-                            </fieldset>
-                        </div>
-
-                        <button class="submit-application" type="submit"><span>SUBMIT
-                                APPLICATION</span><span>→</span></button>
-                        <p id="formMessage" class="form-message" aria-live="polite"></p>
-                    </form>
-
-                    <div class="form-bottom">
-
-                        <span>
-                            No perfect résumé required.
-                        </span>
-
-                        <span>
-                            CURIOSITY HELPS.
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-        </main>
-
-
-        <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-        <footer class="apply-footer">
-            <span>
-                iTELF · SCIT PUNE
-            </span>
-        </footer>
-
-
-    </div>
-
-
-
-    <div id="submissionOverlay" class="submission-overlay" role="dialog" aria-modal="true"
-        aria-labelledby="submissionTitle" aria-describedby="submissionCopy" aria-hidden="true">
-        <div id="submissionModal" class="submission-modal">
-            <span id="submissionKicker" class="submission-kicker">// TRANSMITTING APPLICATION</span>
-            <h2 id="submissionTitle" class="submission-title">HOLD TIGHT.</h2>
-            <p id="submissionCopy" class="submission-copy">Your application is moving from the board to our side. Please
-                don't close this page.</p>
-            <div id="submissionLoader" class="submission-loader" aria-label="Submitting application"></div>
-            <button id="submissionClose" class="submission-close" type="button">BACK TO THE BOARD →</button>
-        </div>
-    </div>
-
-    <script>
-        /* =========================================================
-           iTELF APPLICATION FORM
-           Frontend Controller
-        ========================================================= */
-
-        const SCRIPT_URL =
-            "https://script.google.com/macros/s/AKfycbzKuPhf-3lw9h2-8lMLWjSZOm4HoT2nZ4z3F-3xclBaf7xHcoZexqKe0i8skSXjm3xPfg/exec";
-
-        const ALLOWED_ORIGIN =
-            "https://itelf-scit.github.io";
-
-
-        /* =========================================================
-           FORM ELEMENTS
-        ========================================================= */
-
-        const form =
-            document.getElementById("itelfForm");
-
-        const btn =
-            form.querySelector('button[type="submit"]');
-
-        const msg =
-            document.getElementById("formMessage");
-
-
-        /* =========================================================
-           SUBMISSION MODAL ELEMENTS
-        ========================================================= */
-
-        const overlay =
-            document.getElementById("submissionOverlay");
-
-        const submissionModal =
-            document.getElementById("submissionModal");
-
-        const submissionKicker =
-            document.getElementById("submissionKicker");
-
-        const submissionTitle =
-            document.getElementById("submissionTitle");
-
-        const submissionCopy =
-            document.getElementById("submissionCopy");
-
-        const submissionLoader =
-            document.getElementById("submissionLoader");
-
-        const submissionClose =
-            document.getElementById("submissionClose");
-
-
-        /* =========================================================
-           FORM START TIME
-        ========================================================= */
-
-        let formStartedAt =
-            Date.now();
-
-
-        /* =========================================================
-           FORM MESSAGE
-        ========================================================= */
-
-        function show(text, type = "") {
-
-            msg.textContent =
-                text;
-
-            msg.className =
-                `form-message ${type
-                    ? `is-${type}`
-                    : ""
-                }`;
-
-        }
-
-
-        /* =========================================================
-           SUBMISSION MODAL
-        ========================================================= */
-
-        function openSubmissionModal(
-            state,
-            options = {}
-        ) {
-
-            const states = {
-
-                loading: {
-
-                    kicker:
-                        "// TRANSMITTING APPLICATION",
-
-                    title:
-                        "HOLD TIGHT.",
-
-                    copy:
-                        "Your application is moving from the board to our side. Please don't close this page."
-
-                },
-
-
-                success: {
-
-                    kicker:
-                        "// APPLICATION RECEIVED",
-
-                    title:
-                        "YOU'RE ON THE BOARD.",
-
-                    copy:
-                        "We've received your application. Check your inbox for the confirmation mail and keep your Application ID safe."
-
-                },
-
-
-                duplicate: {
-
-                    kicker:
-                        "// ALREADY ON THE BOARD",
-
-                    title:
-                        "WE'VE GOT YOU.",
-
-                    copy:
-                        "Your application has already been received. No need to submit again — your original application is safely on the board."
-
-                },
-
-
-                error: {
-
-                    kicker:
-                        "// TRANSMISSION FAILED",
-
-                    title:
-                        "SOMETHING BROKE.",
-
-                    copy:
-                        options.message ||
-                        "Your application was not confirmed. Please try again."
-
-                }
-
-            };
-
-
-            const content =
-                states[state] ||
-                states.error;
-
-
-            submissionModal.className =
-                `submission-modal is-${state}`;
-
-
-            submissionKicker.textContent =
-                content.kicker;
-
-
-            submissionTitle.textContent =
-                content.title;
-
-
-            submissionCopy.textContent =
-                content.copy;
-
-
-            submissionLoader.classList.toggle(
-                "is-hidden",
-                state !== "loading"
-            );
-
-
-            submissionClose.classList.toggle(
-                "is-visible",
-                state !== "loading"
-            );
-overlay.classList.add(
-                "is-visible"
-            );
-
-
-            overlay.setAttribute(
-                "aria-hidden",
-                "false"
-            );
-
-
-            document.body.classList.add(
-                "modal-open"
-            );
-
-
-            if (
-                state !== "loading"
-            ) {
-
-                setTimeout(
-                    () =>
-                        submissionClose.focus(),
-                    100
-                );
-
-            }
-
-        }
-
-
-        /* =========================================================
-           CLOSE SUBMISSION MODAL
-        ========================================================= */
-
-        function closeSubmissionModal() {
-
-            overlay.classList.remove(
-                "is-visible"
-            );
-
-
-            overlay.setAttribute(
-                "aria-hidden",
-                "true"
-            );
-
-
-            document.body.classList.remove(
-                "modal-open"
-            );
-
-        }
-
-
-        submissionClose.addEventListener(
-            "click",
-            closeSubmissionModal
-        );
-
-
-        document.addEventListener(
-            "keydown",
-            event => {
-
-                if (
-                    event.key === "Escape" &&
-                    overlay.classList.contains(
-                        "is-visible"
-                    ) &&
-                    submissionLoader.classList.contains(
-                        "is-hidden"
-                    )
-                ) {
-
-                    closeSubmissionModal();
-
-                }
-
-            }
-        );
-
-
-        /* =========================================================
-           INVALID FIELD HANDLER
-        ========================================================= */
-
-        function invalid(
-            field,
-            message
-        ) {
-
-            show(
-                message,
-                "error"
-            );
-
-
-            if (field) {
-
-                field.focus();
-
-
-                field.scrollIntoView({
-
-                    behavior:
-                        "smooth",
-
-                    block:
-                        "center"
-
-                });
-
-            }
-
-
-            return false;
-
-        }
-
-
-        /* =========================================================
-           WORD COUNTERS
-        ========================================================= */
-
-        document
-            .querySelectorAll(
-                "[data-maxwords]"
-            )
-            .forEach(field => {
-
-                const maxWords =
-                    Number(
-                        field.dataset.maxwords
-                    );
-
-
-                const counter =
-                    field.nextElementSibling;
-
-
-                function updateWordCount() {
-
-                    let words =
-                        field.value
-                            .trim()
-                            .split(/\s+/)
-                            .filter(Boolean);
-
-
-                    if (
-                        words.length >
-                        maxWords
-                    ) {
-
-                        words =
-                            words.slice(
-                                0,
-                                maxWords
-                            );
-
-
-                        field.value =
-                            words.join(" ");
-
-                    }
-
-
-                    const currentWords =
-                        field.value
-                            .trim()
-                            .split(/\s+/)
-                            .filter(Boolean)
-                            .length;
-
-
-                    if (
-                        counter &&
-                        counter.classList.contains(
-                            "word-count"
-                        )
-                    ) {
-
-                        counter.textContent =
-                            `${currentWords} / ${maxWords} words`;
-
-                    }
-
-                }
-
-
-                field.addEventListener(
-                    "input",
-                    updateWordCount
-                );
-
-
-                updateWordCount();
-
-            });
-
-
-        /* =========================================================
-           FILE TO BASE64
-        ========================================================= */
-
-        function fileToBase64(file) {
-
-            return new Promise(
-                (
-                    resolve,
-                    reject
-                ) => {
-
-                    const reader =
-                        new FileReader();
-
-
-                    reader.onload =
-                        () => {
-
-                            const result =
-                                String(
-                                    reader.result ||
-                                    ""
-                                );
-
-
-                            const base64 =
-                                result.includes(",")
-                                    ? result.split(",")[1]
-                                    : result;
-
-
-                            resolve(base64);
-
-                        };
-
-
-                    reader.onerror =
-                        () =>
-                            reject(
-                                new Error(
-                                    "FILE_READ_FAILED"
-                                )
-                            );
-
-
-                    reader.readAsDataURL(
-                        file
-                    );
-
-                }
-            );
-
-        }
-
-
-        /* =========================================================
-           COMMITTEE VALUES
-        ========================================================= */
-
-        const committeeInputs =
-            Array.from(document.querySelectorAll('input[name="committees"]'));
-
-        committeeInputs.forEach(input => {
-            input.addEventListener("change", () => {
-                if (!input.checked) return;
-                if (input.value === "N/A") {
-                    committeeInputs.forEach(other => {
-                        if (other !== input) other.checked = false;
-                    });
-                } else {
-                    const naOption = committeeInputs.find(other => other.value === "N/A");
-                    if (naOption) naOption.checked = false;
-                }
-            });
-        });
-
-        function getCommitteeValues() {
-
-            return Array.from(
-
-                form.querySelectorAll(
-                    'input[name="committees"]:checked'
-                )
-
-            ).map(
-                input =>
-                    input.value
-            );
-
-        }
-
-
-        /* =========================================================
-           FORM SUBMISSION
-        ========================================================= */
-
-        form.addEventListener(
-            "submit",
-            async event => {
-
-                event.preventDefault();
-
-
-                /* =====================================================
-                   HTML VALIDATION
-                ===================================================== */
-
-                if (
-                    !form.checkValidity()
-                ) {
-
-                    const badField =
-                        form.querySelector(
-                            ":invalid"
-                        );
-
-
-                    if (
-                        badField ===
-                        form.elements.email
-                    ) {
-
-                        return invalid(
-
-                            form.elements.email,
-
-                            "// USE YOUR @ASSOCIATES.SCIT.EDU EMAIL ID."
-
-                        );
-
-                    }
-
-
-                    return invalid(
-
-                        badField,
-
-                        "// CHECK THE REQUIRED FIELDS AND FORMATS."
-
-                    );
-
-                }
-
-
-                /* =====================================================
-                   PRN VALIDATION
-            
-                   Valid:
-                   26030241001 - 26030241999
-                   26030242001 - 26030242999
-                ===================================================== */
-
-                const prn =
-                    form.elements.prn
-                        .value
-                        .trim();
-
-
-                if (
-                    !/^2603024[12](?!000)\d{3}$/
-                        .test(prn)
-                ) {
-
-                    return invalid(
-
-                        form.elements.prn,
-
-                        "// ENTER A VALID JUNIOR BATCH PRN."
-
-                    );
-
-                }
-
-
-                /* =====================================================
-                   ASSOCIATES EMAIL VALIDATION
-                ===================================================== */
-
-                const email =
-                    form.elements.email
-                        .value
-                        .trim()
-                        .toLowerCase();
-
-
-                if (
-                    !/^[A-Za-z0-9._%+-]+@associates\.scit\.edu$/i
-                        .test(email)
-                ) {
-
-                    return invalid(
-
-                        form.elements.email,
-
-                        "// USE YOUR @ASSOCIATES.SCIT.EDU EMAIL ID."
-
-                    );
-
-                }
-
-
-                /* =====================================================
-                   CONTACT VALIDATION
-                ===================================================== */
-
-                const contact =
-                    form.elements.contact
-                        .value
-                        .trim();
-
-
-                if (
-                    !/^\d{10}$/
-                        .test(contact)
-                ) {
-
-                    return invalid(
-
-                        form.elements.contact,
-
-                        "// ENTER A VALID 10 DIGIT CONTACT NUMBER."
-
-                    );
-
-                }
-
-
-                /* =====================================================
-                   DOMAIN PREFERENCE VALIDATION
-                ===================================================== */
-
-                const preference1 =
-                    form.elements.preference1
-                        ?.value ||
-                    "";
-
-
-                const preference2 =
-                    form.elements.preference2
-                        ?.value ||
-                    "";
-
-
-                const preference3 =
-                    form.elements.preference3
-                        ?.value ||
-                    "";
-
-
-                if (
-                    !preference1 ||
-                    !preference2
-                ) {
-
-                    return invalid(
-
-                        null,
-
-                        "// SELECT YOUR REQUIRED DOMAIN PREFERENCES."
-
-                    );
-
-                }
-
-
-                const preferences = [
-
-                    preference1,
-
-                    preference2,
-
-                    preference3
-
-                ].filter(Boolean);
-
-
-                if (
-                    new Set(
-                        preferences
-                    ).size !==
-                    preferences.length
-                ) {
-
-                    return invalid(
-
-                        null,
-
-                        "// DOMAIN PREFERENCES MUST BE DIFFERENT."
-
-                    );
-
-                }
-
-
-                /* =====================================================
-                   COMMITTEE VALIDATION
-                ===================================================== */
-
-                const committees =
-                    getCommitteeValues();
-
-
-                if (
-                    committees.length === 0
-                ) {
-
-                    return invalid(
-
-                        null,
-
-                        "// SELECT AT LEAST ONE COMMITTEE OR N/A."
-
-                    );
-
-                }
-
-
-                /* =====================================================
-                   FILE VALIDATION
-                ===================================================== */
-
-                const fileInput =
-                    form.elements.proof;
-
-
-                const file =
-                    fileInput &&
-                        fileInput.files
-                        ? fileInput.files[0]
-                        : null;
-
-
-                const allowedMimeTypes = [
-
-                    "application/pdf",
-
-                    "image/png",
-
-                    "image/jpeg",
-
-                    "application/msword",
-
-                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-
-                ];
-
-
-                if (
-                    file &&
-                    !allowedMimeTypes.includes(
-                        file.type
-                    )
-                ) {
-
-                    return invalid(
-
-                        fileInput,
-
-                        "// FILE TYPE NOT ALLOWED."
-
-                    );
-
-                }
-
-
-                if (
-                    file &&
-                    file.size >
-                    5 * 1024 * 1024
-                ) {
-
-                    return invalid(
-
-                        fileInput,
-
-                        "// FILE IS LARGER THAN 5 MB."
-
-                    );
-
-                }
-
-
-                /* =====================================================
-                   START SUBMISSION
-                ===================================================== */
-
-                btn.disabled =
-                    true;
-
-
-                show(
-                    "// SENDING APPLICATION..."
-                );
-
-
-                openSubmissionModal(
-                    "loading"
-                );
-
-
-                try {
-
-                    /* ===================================================
-                       FILE ENCODING
-                    =================================================== */
-
-                    let fileData =
-                        "";
-
-
-                    let fileName =
-                        "";
-
-
-                    let mimeType =
-                        "";
-
-
-                    if (file) {
-
-                        fileData =
-                            await fileToBase64(
-                                file
-                            );
-
-
-                        fileName =
-                            file.name;
-
-
-                        mimeType =
-                            file.type;
-
-                    }
-
-
-                    /* ===================================================
-                       PAYLOAD
-                    =================================================== */
-
-                    const payload = {
-
-                        origin:
-                            ALLOWED_ORIGIN,
-
-                        website:
-                            form.elements.website
-                                ?.value ||
-                            "",
-
-                        formStartedAt:
-                            formStartedAt,
-
-                        fullName:
-                            form.elements.fullName
-                                .value
-                                .trim(),
-
-                        prn:
-                            prn,
-
-                        email:
-                            email,
-
-                        contact:
-                            contact,
-
-                        division:
-                            form.elements.division
-                                .value,
-
-                        linkedin:
-                            form.elements.linkedin
-                                .value
-                                .trim(),
-
-                        hasIdea:
-                            form.elements.hasIdea
-                                .value,
-
-                        ideaDetails:
-                            form.elements.ideaDetails
-                                .value
-                                .trim(),
-
-                        whyJoin:
-                            form.elements.whyJoin
-                                .value
-                                .trim(),
-
-                        skills:
-                            form.elements.skills
-                                .value
-                                .trim(),
-
-                        experience:
-                            form.elements.experience
-                                .value
-                                .trim(),
-
-                        preference1:
-                            preference1,
-
-                        preference2:
-                            preference2,
-
-                        preference3:
-                            preference3,
-
-                        committees:
-                            committees,
-
-                        fileData:
-                            fileData,
-
-                        fileName:
-                            fileName,
-
-                        mimeType:
-                            mimeType
-
-                    };
-
-
-                    /* ===================================================
-                       API REQUEST
-                    =================================================== */
-
-                    const requestUrl =
-
-                        SCRIPT_URL +
-
-                        "?origin=" +
-
-                        encodeURIComponent(
-                            ALLOWED_ORIGIN
-                        );
-
-
-                    const apiResponse =
-                        await fetch(
-                            requestUrl,
-                            {
-
-                                method:
-                                    "POST",
-
-                                headers: {
-
-                                    "Content-Type":
-                                        "text/plain;charset=utf-8"
-
-                                },
-
-                                body:
-                                    JSON.stringify(
-                                        payload
-                                    )
-
-                            }
-                        );
-
-
-                    if (
-                        !apiResponse.ok
-                    ) {
-
-                        throw new Error(
-                            "NETWORK_ERROR"
-                        );
-
-                    }
-
-
-                    const result =
-                        await apiResponse.json();
-
-
-                    /* ===================================================
-                       DUPLICATE APPLICATION
-                    =================================================== */
-
-                    if (
-                        !result.ok &&
-                        result.error ===
-                        "APPLICATION_ALREADY_EXISTS"
-                    ) {
-
-                        show(
-
-                            "// APPLICATION ALREADY RECEIVED.",
-
-                            "success"
-
-                        );
-
-
-                        openSubmissionModal("duplicate");
-
-
-                        return;
-
-                    }
-
-
-                    /* ===================================================
-                       OTHER API ERROR
-                    =================================================== */
-
-                    if (
-                        !result.ok
-                    ) {
-
-                        const apiError =
-                            new Error(
-
-                                result.error ||
-                                "SERVER_ERROR"
-
-                            );
-
-
-                        throw apiError;
-
-                    }
-
-
-                    /* ===================================================
-                       SUCCESS
-                    =================================================== */
-
-                    show(
-
-                        "// APPLICATION RECEIVED. SEE YOU ON THE OTHER SIDE.",
-
-                        "success"
-
-                    );
-
-
-                    openSubmissionModal(
-                "success",
-                {
-                    message: result.emailAccepted === false
-                        ? "We've received your application. The confirmation email could not be queued, but your application is safely recorded."
-                        : "We've received your application. Check your Associates inbox for the confirmation mail."
-                }
-            );
-
-
-                    form.reset();
-
-
-                    formStartedAt =
-                        Date.now();
-
-
-                    document
-                        .querySelectorAll(
-                            "[data-maxwords]"
-                        )
-                        .forEach(field => {
-
-                            const counter =
-                                field.nextElementSibling;
-
-
-                            if (
-                                counter &&
-                                counter.classList.contains(
-                                    "word-count"
-                                )
-                            ) {
-
-                                counter.textContent =
-                                    `0 / ${field.dataset.maxwords} words`;
-
-                            }
-
-                        });
-
-
-                } catch (error) {
-
-                    /* ===================================================
-                       ACTUAL ERRORS
-                    =================================================== */
-
-                    const known = {
-
-                        INVALID_FILE_TYPE:
-                            "// FILE TYPE NOT ALLOWED.",
-
-                        FILE_TOO_LARGE:
-                            "// FILE IS LARGER THAN 5 MB.",
-
-                        INVALID_FILE_DATA:
-                            "// FILE COULD NOT BE PROCESSED.",
-
-                        INVALID_PRN:
-                            "// ENTER A VALID JUNIOR BATCH PRN.",
-
-                        INVALID_EMAIL:
-                            "// USE YOUR @ASSOCIATES.SCIT.EDU EMAIL ID.",
-
-                        INVALID_CONTACT:
-                            "// ENTER A VALID 10 DIGIT CONTACT NUMBER.",
-
-                        INVALID_DOMAIN_PREFERENCES:
-                            "// SELECT YOUR REQUIRED DOMAIN PREFERENCES.",
-
-                        DOMAIN_PREFERENCES_MUST_BE_DIFFERENT:
-                            "// DOMAIN PREFERENCES MUST BE DIFFERENT.",
-
-                        ORIGIN_NOT_ALLOWED:
-                            "// THIS FORM CAN ONLY BE SUBMITTED FROM THE iTELF WEBSITE.",
-
-                        BOT_DETECTED:
-                            "// SUBMISSION COULD NOT BE VERIFIED.",
-
-                        INVALID_SUBMISSION_TIME:
-                            "// SUBMISSION COULD NOT BE VERIFIED.",
-
-                        NETWORK_ERROR:
-                            "// NETWORK ERROR. CHECK YOUR CONNECTION AND TRY AGAIN.",
-
-                        SERVER_ERROR:
-                            "// SERVER ERROR. YOUR APPLICATION WAS NOT CONFIRMED."
-
-                    };
-
-
-                    const errorMessage =
-
-                        known[error.message] ||
-
-                        "// SOMETHING BROKE. YOUR APPLICATION WAS NOT CONFIRMED. PLEASE TRY AGAIN.";
-
-
-                    show(
-
-                        errorMessage,
-
-                        "error"
-
-                    );
-
-
-                    openSubmissionModal(
-
-                        "error",
-
-                        {
-
-                            message:
-                                errorMessage.replace(
-                                    /^\/\/\s*/,
-                                    ""
-                                )
-
-                        }
-
-                    );
-
-
-                } finally {
-
-                    btn.disabled =
-                        false;
-
-                }
-
-            }
-        );
-    </script>
-
-</body>
-
-</html>
+                    <!-- CLO
