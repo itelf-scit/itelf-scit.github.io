@@ -1,929 +1,267 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iTELF — SCIT Pune Entrepreneurship Cell</title>
-  <meta name="description"
-    content="iTELF is SCIT Pune's entrepreneurship cell. Placeholder description — replace with official copy.">
-
-  <!-- =========================================================
-     FONTS
-     Display: Space Grotesk / Body: Inter / Mono: JetBrains Mono
-========================================================== -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="./src/images/browser-icon.svg" type="image/svg+xml">
-  <link rel="icon" href="/src/images/browser-icon.png" type="image/png">
-
-</head>
-
-<body>
-
-  <!-- =========================================================
-     NAV
-     EDITABLE: nav links, brand mark
-========================================================== -->
-  <header class="site-nav">
-    <div class="nav-inner">
-      <a href="#top" class="nav-brand" aria-label="iTELF Home">
-        <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/iTELF-logo.png"
-          alt="iTELF Logo" class="nav-logo">
-      </a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav-links" id="navMenu">
-        <a href="#about">About</a>
-        <a href="#initiatives">What We Conduct</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#domains">Domains</a>
-        <a href="#join" class="nav-cta">Join</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top">
-
-    <!-- =========================================================
-       HERO
-       EDITABLE: HERO COPY — headline + subhead + CTA label
-       The Board (signature element) is markup further down this block.
-  ========================================================== -->
-    <section class="hero">
-      <div class="hero-inner">
-
-        <div class="hero-copy">
-          <!-- EDITABLE: HERO HEADLINE -->
-          <h1 class="hero-headline">
-            We make<br>
-            “What if?”<br>
-            look <span class="hero-punch">inevitable.</span>
-          </h1>
-          <!-- EDITABLE: HERO SUBHEAD -->
-          <p class="hero-subhead">
-            There is always a moment before something remarkable exists — when it's nothing more than a wild question,
-            a rough sketch, or an idea nobody quite understands yet.
-            <span class="hero-subhead-punch">
-              That's the moment we live for. The rest? We make inevitable.
-            </span>
-          </p>
-          <!-- EDITABLE: HERO CTA LABEL -->
-          <a href="#about" class="btn-primary">Explore iTELF <span aria-hidden="true">→</span></a>
-        </div>
-
-        <!-- =========================================================
-           SIGNATURE ELEMENT: THE BOARD
-           EDITABLE: card text (id="board-card-*"), keep tags short.
-           These are DEMO / PLACEHOLDER notes, not real iTELF activities.
-           Threads (SVG paths) are decorative and connect card pairs.
-      ========================================================== -->
-        <div class="board-neon-frame">
-          <div class="board" id="board" aria-hidden="true">
-            <svg class="board-threads" viewBox="0 0 560 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="thread" data-pair="1-2" d="M120,90 C200,60 260,140 300,150" />
-              <path class="thread" data-pair="2-3" d="M300,150 C340,220 260,260 210,300" />
-              <path class="thread" data-pair="1-4" d="M120,90 C80,180 120,260 150,340" />
-              <path class="thread" data-pair="3-4" d="M210,300 C200,330 180,340 150,340" />
-              <path class="thread" data-pair="4-5" d="M150,340 C220,380 320,370 380,330" />
-              <path class="thread" data-pair="2-5" d="M300,150 C360,200 400,260 380,330" />
-            </svg>
-
-            <!-- PLACEHOLDER card copy — swap for real founder notes / prompts if desired -->
-            <div class="board-card note-white" data-card="1" style="--rot: -4deg; top: 18%; left: 2%;">
-              <span class="card-pin"></span>
-              <p id="board-card-1">
-                what if<br>
-                we actually<br>
-                did this?
-              </p>
-              <span class="card-tag">// thought-01</span>
-            </div>
-
-            <div class="board-card note-yellow" data-card="2" style="--rot: 3deg; top: 10%; left: 45%;">
-              <span class="card-pin"></span>
-              <p id="board-card-2">
-                okay.<br><br>
-                hear me<br>
-                out.
-              </p>
-              <span class="card-tag">// spark-02</span>
-            </div>
-
-            <div class="board-card note-white" data-card="3" style="--rot: -2deg; top: 44%; left: 30%;">
-              <span class="card-pin"></span>
-              <p id="board-card-3">
-                this is<br>
-                getting a little<br>
-                too real.
-              </p>
-              <span class="card-tag">// build-03</span>
-            </div>
-
-            <div class="board-card note-pink" data-card="4" style="--rot: 5deg; top: 65%; left: 4%;">
-              <span class="card-pin"></span>
-              <p id="board-card-4">
-                wait—<br><br>
-                people are<br>
-                actually coming.
-              </p>
-              <span class="card-tag">// moment-04</span>
-            </div>
-
-            <div class="board-card note-yellow" data-card="5" style="--rot: -3deg; top: 62%; left: 54%;">
-              <span class="card-pin"></span>
-              <p id="board-card-5">
-                look at that.<br><br>
-                we made<br>
-                it happen.
-              </p>
-              <span class="card-tag">// inevitable-05</span>
-            </div>
-          </div>
-        </div>
-        <!-- END SIGNATURE ELEMENT -->
-
-      </div>
-    </section>
-
-    <!-- =========================================================
-       ABOUT ITELF
-       EDITABLE: ABOUT COPY — manifesto-style paragraph
-  ========================================================== -->
-    <section class="about" id="about">
-      <div class="section-inner about-simple">
-
-        <span class="eyebrow">// About iTELF</span>
-
-        <p class="about-manifesto">
-          Entrepreneurship begins
-          <span class="pink-text">long before a company does.</span>
-
-          It begins with <span class="yellow-text">curiosity</span> —
-          the courage to question what exists and the drive to
-          <span class="cyan-text">imagine what could.</span>
-
-          At <strong>iTELF</strong>, we bring together ideas, people and
-          perspectives through experiences that inspire conversations,
-          challenge thinking and encourage students to
-          <span class="underline-text">create something of their own.</span>
-        </p>
-
-      </div>
-    </section>
-    <!-- =========================================================
-       INITIATIVES / EVENTS
-       EDITABLE: INITIATIVE / EVENT ENTRIES
-       ⚠️ Cards below are structural PLACEHOLDERS ("Initiative 01" etc.)
-       Do not treat as real iTELF events until confirmed and replaced.
-  ========================================================== -->
-    <section class="initiatives merged-initiatives" id="initiatives">
-      <div class="section-inner">
-
-        <div class="initiatives-intro">
-          <span class="eyebrow">// what we conduct</span>
-
-          <h2 class="initiatives-heading">
-            Three distinct platforms.<br>
-            <span>One committee behind them.</span>
-          </h2>
-
-          <p class="initiatives-lead">
-            Ideas, people and execution come together differently every time.
-            These are the spaces where we make it happen.
-          </p>
-        </div>
-
-        <div class="initiative-strip">
-
-          <!-- SPROUTIT -->
-          <article class="init-card init-sprout">
-
-            <span class="initiative-line">
-              // 01 · entrepreneurship
-            </span>
-
-            <h3>SPROUT'IT</h3>
-
-            <p>
-              Plan and execute an entrepreneurship fest where ideas, innovation
-              and business come together. Build real experience in leadership,
-              event management and stakeholder coordination while creating
-              memorable entrepreneurial experiences.
-            </p>
-
-            <a href="https://sproutit.scit.edu/" target="_blank" rel="noopener noreferrer" class="initiative-link">
-              VISIT WEBSITE ↗
-            </a>
-
-            <span class="initiative-tag">
-              IDEAS → CONVERSATIONS → ACTION
-            </span>
-
-          </article>
-
-
-          <!-- STREAMS -->
-          <article class="init-card init-streams">
-
-            <span class="initiative-line">
-              // 02 · conversations
-            </span>
-
-            <h3>STREAMS</h3>
-
-            <p>
-              Get a front-row seat to how founders and industry leaders think.
-              Help shape their stories, drive meaningful conversations and connect
-              with the people shaping business today.
-            </p>
-
-            <span class="initiative-tag">
-              LISTEN → QUESTION → LEARN
-            </span>
-
-          </article>
-
-
-          <!-- TEDxSIUHINJEWADI -->
-          <!-- TEDX -->
-          <article class="init-card init-tedx">
-
-            <span class="initiative-line">
-              // 03 · ideas worth spreading
-            </span>
-
-            <h3>TEDxSIUHinjewadi</h3>
-
-            <p>
-              Transform powerful ideas into an unforgettable TEDx experience.
-              From shaping speaker journeys to executing every detail behind the
-              scenes, create an impact that lasts beyond the stage.
-            </p>
-
-            <a href="https://tedxsiuhinjewadi.scit.edu/" target="_blank" rel="noopener noreferrer"
-              class="initiative-link">
-              VISIT TEDxSIUHinjewadi ↗
-            </a>
-
-            <span class="initiative-tag">
-              IDEAS → STORIES → IMPACT
-            </span>
-
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========================================================
-     MOMENTS / PHOTO GALLERY
-========================================================= -->
-
-    <section class="gallery" id="gallery">
-
-      <div class="section-inner">
-
-        <span class="eyebrow">
-          // moments from the board
-        </span>
-
-        <h2 class="section-display">
-          Ideas happened.<br>
-          People showed up.<br>
-          Things got built.
-        </h2>
-
-
-        <div class="gallery-grid">
-
-          <!-- SPROUTIT / 01 -->
-
-          <figure class="gallery-tile gallery-sprout-main">
-
-            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/SproutIT_1.jpg"
-              alt="SproutIT event" loading="lazy">
-
-            <figcaption>
-              SPROUTIT / 01
-            </figcaption>
-
-          </figure>
-
-
-          <!-- SPROUTIT / 02 -->
-
-          <figure class="gallery-tile gallery-sprout-group">
-
-            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/SproutIT_2.jpg"
-              alt="SproutIT group photograph" loading="lazy">
-
-            <figcaption>
-              SPROUTIT / 02
-            </figcaption>
-
-          </figure>
-
-
-          <!-- STREAMS / 01 -->
-
-          <figure class="gallery-tile gallery-streams-group">
-
-            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/streams_1.jpg"
-              alt="Streams event" loading="lazy">
-
-            <figcaption>
-              STREAMS / 01
-            </figcaption>
-
-          </figure>
-
-
-          <!-- STREAMS / 02 -->
-
-          <figure class="gallery-tile gallery-streams-feature">
-
-            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/streams_2.jpg"
-              alt="Streams by iTELF" loading="lazy">
-
-            <figcaption>
-              STREAMS / 02
-            </figcaption>
-
-          </figure>
-
-
-          <!-- TEDX / 01 -->
-
-          <figure class="gallery-tile gallery-tedx-installation">
-
-            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/tedx_1.jpg"
-              alt="TEDx SIU Hinjewadi installation" loading="lazy">
-
-            <figcaption>
-              TEDX / 01
-            </figcaption>
-
-          </figure>
-
-
-          <!-- TEDX / 02 -->
-
-          <figure class="gallery-tile gallery-tedx-team">
-
-            <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/gallery/tedx_2.jpeg"
-              alt="TEDx SIU Hinjewadi team" loading="lazy">
-
-            <figcaption>
-              TEDX / 02
-            </figcaption>
-
-          </figure>
-
-        </div>
-
-
-        <p class="gallery-note">
-          // a few frames from ideas that escaped the board
-        </p>
-
-      </div>
-
-    </section>
-
-    <!-- =========================================================
-        DOMAINS / TEAMS
-    ========================================================= -->
-
-    <section class="domains domain-directory" id="domains">
-      <div class="section-inner">
-
-        <div class="domain-intro">
-
-          <span class="eyebrow">// find your place</span>
-
-          <h2 class="domain-heading">
-            Find your domain.<br>
-            <span>Then make it yours.</span>
-          </h2>
-
-          <p class="domain-lead">
-            Different skills. Different interests. Different ways to make an impact.
-            Explore the teams behind iTELF and find the work that pulls you in.
-          </p>
-
-        </div>
-
-
-        <div class="domain-list">
-
-
-          <!-- SPONSORSHIP -->
-
-          <article class="domain-row" style="--domain-accent: #00d9ff;">
-
-            <button class="domain-trigger" type="button">
-
-              <span class="domain-number">01</span>
-
-              <span class="domain-name">
-                SPONSORSHIP
-              </span>
-
-              <span class="domain-hook">
-                FACE THE WORLD.
-              </span>
-
-              <span class="domain-arrow">↗</span>
-
-            </button>
-
-            <div class="domain-details">
-
-              <div class="domain-details-inner">
-
-                <p>
-                  Sponsorship is where you become the face of the committee
-                  to the outside world. You'll interact with real clients,
-                  sharpen your marketing and persuasion skills, and apply your
-                  MBA learnings in a live, high-impact setting — no textbooks,
-                  just real experience.
-                </p>
-
-                <div class="domain-skills">
-                  <span>CLIENT RELATIONS</span>
-                  <span>PERSUASION</span>
-                  <span>MARKETING</span>
-                  <span>NEGOTIATION</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </article>
-
-          <!-- CREATIVES -->
-
-          <article class="domain-row" style="--domain-accent: #ff3b70;">
-
-            <button class="domain-trigger" type="button">
-
-              <span class="domain-number">02</span>
-
-              <span class="domain-name">
-                CREATIVES
-              </span>
-
-              <span class="domain-hook">
-                MAKE IT SEEN.
-              </span>
-
-              <span class="domain-arrow">↗</span>
-
-            </button>
-
-            <div class="domain-details">
-
-              <div class="domain-details-inner">
-
-                <p>
-                  Design creative visuals, event materials and turn ideas into
-                  something people can actually see. Learn to collaborate,
-                  divide responsibilities, manage deadlines and confidently solve
-                  the last-minute creative challenges that come with live events.
-                </p>
-
-                <div class="domain-skills">
-                  <span>DESIGN</span>
-                  <span>VISUAL THINKING</span>
-                  <span>COLLABORATION</span>
-                  <span>CREATIVE PROBLEM SOLVING</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- PR -->
-
-          <article class="domain-row" style="--domain-accent: #ff8a3d;">
-
-            <button class="domain-trigger" type="button">
-
-              <span class="domain-number">03</span>
-
-              <span class="domain-name">
-                PR
-              </span>
-
-              <span class="domain-hook">
-                MAKE THEM CARE.
-              </span>
-
-              <span class="domain-arrow">↗</span>
-
-            </button>
-
-            <div class="domain-details">
-
-              <div class="domain-details-inner">
-
-                <p>
-                  Be the voice behind the brand. From crafting high-impact
-                  campaigns and creating buzz to managing digital outreach and
-                  audience engagement, gain hands-on experience in branding,
-                  marketing strategy, storytelling and event publicity.
-                </p>
-
-                <div class="domain-skills">
-                  <span>BRANDING</span>
-                  <span>CAMPAIGNS</span>
-                  <span>STORYTELLING</span>
-                  <span>AUDIENCE ENGAGEMENT</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </article>
-
-          <!-- PERFORMERS -->
-
-          <article class="domain-row" style="--domain-accent: #b36cff;">
-
-            <button class="domain-trigger" type="button">
-
-              <span class="domain-number">04</span>
-
-              <span class="domain-name">
-                PERFORMERS
-              </span>
-
-              <span class="domain-hook">
-                OWN THE MOMENT.
-              </span>
-
-              <span class="domain-arrow">↗</span>
-
-            </button>
-
-            <div class="domain-details">
-
-              <div class="domain-details-inner">
-
-                <p>
-                  Be the force behind performances that captivate the audience
-                  and elevate the TEDx stage. Work closely with artists from
-                  onboarding to showtime while gaining hands-on experience in
-                  artist relations, coordination and live event management.
-                </p>
-
-                <div class="domain-skills">
-                  <span>ARTIST RELATIONS</span>
-                  <span>COORDINATION</span>
-                  <span>LIVE EVENTS</span>
-                  <span>STAGE MANAGEMENT</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </article>
-
-          <!-- SPEAKERS & INVESTORS -->
-
-          <article class="domain-row" style="--domain-accent: #ff3b70;">
-
-            <button class="domain-trigger" type="button">
-
-              <span class="domain-number">05</span>
-
-              <span class="domain-name">
-                SPEAKERS & INVESTORS
-              </span>
-
-              <span class="domain-hook">
-                BRING MINDS TOGETHER.
-              </span>
-
-              <span class="domain-arrow">↗</span>
-
-            </button>
-
-            <div class="domain-details">
-
-              <div class="domain-details-inner">
-
-                <p>
-                  Curate impactful speakers for SproutIT and TEDx while connecting
-                  promising startups and collaborating with investors at Biznovator.
-                  Build meaningful networks through outreach and create experiences
-                  that connect students with industry leaders and investors.
-                </p>
-
-                <div class="domain-skills">
-                  <span>NETWORKING</span>
-                  <span>OUTREACH</span>
-                  <span>SPEAKER RELATIONS</span>
-                  <span>INVESTOR CONNECT</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- EVENTS -->
-
-          <article class="domain-row" style="--domain-accent: #e8ff47;">
-
-            <button class="domain-trigger" type="button">
-
-              <span class="domain-number">06</span>
-
-              <span class="domain-name">
-                EVENTS
-              </span>
-
-              <span class="domain-hook">
-                MAKE IT HAPPEN.
-              </span>
-
-              <span class="domain-arrow">↗</span>
-
-            </button>
-
-            <div class="domain-details">
-
-              <div class="domain-details-inner">
-
-                <p>
-                  Design, plan and execute entrepreneurial events that challenge
-                  participants through innovation, strategy and teamwork. Build
-                  leadership and event management skills while turning competition
-                  concepts into experiences people remember.
-                </p>
-
-                <div class="domain-skills">
-                  <span>EVENT DESIGN</span>
-                  <span>PLANNING</span>
-                  <span>EXECUTION</span>
-                  <span>LEADERSHIP</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- WEB N MEDIA -->
-
-          <article class="domain-row domain-featured" style="--domain-accent: #3355ff;">
-
-            <button class="domain-trigger" type="button">
-
-              <span class="domain-number">07</span>
-
-              <span class="domain-name">
-                WEB N MEDIA
-              </span>
-
-              <span class="domain-hook">
-                BUILD THE DIGITAL WORLD.
-              </span>
-
-              <span class="domain-arrow">↗</span>
-
-            </button>
-
-            <div class="domain-details">
-
-              <div class="domain-details-inner">
-
-                <p>
-                  Be the creative powerhouse behind our digital presence and
-                  visual identity. Design graphics, edit cinematic videos, create
-                  animations, develop websites and shape social media, photography
-                  and content strategy. Turn ideas into compelling digital
-                  experiences through real projects that leave a lasting impact.
-                </p>
-
-                <div class="domain-skills">
-                  <span>WEB DEVELOPMENT</span>
-                  <span>UI / UX</span>
-                  <span>MOTION GRAPHICS</span>
-                  <span>VIDEO EDITING</span>
-                  <span>PHOTOGRAPHY</span>
-                  <span>DIGITAL MARKETING</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- JOIN CTA -->
-    <section class="join join-cta-section" id="join">
-
-      <div class="section-inner join-cta-inner">
-
-        <div class="join-top">
-          <span class="eyebrow">// your move</span>
-
-          <span class="join-status">
-            DIFFERENT DOMAINS · ONE DECISION
-          </span>
-        </div>
-
-        <div class="join-main">
-
-          <h2 class="join-heading">
-            You've seen<br>
-            what <span>we build.</span>
-          </h2>
-
-          <p class="join-question">
-            Now tell us —
-            <em>what will you build?</em>
-          </p>
-
-        </div>
-
-        <div class="join-action">
-
-          <a href="apply.html" class="join-now">
-            <span class="join-button-text">JOIN iTELF</span>
-
-            <span class="join-button-arrow" aria-hidden="true">
-              →
-            </span>
-          </a>
-
-          <p class="join-note">
-            // no perfect résumé required. curiosity helps.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- =========================================================
-     FOOTER
-     EDITABLE: SOCIAL LINKS, footer copy
-========================================================== -->
-  <footer class="site-footer">
-
-    <div class="section-inner footer-inner">
-
-      <div class="footer-brand">
-
-        <a href="#top" class="footer-logo-link" aria-label="iTELF Home">
-          <img src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/iTELF-logo.png"
-            alt="iTELF Logo" class="footer-logo">
-        </a>
-
-        <p class="footer-line">
-          Ideas start messy.<br>
-          <span>We like them that way.</span>
-        </p>
-
-      </div>
-
-
-      <div class="footer-connect">
-
-        <span class="footer-label">// find us</span>
-
-        <nav class="social-links" aria-label="Social links">
-
-          <a href="https://www.instagram.com/itelf_scit/" target="_blank" rel="noopener">
-            <span>Instagram</span>
-            <span aria-hidden="true">↗</span>
-          </a>
-
-          <a href="https://www.linkedin.com/in/itelf-ecell/" target="_blank" rel="noopener">
-            <span>LinkedIn</span>
-            <span aria-hidden="true">↗</span>
-          </a>
-
-          <a href="https://www.youtube.com/channel/UCG69_r6JnSfI3N-91Efz_Dg" target="_blank" rel="noopener noreferrer">
-            <span>YouTube</span>
-            <span aria-hidden="true">↗</span>
-          </a>
-
-        </nav>
-
-      </div>
-
-    </div>
-
-
-    <div class="section-inner footer-bottom">
-
-      <span>
-        iTELF · SCIT PUNE
-      </span>
-
-      <span class="footer-build">
-        BUILT ON “WHAT IF?” &amp; “BRO, FINAL HAI NA?”
-      </span>
-
-      <a href="#" class="footer-top">
-        BACK TO TOP ↑
-      </a>
-
-    </div>
-
-  </footer>
-
-  <script src="script.js"></script>
-
-  <script>
-    const domainData = {
-      events: {
-        title: "EVENTS", lead: "Build the experience — from the first idea to the last person leaving the room.",
-        roles: [
-          ["Event Planning", "Shape event concepts, timelines and the execution plan."],
-          ["Operations", "Coordinate venues, logistics, schedules and on-ground requirements."],
-          ["Speaker & Stakeholder Coordination", "Work with speakers, guests, partners and internal teams."],
-          ["On-ground Execution", "Own the details that turn a plan into a live experience."]
-        ]
-      },
-      web: {
-        title: "WEB DEVELOPMENT", lead: "Build and maintain the digital presence of iTELF and its initiatives.",
-        roles: [
-          ["Frontend Development", "Build responsive event and committee websites using HTML, CSS and JavaScript."],
-          ["UI / UX", "Translate event identities and ideas into clear, usable interfaces."],
-          ["Deployment & Hosting", "Work with Git, GitHub, GitHub Pages, cPanel and deployment workflows."],
-          ["Website Maintenance", "Maintain live websites, fix issues and ship updates when the committee needs them."]
-        ]
-      },
-      design: {
-        title: "DESIGN", lead: "Build the visual language people associate with our events and ideas.",
-        roles: [
-          ["Visual Design", "Create event creatives, campaign assets and communication material."],
-          ["Brand Identity", "Help define the visual direction of initiatives and event themes."],
-          ["Digital Creatives", "Design content for websites, social media and digital campaigns."],
-          ["Event Collateral", "Take visual systems into physical spaces and on-ground experiences."]
-        ]
-      },
-      social: {
-        title: "SOCIAL MEDIA", lead: "Build the conversation before, during and after every initiative.",
-        roles: [
-          ["Content Strategy", "Plan what we say, when we say it and how a campaign unfolds."],
-          ["Copy & Storytelling", "Turn events, speakers and ideas into content people want to read."],
-          ["Platform Management", "Publish, coordinate and maintain the committee's social presence."],
-          ["Campaign Execution", "Work with design and event teams to take campaigns from plan to post."]
-        ]
-      }
-    };
-    const modal = document.getElementById("domainModal");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalLead = document.getElementById("modalLead");
-    const modalContent = document.getElementById("modalContent");
-    document.querySelectorAll(".domain-card").forEach(card => card.addEventListener("click", () => {
-      const data = domainData[card.dataset.domain];
-      modalTitle.textContent = data.title;
-      modalLead.textContent = data.lead;
-      modalContent.innerHTML = data.roles.map(([title, copy]) => `<div class="role-block"><h4>${title}</h4><p>${copy}</p></div>`).join("");
-      modal.classList.add("is-open"); modal.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden";
-    }));
-    function closeDomainModal() { modal.classList.remove("is-open"); modal.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; }
-    document.getElementById("modalClose").addEventListener("click", closeDomainModal);
-    modal.addEventListener("click", e => { if (e.target === modal) closeDomainModal(); });
-    document.addEventListener("keydown", e => { if (e.key === "Escape") closeDomainModal(); });
-  </script>
-
-</body>
-
-</html>
+<!DOCTYPE html><!--AW78PhUc2rLRsDucb8Lpv--><html lang="en" class="__variable_246ccd __variable_c29908 __variable_6b9622"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/22a5144ee8d83bca-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/36966cca54120369-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/7d4881bb7e1bf84d-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/iTELF-logo.png"/><link rel="preload" as="image" href="/scit-feature.jpg"/><link rel="preload" as="image" href="./sproutit-logo.jpeg"/><link rel="preload" as="image" href="./streams-logo.jpg"/><link rel="preload" as="image" href="/tedx-logo.png"/><link rel="stylesheet" href="/_next/static/css/73317f0232bc45be.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/b530f2d182671b20.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-3d9ffdbdaaca7c5d.js"/><script src="/_next/static/chunks/4bd1b696-409494caf8c83275.js" async=""></script><script src="/_next/static/chunks/255-bb522cac0f7adf8c.js" async=""></script><script src="/_next/static/chunks/main-app-240a51e8a9917ce3.js" async=""></script><script src="/_next/static/chunks/53c13509-36d5bb7207c66d18.js" async=""></script><script src="/_next/static/chunks/223-9b9bf513e34d1a5b.js" async=""></script><script src="/_next/static/chunks/239-c9c901f67bc16075.js" async=""></script><script src="/_next/static/chunks/619-1108b4c084a63a2d.js" async=""></script><script src="/_next/static/chunks/234-97aeb90adef45147.js" async=""></script><script src="/_next/static/chunks/77-3d50aca1f23682cf.js" async=""></script><script src="/_next/static/chunks/app/layout-f12606d209bd75f5.js" async=""></script><script src="/_next/static/chunks/630-ab7776196e19012b.js" async=""></script><script src="/_next/static/chunks/app/page-dd3415c883f31047.js" async=""></script><link rel="preload" href="https://challenges.cloudflare.com/turnstile/v0/api.js" as="script"/><meta name="next-size-adjust" content=""/><title>iTELF | SCIT Pune</title><meta name="description" content="Innovation. Leadership. Entrepreneurship. The official Entrepreneurship Cell of Symbiosis Centre for Information Technology, Pune."/><link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16"/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class=" min-h-screen bg-background text-foreground antialiased overflow-x-hidden font-sans "><div hidden=""><!--$--><!--/$--></div><header class="fixed inset-x-0 top-0 z-[999] flex justify-center px-4 pt-[10px]" style="opacity:0;transform:translateY(-60px)"><div class=" relative flex w-full items-center justify-between border border-[var(--nav-border)] bg-[var(--nav-bg)] px-3 sm:px-4 xl:px-5 backdrop-blur-3xl shadow-[0_20px_80px_rgba(0,0,0,.45)] transition-colors duration-500 " style="--nav-accent:#a9c5ff;--nav-accent-soft:rgba(126,155,255,0.16);--nav-glow:rgba(126,155,255,0.28);--nav-border:rgba(169,197,255,0.18);--nav-bg:rgba(6,9,25,0.82);--nav-gradient:linear-gradient(115deg, rgba(139,92,246,0.16), rgba(255,255,255,0.025) 46%, rgba(59,130,246,0.16))"><div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]"><div class="absolute inset-0" style="background:linear-gradient(110deg, rgba(31,29,67,0.98) 0%, rgba(25,31,62,0.98) 52%, rgba(31,52,92,0.98) 100%)"></div><div class="absolute inset-0 opacity-30" style="background:radial-gradient(circle at 18% 50%, rgba(139,92,246,0.18), transparent 32%), radial-gradient(circle at 82% 50%, rgba(59,130,246,0.18), transparent 34%)"></div><div class="absolute inset-x-0 top-0 h-px bg-white/15"></div><div class="absolute inset-x-0 bottom-0 h-px bg-black/45"></div></div><div class="relative z-20 lg:block"><a aria-label="iTELF Home" class="group relative flex items-center gap-3" href="/"><div class="absolute inset-0 rounded-full bg-cyan-400/20 blur-2xl" style="opacity:0"></div><div class="relative z-10 flex items-center gap-1"><img alt="iTELF Logo" width="90" height="90" decoding="async" data-nimg="1" class="h-[4.25rem] w-[4.25rem] object-contain transition-transform duration-300 group-hover:rotate-3" style="color:transparent" src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/iTELF-logo.png"/></div></a></div><div class="relative z-20 hidden lg:block"><nav class="relative flex items-center gap-0.5"><a class=" group/nav relative flex items-center justify-center rounded-full px-2.5 py-2 xl:px-3 " href="/#home"><span class="                absolute
+                inset-0
+                rounded-full
+                border
+                transition-all
+                duration-300
+
+                
+                      border-[var(--nav-border)]
+                      bg-[var(--nav-accent-soft)]
+                      shadow-[inset_0_0_20px_var(--nav-glow)]
+                    
+              "></span><span class="
+                relative
+                z-10
+                whitespace-nowrap
+                text-[10px]
+                font-medium
+                uppercase
+                tracking-[0.09em]
+                transition-colors
+                duration-300
+
+                text-[var(--nav-accent)]
+              ">Home</span><span class=" absolute -bottom-[2px] left-1/2 h-[3px] w-[3px] -translate-x-1/2 rounded-full bg-[var(--nav-accent)] shadow-[0_0_8px_var(--nav-glow)] "></span><span class="
+                absolute
+                bottom-[2px]
+                left-1/2
+                h-px
+                w-0
+                -translate-x-1/2
+                bg-gradient-to-r
+                from-transparent
+                via-[var(--nav-accent)]
+                to-transparent
+                transition-all
+                duration-300
+                group-hover/nav:w-[55%]
+              "></span></a><a class=" group/nav relative flex items-center justify-center rounded-full px-2.5 py-2 xl:px-3 " href="/#scit"><span class="                absolute
+                inset-0
+                rounded-full
+                border
+                transition-all
+                duration-300
+
+                
+                      border-transparent
+                      bg-transparent
+                      group-hover/nav:border-white/[0.06]
+                      group-hover/nav:bg-white/[0.035]
+                    
+              "></span><span class="
+                relative
+                z-10
+                whitespace-nowrap
+                text-[10px]
+                font-medium
+                uppercase
+                tracking-[0.09em]
+                transition-colors
+                duration-300
+
+                text-white/55 group-hover/nav:text-white
+              ">SCIT</span><span class="
+                absolute
+                bottom-[2px]
+                left-1/2
+                h-px
+                w-0
+                -translate-x-1/2
+                bg-gradient-to-r
+                from-transparent
+                via-[var(--nav-accent)]
+                to-transparent
+                transition-all
+                duration-300
+                group-hover/nav:w-[55%]
+              "></span></a><a class=" group/nav relative flex items-center justify-center rounded-full px-2.5 py-2 xl:px-3 " href="/#about"><span class="                absolute
+                inset-0
+                rounded-full
+                border
+                transition-all
+                duration-300
+
+                
+                      border-transparent
+                      bg-transparent
+                      group-hover/nav:border-white/[0.06]
+                      group-hover/nav:bg-white/[0.035]
+                    
+              "></span><span class="
+                relative
+                z-10
+                whitespace-nowrap
+                text-[10px]
+                font-medium
+                uppercase
+                tracking-[0.09em]
+                transition-colors
+                duration-300
+
+                text-white/55 group-hover/nav:text-white
+              ">About</span><span class="
+                absolute
+                bottom-[2px]
+                left-1/2
+                h-px
+                w-0
+                -translate-x-1/2
+                bg-gradient-to-r
+                from-transparent
+                via-[var(--nav-accent)]
+                to-transparent
+                transition-all
+                duration-300
+                group-hover/nav:w-[55%]
+              "></span></a><a class=" group/nav relative flex items-center justify-center rounded-full px-2.5 py-2 xl:px-3 " href="/#events"><span class="                absolute
+                inset-0
+                rounded-full
+                border
+                transition-all
+                duration-300
+
+                
+                      border-transparent
+                      bg-transparent
+                      group-hover/nav:border-white/[0.06]
+                      group-hover/nav:bg-white/[0.035]
+                    
+              "></span><span class="
+                relative
+                z-10
+                whitespace-nowrap
+                text-[10px]
+                font-medium
+                uppercase
+                tracking-[0.09em]
+                transition-colors
+                duration-300
+
+                text-white/55 group-hover/nav:text-white
+              ">Events</span><span class="
+                absolute
+                bottom-[2px]
+                left-1/2
+                h-px
+                w-0
+                -translate-x-1/2
+                bg-gradient-to-r
+                from-transparent
+                via-[var(--nav-accent)]
+                to-transparent
+                transition-all
+                duration-300
+                group-hover/nav:w-[55%]
+              "></span></a><a class=" group/nav relative flex items-center justify-center rounded-full px-2.5 py-2 xl:px-3 " href="/#gallery"><span class="                absolute
+                inset-0
+                rounded-full
+                border
+                transition-all
+                duration-300
+
+                
+                      border-transparent
+                      bg-transparent
+                      group-hover/nav:border-white/[0.06]
+                      group-hover/nav:bg-white/[0.035]
+                    
+              "></span><span class="
+                relative
+                z-10
+                whitespace-nowrap
+                text-[10px]
+                font-medium
+                uppercase
+                tracking-[0.09em]
+                transition-colors
+                duration-300
+
+                text-white/55 group-hover/nav:text-white
+              ">Gallery</span><span class="
+                absolute
+                bottom-[2px]
+                left-1/2
+                h-px
+                w-0
+                -translate-x-1/2
+                bg-gradient-to-r
+                from-transparent
+                via-[var(--nav-accent)]
+                to-transparent
+                transition-all
+                duration-300
+                group-hover/nav:w-[55%]
+              "></span></a><a class=" group/nav relative flex items-center justify-center rounded-full px-2.5 py-2 xl:px-3 " href="/#startup-india"><span class="                absolute
+                inset-0
+                rounded-full
+                border
+                transition-all
+                duration-300
+
+                
+                      border-[#E7B24C]/20
+                      bg-[#E7B24C]/[0.07]
+                      shadow-[inset_0_0_18px_rgba(231,178,76,.05),0_0_18px_rgba(231,178,76,.04)]
+                      group-hover/nav:border-[#E7B24C]/35
+                      group-hover/nav:bg-[#E7B24C]/[0.11]
+                    
+              "></span><span class="
+                relative
+                z-10
+                whitespace-nowrap
+                text-[10px]
+                font-medium
+                uppercase
+                tracking-[0.09em]
+                transition-colors
+                duration-300
+
+                font-semibold text-[#F3C85F] group-hover/nav:text-[#FFE29A]
+              "><span class="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#E7B24C] shadow-[0_0_8px_rgba(231,178,76,.75)]"></span>Startup India</span><span class="
+                absolute
+                bottom-[2px]
+                left-1/2
+                h-px
+                w-0
+                -translate-x-1/2
+                bg-gradient-to-r
+                from-transparent
+                via-[#E7B24C]
+                to-transparent
+                transition-all
+                duration-300
+                group-hover/nav:w-[55%]
+              "></span></a></nav></div><div class="relative z-20 flex shrink-0 items-center gap-3 min-w-fit"><div class="hidden lg:block"><div class="inline-flex" style="transform:none"><a class="group inline-flex min-h-[42px] items-center justify-center rounded-full border-2 border-black/85 bg-white px-5 py-2 text-[12px] font-semibold tracking-[0.01em] text-black shadow-[0_8px_30px_rgba(0,0,0,.18)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--nav-accent)] hover:bg-[var(--nav-accent)] hover:text-black hover:shadow-[0_12px_40px_var(--nav-glow)]" href="#contact">Contact Us</a></div></div><button type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-navigation" class=" flex lg:hidden items-center justify-center w-11 h-11 rounded-xl border border-[var(--nav-border)] bg-white/[0.03] backdrop-blur-xl transition-all duration-300 hover:bg-[var(--nav-accent-soft)] hover:border-[var(--nav-accent)]/40 active:scale-95 text-[var(--nav-accent)] "><span class="flex w-5 flex-col gap-[4px]" style="opacity:0;transform:scale(0.7)"><span class="h-[2px] w-5 rounded-full bg-current"></span><span class="h-[2px] w-5 rounded-full bg-current"></span><span class="h-[2px] w-5 rounded-full bg-current"></span></span></button></div></div></header><main><div class="home-page relative isolate overflow-hidden"><div aria-hidden="true" class="fluid-background fluid-background--light" style="--fluid-image:url(&quot;/images/itelf-fluid-bg.png&quot;)"><div class="fluid-background__image"></div><div class="fluid-background__image fluid-background__image--drift"></div><div class="fluid-background__wash"></div><div class="fluid-background__vignette"></div></div><div class="relative z-10"><section id="home" class="relative min-h-screen scroll-mt-28 overflow-hidden pt-28 sm:pt-32 lg:flex lg:items-center lg:pt-20"><div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden bg-[#030406]"><div aria-hidden="true" class="absolute -inset-[8%] opacity-[0.34]" style="background-image:url(&quot;/itelf-marble-bg.png&quot;);background-size:cover;background-position:center;filter:contrast(1.08) brightness(0.42) saturate(0)"></div><div class="absolute inset-0 bg-[linear-gradient(90deg,#030406_0%,rgba(3,4,6,.96)_24%,rgba(3,4,6,.62)_48%,rgba(3,4,6,.18)_74%,rgba(3,4,6,.5)_100%)]"></div><div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,4,6,.7)_0%,transparent_24%,transparent_76%,#030406_100%)]"></div><div class="absolute inset-0 opacity-50"><svg class="h-full w-full" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="heroLine" x1="0" x2="1"><stop offset="0" stop-color="#60a5fa" stop-opacity="0"></stop><stop offset="0.45" stop-color="#8b5cf6" stop-opacity="0.22"></stop><stop offset="1" stop-color="#60a5fa" stop-opacity="0"></stop></linearGradient></defs><path d="M-80 180 C 220 40, 360 330, 650 185 S 1120 80, 1680 250" fill="none" stroke="url(#heroLine)" stroke-width="1"></path><path d="M-60 610 C 260 470, 430 760, 720 570 S 1220 430, 1660 610" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"></path><path d="M-80 700 C 240 560, 470 820, 780 650 S 1240 530, 1660 700" fill="none" stroke="#60a5fa" stroke-opacity="0.10" stroke-width="1"></path></svg></div><span class="absolute left-[39%] top-[24%] h-1 w-1 rounded-full bg-blue-300/60 shadow-[0_0_14px_rgba(96,165,250,.8)]"></span><span class="absolute right-[12%] top-[28%] h-1.5 w-1.5 rounded-full bg-blue-400/60 shadow-[0_0_18px_rgba(96,165,250,.8)]"></span><span class="absolute right-[29%] bottom-[22%] h-1 w-1 rounded-full bg-violet-300/50 shadow-[0_0_14px_rgba(167,139,250,.7)]"></span><div aria-hidden="true" class="absolute right-[8%] top-[28%] h-[560px] w-[560px] rounded-full bg-blue-500/[0.09] blur-[150px]"></div><div class="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_46%,transparent_0%,transparent_42%,rgba(0,0,0,.38)_78%,rgba(0,0,0,.72)_100%)]"></div><div aria-hidden="true" class="absolute inset-0 opacity-[0.018] mix-blend-soft-light" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; width=&#x27;180&#x27; height=&#x27;180&#x27;%3E%3Cfilter id=&#x27;n&#x27;%3E%3CfeTurbulence type=&#x27;fractalNoise&#x27; baseFrequency=&#x27;0.8&#x27; numOctaves=&#x27;2&#x27; stitchTiles=&#x27;stitch&#x27;/%3E%3C/filter%3E%3Crect width=&#x27;100%25&#x27; height=&#x27;100%25&#x27; filter=&#x27;url(%23n)&#x27;/%3E%3C/svg%3E&quot;)"></div></div><div class="pointer-events-none absolute inset-0"><div class="absolute left-[72%] top-[46%] h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/[0.045] blur-[150px]"></div><div class="absolute left-[54%] top-[16%] h-[260px] w-[360px] rounded-full bg-violet-500/[0.018] blur-[130px]"></div><div class="absolute left-[6%] top-[34%] h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_20px_hsl(var(--primary))]"></div><div class="absolute left-[47%] top-[18%] h-1 w-1 rounded-full bg-violet-400/80 shadow-[0_0_14px_rgba(167,139,250,0.9)]"></div><div class="absolute right-[7%] top-[28%] h-1.5 w-1.5 rounded-full bg-primary/70 shadow-[0_0_20px_hsl(var(--primary))]"></div></div><div class="relative mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-10 px-4 pb-16 sm:px-8 lg:grid-cols-12 lg:gap-6 lg:pb-10"><div class="relative z-20 lg:col-span-7"><div class="mb-7 flex flex-wrap items-center gap-3" style="opacity:0;transform:translateY(8px)"></div><h1 class="max-w-[820px] font-heading text-[2.8rem] font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-6xl lg:text-[4.7rem]" style="opacity:0;transform:translateY(22px)">Ideas don&#x27;t<br class="hidden sm:block"/> change the world.<span class="mt-2 block">People who<!-- --> <span class="relative inline-block"><span class="bg-gradient-to-r from-[#60A5FA] via-[#8B5CF6] to-[#C4B5FD] bg-clip-text text-transparent" style="filter:drop-shadow(0 0 18px rgba(139,92,246,0.18))">build them</span><span class="absolute -bottom-1 left-0 h-px w-full origin-left bg-gradient-to-r from-blue-400 via-violet-500 to-transparent" style="transform:scaleX(0)"></span></span> <!-- -->do.</span></h1><div class="mt-8 max-w-2xl" style="opacity:0;transform:translateY(16px)"><p class="text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">iTELF is the Entrepreneurship Cell of SCIT — where students experiment with ideas, meet people who&#x27;ve built before, and learn what it takes to turn<!-- --> <span class="text-foreground">“what if?”</span> <!-- -->into<!-- --> <span class="font-medium text-foreground">“what&#x27;s next?”</span></p></div><div class="mt-9 flex flex-wrap items-center gap-4" style="opacity:0;transform:translateY(12px)"><div class="inline-flex" style="transform:none"><a class="group relative inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 font-mono text-xs tracking-[0.13em] transition duration-300 bg-primary text-white shadow-[0_12px_40px_rgba(59,130,246,0.25)] hover:-translate-y-0.5 hover:shadow-[0_18px_50px_rgba(59,130,246,0.32)]" href="#about"><span class="flex items-center gap-2">Explore iTELF</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div></div></div><div class="relative min-h-[460px] lg:col-span-5 lg:min-h-[680px]"><div class="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.08] blur-[110px]"></div><div class="pointer-events-none absolute bottom-[12%] left-1/2 h-40 w-[75%] -translate-x-1/2 rounded-full bg-blue-500/[0.08] blur-[80px]"></div><div class="relative z-10 h-full" style="opacity:0;transform:scale(0.96)"><div class="relative h-[460px] w-full sm:h-[540px] lg:h-[680px]" style="-webkit-mask-image:radial-gradient(ellipse 72% 80% at 50% 43%, #000 42%, transparent 97%);mask-image:radial-gradient(ellipse 72% 80% at 50% 43%, #000 42%, transparent 97%);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%"><!--$!--><template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"></template><div class="flex h-full w-full items-center justify-center"><div class="relative flex h-24 w-24 items-center justify-center rounded-[28px] border border-primary/20 bg-primary/[0.06]"><div class="absolute inset-[-24px] animate-spin rounded-full border border-dashed border-primary/20 [animation-duration:8s]"></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket h-7 w-7 animate-pulse text-primary" aria-hidden="true"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"></path><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"></path></svg></div></div><!--/$--></div><div class="absolute bottom-[8%] left-1/2 z-20 -translate-x-1/2" style="opacity:0;transform:translateY(10px)"></div></div></div></div><a href="#about" class="absolute bottom-6 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-2 lg:flex" style="opacity:0"><span class="font-mono text-[8px] uppercase tracking-[0.22em] text-muted-foreground">Discover</span><div class="flex h-8 w-5 justify-center rounded-full border border-border/80 pt-1.5"><div class="h-1 w-1 rounded-full bg-primary"></div></div></a></section><section id="scit" class="relative isolate overflow-hidden bg-[#020304] px-4 py-20 text-white sm:px-8 lg:py-28"><div class="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_10%_25%,rgba(255,20,40,.09),transparent_30%),radial-gradient(circle_at_90%_35%,rgba(20,100,255,.09),transparent_32%)]"></div><div class="mx-auto max-w-[1320px]"><div class="mb-12 lg:mb-16" style="opacity:0;transform:translateY(18px)"><div class="mb-5 flex items-center gap-3"><span class="h-px w-10 bg-red-500"></span><span class="font-mono text-[10px] uppercase tracking-[0.28em] text-white/40">About SCIT</span></div><div class="grid gap-7 lg:grid-cols-[1fr_430px] lg:items-end"><h2 class="font-heading text-5xl font-semibold leading-[0.92] tracking-[-0.06em] sm:text-6xl lg:text-[5.7rem]">Technology.<br/><span class="text-red-400">Management.</span><br/><span class="text-white/80">Innovation.</span></h2><div class="lg:pb-2"><p class="text-sm leading-7 text-white/45 sm:text-[15px]">SCIT’s MBA in Information Technology Business Management (ITBM) is a premier postgraduate programme that brings technology and management together. It is designed to develop techno-managerial professionals who can understand business challenges, work with emerging technologies and turn ideas into practical solutions. With a strong focus on IT, business strategy and industry relevance, the programme prepares students for leadership roles across the evolving technology landscape.</p></div></div></div><div class="grid overflow-hidden rounded-[2rem] border border-white/[0.10] bg-[#07090c] shadow-[0_35px_120px_rgba(0,0,0,.55)] lg:grid-cols-[1.12fr_.88fr]"><div class="group relative min-h-[420px] overflow-hidden lg:min-h-[600px]" style="opacity:0;transform:scale(0.985)"><img src="/scit-feature.jpg" alt="SCIT technology and management visual" class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.035]"/><div class="absolute inset-0 bg-gradient-to-r from-black/65 via-black/20 to-transparent"></div><div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/10"></div><div class="absolute inset-0 bg-gradient-to-br from-red-600/10 via-transparent to-blue-600/15 mix-blend-screen"></div><div class="absolute left-7 top-7 sm:left-9 sm:top-9"><div class="flex items-center gap-3"><span class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/35 text-[10px] font-semibold backdrop-blur-md">S</span><div><p class="font-mono text-[9px] uppercase tracking-[0.25em] text-white/60">SCIT</p><p class="mt-1 text-[10px] text-white/40">Technology · Management</p></div></div></div><div class="absolute bottom-7 left-7 right-7 sm:bottom-9 sm:left-9 sm:right-9"><div class="mb-5 flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-red-400 shadow-[0_0_12px_rgba(255,50,70,.8)]"></span><span class="font-mono text-[9px] uppercase tracking-[0.24em] text-white/50">Institutional identity</span></div><p class="max-w-xl font-heading text-3xl font-medium leading-tight tracking-[-0.035em] sm:text-4xl">Learning that connects<br/>technology with impact.</p></div></div><div class="flex flex-col justify-between border-t border-white/[0.08] p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-12" style="opacity:0;transform:translateX(20px)"><div><div class="flex items-center justify-between"><span class="font-mono text-[9px] uppercase tracking-[0.25em] text-white/30">Our perspective</span><span class="font-mono text-[9px] uppercase tracking-[0.2em] text-blue-300/45">SCIT / 01</span></div><h3 class="mt-9 max-w-lg font-heading text-3xl font-semibold leading-[1.03] tracking-[-0.045em] sm:text-4xl">More than learning<br/><span class="text-white/45">— building capability.</span></h3><p class="mt-7 max-w-xl text-sm leading-7 text-white/45 sm:text-[15px]">SCIT brings technology and management together in an academic environment where learners can develop practical knowledge, broaden their perspective and prepare for the demands of a technology-driven world.</p></div><div class="mt-12"><div class="border-y border-white/[0.08] py-6"><p class="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">Core direction</p><p class="mt-3 max-w-md text-sm leading-6 text-white/65">Connecting people, technology and business thinking to create a stronger foundation for the future.</p></div><a href="https://scit.edu" target="_blank" rel="noopener noreferrer" class="group mt-7 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:text-red-300">Explore SCIT<span class="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-red-400/50 group-hover:bg-red-500/10"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a></div></div></div><div class="mt-10 overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-white/[0.018]" style="opacity:0;transform:translateY(18px)"><div class="flex flex-col gap-2 border-b border-white/[0.07] px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8"><span class="font-mono text-[9px] uppercase tracking-[0.25em] text-white/30">What defines the ecosystem</span><span class="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">Four connected dimensions</span></div><div class="grid sm:grid-cols-2 lg:grid-cols-4"><div class="group relative p-6 sm:p-7 "><div class="mb-8 flex items-center justify-between"><span class="flex h-9 w-9 items-center justify-center rounded-full border border-red-400/30 bg-red-500/[0.06] text-red-300"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-network" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path></svg></span><span class="font-mono text-[9px] tracking-[0.18em] text-white/20">01</span></div><h4 class="font-heading text-xl font-semibold tracking-[-0.03em] text-white/85">Technology</h4><p class="mt-3 max-w-[240px] text-[11px] leading-5 text-white/35">Building the technical perspective needed to understand and respond to a changing digital world.</p><div class="absolute bottom-0 left-6 right-6 h-px origin-left scale-x-0 bg-gradient-to-r from-red-400 to-blue-400 transition-transform duration-500 group-hover:scale-x-100 sm:left-7 sm:right-7"></div></div><div class="group relative p-6 sm:p-7 border-t border-white/[0.07] sm:border-l sm:border-t-0"><div class="mb-8 flex items-center justify-between"><span class="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.025] text-white/45"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase-business" aria-hidden="true"><path d="M12 12h.01"></path><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path><path d="M22 13a18.15 18.15 0 0 1-20 0"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg></span><span class="font-mono text-[9px] tracking-[0.18em] text-white/20">02</span></div><h4 class="font-heading text-xl font-semibold tracking-[-0.03em] text-white/85">Management</h4><p class="mt-3 max-w-[240px] text-[11px] leading-5 text-white/35">Connecting technology with business thinking, leadership and practical decision-making.</p><div class="absolute bottom-0 left-6 right-6 h-px origin-left scale-x-0 bg-gradient-to-r from-red-400 to-blue-400 transition-transform duration-500 group-hover:scale-x-100 sm:left-7 sm:right-7"></div></div><div class="group relative p-6 sm:p-7 border-t border-white/[0.07] sm:border-l sm:border-t-0"><div class="mb-8 flex items-center justify-between"><span class="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.025] text-white/45"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg></span><span class="font-mono text-[9px] tracking-[0.18em] text-white/20">03</span></div><h4 class="font-heading text-xl font-semibold tracking-[-0.03em] text-white/85">Innovation</h4><p class="mt-3 max-w-[240px] text-[11px] leading-5 text-white/35">Encouraging curiosity, experimentation and ideas that can create meaningful impact.</p><div class="absolute bottom-0 left-6 right-6 h-px origin-left scale-x-0 bg-gradient-to-r from-red-400 to-blue-400 transition-transform duration-500 group-hover:scale-x-100 sm:left-7 sm:right-7"></div></div><div class="group relative p-6 sm:p-7 border-t border-white/[0.07] sm:border-l sm:border-t-0"><div class="mb-8 flex items-center justify-between"><span class="flex h-9 w-9 items-center justify-center rounded-full border border-blue-400/30 bg-blue-500/[0.06] text-blue-300"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg></span><span class="font-mono text-[9px] tracking-[0.18em] text-white/20">04</span></div><h4 class="font-heading text-xl font-semibold tracking-[-0.03em] text-white/85">People</h4><p class="mt-3 max-w-[240px] text-[11px] leading-5 text-white/35">Developing learners who can collaborate, communicate and contribute beyond the classroom.</p><div class="absolute bottom-0 left-6 right-6 h-px origin-left scale-x-0 bg-gradient-to-r from-red-400 to-blue-400 transition-transform duration-500 group-hover:scale-x-100 sm:left-7 sm:right-7"></div></div></div></div><div class="mt-8 flex flex-col gap-4 border-t border-white/[0.07] pt-6 sm:flex-row sm:items-center sm:justify-between" style="opacity:0"><p class="font-mono text-[9px] uppercase tracking-[0.22em] text-white/25">SCIT · iTELF · Technology · Management · Innovation</p><div class="flex items-center gap-2 text-[9px] uppercase tracking-[0.2em] text-white/25"><span>Two decades+ of IT &amp; management education</span><span class="h-1 w-1 rounded-full bg-blue-400/60"></span><span>Shaping tomorrow</span></div></div></div></section><section id="about" class="relative scroll-mt-28 overflow-hidden px-4 py-24 sm:px-8 lg:py-32"><div class="pointer-events-none absolute inset-0"><div class="absolute left-1/2 top-0 h-[550px] w-[850px] -translate-x-1/2 rounded-full bg-primary/5 blur-[140px]"></div><div class="absolute left-[8%] top-[18%] h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_18px_hsl(var(--primary))]"></div><div class="absolute right-[12%] top-[36%] h-1 w-1 rounded-full bg-primary/70 shadow-[0_0_14px_hsl(var(--primary))]"></div></div><div class="relative mx-auto max-w-[1280px]"><div class="grid gap-10 lg:grid-cols-12 lg:items-end"><div class="lg:col-span-8"><div style="opacity:0;transform:translateY(24px)"><div class="mb-5 flex items-center gap-3"><div class="flex h-8 w-8 items-center justify-center rounded-full border border-primary/20 bg-primary/10"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles h-3.5 w-3.5 text-primary" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg></div><span class="font-mono text-xs tracking-[0.22em] text-primary">About iTELF</span><div class="h-px w-16 bg-gradient-to-r from-primary/50 to-transparent"></div></div></div><div style="opacity:0;transform:translateY(24px)"><h2 class="max-w-4xl font-heading text-4xl font-semibold leading-[1.05] tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl">Where curiosity becomes<span class="relative ml-3 inline-block text-primary">momentum.<span class="absolute -bottom-1 left-0 h-px w-full bg-gradient-to-r from-primary to-transparent"></span></span></h2></div></div><div class="lg:col-span-4" style="opacity:0;transform:translateY(24px)"><p class="max-w-md text-sm leading-7 text-muted-foreground lg:ml-auto">iTELF is SCIT&#x27;s Entrepreneurship Cell — a student-led ecosystem where ambitious ideas meet people, opportunities, and experiences that help turn them into something real.</p></div></div><div class="mt-16 grid gap-6 lg:grid-cols-12"><div class="lg:col-span-5" style="opacity:0;transform:translateY(24px)"><div class="relative flex min-h-[460px] overflow-hidden rounded-[32px] border border-border/70 bg-card/40 p-8 backdrop-blur-xl sm:p-10"><div class="absolute right-0 top-0 h-56 w-56 translate-x-1/3 -translate-y-1/3 rounded-full bg-primary/10 blur-3xl"></div><div class="relative z-10 flex w-full flex-col"><div class="flex items-center justify-between"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-network h-5 w-5 text-primary/70" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path></svg></div><div class="relative my-auto min-h-[250px]"><div class="absolute left-1/2 top-1/2 h-px w-[58%] -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div><div class="absolute left-1/2 top-1/2 h-[64%] w-px -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-transparent via-primary/40 to-transparent"></div><div class="absolute left-1/2 top-1/2 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl"></div><div class="absolute left-1/2 top-[8%] -translate-x-1/2"><div class="group flex cursor-pointer flex-col items-center gap-2"><div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/20 bg-background/80 text-primary backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-primary/50 group-hover:bg-primary/10 group-hover:shadow-[0_0_24px_hsl(var(--primary)/0.22)]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wand-sparkles transition-transform duration-300 group-hover:rotate-6" aria-hidden="true"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"></path><path d="m14 7 3 3"></path><path d="M5 6v4"></path><path d="M19 14v4"></path><path d="M10 2v2"></path><path d="M7 8H3"></path><path d="M21 16h-4"></path><path d="M11 3H9"></path></svg></div><span class="font-mono text-[9px] uppercase tracking-[0.16em] text-muted-foreground transition-colors duration-300 group-hover:text-primary">Imagine</span></div></div><div class="absolute left-[7%] top-1/2 -translate-y-1/2"><div class="group flex cursor-pointer flex-col items-center gap-2"><div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/20 bg-background/80 text-primary backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-primary/50 group-hover:bg-primary/10 group-hover:shadow-[0_0_24px_hsl(var(--primary)/0.22)]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users transition-transform duration-300 group-hover:scale-110" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg></div><span class="font-mono text-[9px] uppercase tracking-[0.16em] text-muted-foreground transition-colors duration-300 group-hover:text-primary">Collaborate</span></div></div><div class="absolute right-[9%] top-1/2 -translate-y-1/2"><div class="group flex cursor-pointer flex-col items-center gap-2"><div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/20 bg-background/80 text-primary backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-primary/50 group-hover:bg-primary/10 group-hover:shadow-[0_0_24px_hsl(var(--primary)/0.22)]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:rotate-[-8deg]" aria-hidden="true"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"></path><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"></path></svg></div><span class="font-mono text-[9px] uppercase tracking-[0.16em] text-muted-foreground transition-colors duration-300 group-hover:text-primary">Launch</span></div></div><div class="absolute left-1/2 bottom-[2%] -translate-x-1/2"><div class="group flex cursor-pointer flex-col items-center gap-2"><div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/20 bg-background/80 text-primary backdrop-blur-xl transition-all duration-300 group-hover:translate-y-1 group-hover:border-primary/50 group-hover:bg-primary/10 group-hover:shadow-[0_0_24px_hsl(var(--primary)/0.22)]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target transition-transform duration-300 group-hover:scale-110" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div><span class="font-mono text-[9px] uppercase tracking-[0.16em] text-muted-foreground transition-colors duration-300 group-hover:text-primary">Impact</span></div></div><div class="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-[28px] border border-primary/30 bg-primary/10 backdrop-blur-xl"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb h-8 w-8 text-primary" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg><span class="mt-1 font-mono text-[8px] uppercase tracking-[0.2em] text-primary/80">Your idea</span></div></div><div><p class="font-mono text-xs tracking-[0.18em] text-primary">SCIT × iTELF</p><h3 class="mt-3 max-w-sm font-heading text-2xl font-semibold leading-tight text-foreground">A launchpad for builders, thinkers, and future founders.</h3><p class="mt-4 max-w-md text-sm leading-6 text-muted-foreground">We bring founders, investors, mentors, and operators onto campus while giving students opportunities to build, organise, experiment, and lead.</p></div></div></div></div><div class="lg:col-span-7"><div class="flex h-full flex-col gap-4"><div class="flex-1" style="opacity:0;transform:translateY(20px)"><div class="group relative h-full overflow-hidden rounded-[26px] border border-border/70 bg-card/35 p-6 transition-all duration-500 hover:border-primary/30 hover:bg-card/60 sm:p-7"><div class="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-primary/0 to-transparent transition-all duration-500 group-hover:via-primary/60"></div><div class="grid gap-5 sm:grid-cols-[72px_1fr_auto] sm:items-center"><div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/15 bg-primary/[0.07] text-primary transition-all duration-500 group-hover:scale-105 group-hover:bg-primary/10"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg></div><div><div class="mb-2 flex items-center gap-3"><span class="font-mono text-[10px] tracking-[0.18em] text-primary/70">01</span><div class="h-px w-7 bg-primary/20"></div></div><h3 class="font-heading text-xl font-semibold text-foreground">Innovation</h3><p class="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Ideas become sharper through workshops, build sprints, rapid experimentation, and feedback from people who&#x27;ve done it before.</p></div></div></div></div><div class="flex-1" style="opacity:0;transform:translateY(20px)"><div class="group relative h-full overflow-hidden rounded-[26px] border border-border/70 bg-card/35 p-6 transition-all duration-500 hover:border-primary/30 hover:bg-card/60 sm:p-7"><div class="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-primary/0 to-transparent transition-all duration-500 group-hover:via-primary/60"></div><div class="grid gap-5 sm:grid-cols-[72px_1fr_auto] sm:items-center"><div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/15 bg-primary/[0.07] text-primary transition-all duration-500 group-hover:scale-105 group-hover:bg-primary/10"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg></div><div><div class="mb-2 flex items-center gap-3"><span class="font-mono text-[10px] tracking-[0.18em] text-primary/70">02</span><div class="h-px w-7 bg-primary/20"></div></div><h3 class="font-heading text-xl font-semibold text-foreground">Leadership</h3><p class="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Students lead domains, teams, and flagship events — gaining ownership and decision-making experience beyond the classroom.</p></div></div></div></div><div class="flex-1" style="opacity:0;transform:translateY(20px)"><div class="group relative h-full overflow-hidden rounded-[26px] border border-border/70 bg-card/35 p-6 transition-all duration-500 hover:border-primary/30 hover:bg-card/60 sm:p-7"><div class="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-primary/0 to-transparent transition-all duration-500 group-hover:via-primary/60"></div><div class="grid gap-5 sm:grid-cols-[72px_1fr_auto] sm:items-center"><div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/15 bg-primary/[0.07] text-primary transition-all duration-500 group-hover:scale-105 group-hover:bg-primary/10"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket" aria-hidden="true"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"></path><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"></path></svg></div><div><div class="mb-2 flex items-center gap-3"><span class="font-mono text-[10px] tracking-[0.18em] text-primary/70">03</span><div class="h-px w-7 bg-primary/20"></div></div><h3 class="font-heading text-xl font-semibold text-foreground">Entrepreneurship</h3><p class="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">From a first pitch to a first customer, we connect aspiring founders with mentors, operators, investors, and startup ecosystems.</p></div></div></div></div></div></div></div><div style="opacity:0;transform:translateY(24px)"><div class="relative mt-6 overflow-hidden rounded-[26px] border border-border/60 bg-card/25 px-6 py-6 sm:px-8"><div class="grid gap-6 sm:grid-cols-3"><div class="relative flex items-center gap-4 sm:justify-center"><span class="font-heading text-2xl font-semibold tracking-tight text-foreground">Build</span><span class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Ideas</span></div><div class="relative flex items-center gap-4 sm:justify-center"><div class="absolute -left-3 hidden h-8 w-px bg-border sm:block"></div><span class="font-heading text-2xl font-semibold tracking-tight text-foreground">Lead</span><span class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Teams</span></div><div class="relative flex items-center gap-4 sm:justify-center"><div class="absolute -left-3 hidden h-8 w-px bg-border sm:block"></div><span class="font-heading text-2xl font-semibold tracking-tight text-foreground">Launch</span><span class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Ventures</span></div></div></div></div></div></section><section id="domains" class="relative overflow-hidden px-4 py-24 sm:px-8 lg:py-32"><div class="pointer-events-none absolute inset-0"><div class="absolute left-1/2 top-1/2 h-[650px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.025] blur-[150px]"></div></div><div class="relative mx-auto max-w-[1280px]"><div class="grid gap-8 lg:grid-cols-12 lg:items-end"><div class="lg:col-span-8"><div style="opacity:0;transform:translateY(24px)"><div class="mb-5 flex items-center gap-3"><span class="font-mono text-[10px] uppercase tracking-[0.22em] text-primary sm:text-xs">Explore the ecosystem</span><div class="h-px w-14 bg-gradient-to-r from-primary/60 to-transparent"></div></div><h2 class="max-w-3xl font-heading text-4xl font-semibold leading-[1.04] tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl">Pick your domain.<span class="block text-muted-foreground">Own your impact.</span></h2></div></div><div class="lg:col-span-4" style="opacity:0;transform:translateY(24px)"><p class="max-w-md text-sm leading-7 text-muted-foreground lg:ml-auto">iTELF runs through four specialized teams. Different skills, different responsibilities — one ecosystem built around making ideas happen.</p></div></div><div class="mt-16 grid grid-cols-1 gap-5 lg:grid-cols-2"><div class="h-full" style="opacity:0;transform:translateY(20px)"><div class="group relative h-full min-h-[420px] overflow-hidden rounded-[30px] border border-border/70 bg-card/30 p-7 transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.12] sm:p-9" style="--domain-accent:34, 211, 238"><div class="pointer-events-none absolute -right-28 -top-28 h-72 w-72 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-[0.16]" style="background:rgb(34, 211, 238)"></div><div class="absolute inset-x-8 top-0 h-px opacity-40" style="background:linear-gradient(
+                        90deg,
+                        transparent,
+                        rgb(34, 211, 238),
+                        transparent
+                      )"></div><div class="pointer-events-none absolute -bottom-28 -right-28 h-72 w-72 rounded-full border border-dashed border-white/[0.06] transition-transform duration-700 group-hover:scale-110"></div><div class="pointer-events-none absolute -bottom-12 -right-12 h-44 w-44 rounded-full border border-white/[0.04]"></div><div class="relative z-10 flex h-full flex-col"><div class="flex items-start justify-between gap-5"><div class="flex h-12 w-12 items-center justify-center rounded-2xl border bg-background/40 backdrop-blur-xl" style="border-color:rgba(34, 211, 238, 0.22);color:rgb(34, 211, 238);background-color:rgba(34, 211, 238, 0.06)"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"></path><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"></path><path d="m21 3 1 11h-2"></path><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path><path d="M3 4h8"></path></svg></div><span class="font-mono text-[10px] tracking-[0.2em]" style="color:rgba(34, 211, 238, 0.7)">DOMAIN / <!-- -->01</span></div><div class="mt-10"><p class="mb-3 font-mono text-[10px] uppercase tracking-[0.2em]" style="color:rgb(34, 211, 238)">Face the world.</p><h3 class="max-w-xl bg-gradient-to-r from-cyan-400 via-cyan-400 to-blue-500 bg-clip-text font-heading text-4xl font-semibold uppercase leading-[0.95] tracking-[-0.04em] text-transparent sm:text-5xl">Sponsorship</h3><p class="mt-6 max-w-xl text-sm leading-7 text-muted-foreground sm:text-[15px]">Become the face of iTELF to the outside world. Work with real brands and partners, sharpen your marketing and persuasion skills, and turn conversations into collaborations.</p></div><div class="mt-auto pt-9"><div class="flex flex-wrap gap-2"><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(34, 211, 238, 0.25);color:rgba(34, 211, 238, 0.9)">Client Relations</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(34, 211, 238, 0.25);color:rgba(34, 211, 238, 0.9)">Marketing</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(34, 211, 238, 0.25);color:rgba(34, 211, 238, 0.9)">Negotiation</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(34, 211, 238, 0.25);color:rgba(34, 211, 238, 0.9)">Persuasion</span></div></div></div></div></div><div class="h-full" style="opacity:0;transform:translateY(20px)"><div class="group relative h-full min-h-[420px] overflow-hidden rounded-[30px] border border-border/70 bg-card/30 p-7 transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.12] sm:p-9" style="--domain-accent:217, 249, 20"><div class="pointer-events-none absolute -right-28 -top-28 h-72 w-72 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-[0.16]" style="background:rgb(217, 249, 20)"></div><div class="absolute inset-x-8 top-0 h-px opacity-40" style="background:linear-gradient(
+                        90deg,
+                        transparent,
+                        rgb(217, 249, 20),
+                        transparent
+                      )"></div><div class="pointer-events-none absolute -bottom-28 -right-28 h-72 w-72 rounded-full border border-dashed border-white/[0.06] transition-transform duration-700 group-hover:scale-110"></div><div class="pointer-events-none absolute -bottom-12 -right-12 h-44 w-44 rounded-full border border-white/[0.04]"></div><div class="relative z-10 flex h-full flex-col"><div class="flex items-start justify-between gap-5"><div class="flex h-12 w-12 items-center justify-center rounded-2xl border bg-background/40 backdrop-blur-xl" style="border-color:rgba(217, 249, 20, 0.22);color:rgb(217, 249, 20);background-color:rgba(217, 249, 20, 0.06)"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days" aria-hidden="true"><path d="M8 2v3"></path><path d="M16 2v3"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path><path d="M8 13h.01"></path><path d="M12 13h.01"></path><path d="M16 13h.01"></path><path d="M8 17h.01"></path><path d="M12 17h.01"></path><path d="M16 17h.01"></path></svg></div><span class="font-mono text-[10px] tracking-[0.2em]" style="color:rgba(217, 249, 20, 0.7)">DOMAIN / <!-- -->02</span></div><div class="mt-10"><p class="mb-3 font-mono text-[10px] uppercase tracking-[0.2em]" style="color:rgb(217, 249, 20)">Make it happen.</p><h3 class="max-w-xl bg-gradient-to-r from-lime-300 via-yellow-300 to-lime-400 bg-clip-text font-heading text-4xl font-semibold uppercase leading-[0.95] tracking-[-0.04em] text-transparent sm:text-5xl">Events</h3><p class="mt-6 max-w-xl text-sm leading-7 text-muted-foreground sm:text-[15px]">Design, plan, and execute entrepreneurial experiences that challenge people to think differently. Turn ambitious concepts into events people remember.</p></div><div class="mt-auto pt-9"><div class="flex flex-wrap gap-2"><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(217, 249, 20, 0.25);color:rgba(217, 249, 20, 0.9)">Event Design</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(217, 249, 20, 0.25);color:rgba(217, 249, 20, 0.9)">Planning</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(217, 249, 20, 0.25);color:rgba(217, 249, 20, 0.9)">Execution</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(217, 249, 20, 0.25);color:rgba(217, 249, 20, 0.9)">Leadership</span></div></div></div></div></div><div class="h-full" style="opacity:0;transform:translateY(20px)"><div class="group relative h-full min-h-[420px] overflow-hidden rounded-[30px] border border-border/70 bg-card/30 p-7 transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.12] sm:p-9" style="--domain-accent:99, 102, 241"><div class="pointer-events-none absolute -right-28 -top-28 h-72 w-72 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-[0.16]" style="background:rgb(99, 102, 241)"></div><div class="absolute inset-x-8 top-0 h-px opacity-40" style="background:linear-gradient(
+                        90deg,
+                        transparent,
+                        rgb(99, 102, 241),
+                        transparent
+                      )"></div><div class="pointer-events-none absolute -bottom-28 -right-28 h-72 w-72 rounded-full border border-dashed border-white/[0.06] transition-transform duration-700 group-hover:scale-110"></div><div class="pointer-events-none absolute -bottom-12 -right-12 h-44 w-44 rounded-full border border-white/[0.04]"></div><div class="relative z-10 flex h-full flex-col"><div class="flex items-start justify-between gap-5"><div class="flex h-12 w-12 items-center justify-center rounded-2xl border bg-background/40 backdrop-blur-xl" style="border-color:rgba(99, 102, 241, 0.22);color:rgb(99, 102, 241);background-color:rgba(99, 102, 241, 0.06)"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-play" aria-hidden="true"><path d="M15.033 9.44a.647.647 0 0 1 0 1.12l-4.065 2.352a.645.645 0 0 1-.968-.56V7.648a.645.645 0 0 1 .967-.56z"></path><path d="M12 17v4"></path><path d="M8 21h8"></path><rect x="2" y="3" width="20" height="14" rx="2"></rect></svg></div><span class="font-mono text-[10px] tracking-[0.2em]" style="color:rgba(99, 102, 241, 0.7)">DOMAIN / <!-- -->03</span></div><div class="mt-10"><p class="mb-3 font-mono text-[10px] uppercase tracking-[0.2em]" style="color:rgb(99, 102, 241)">Build the digital world.</p><h3 class="max-w-xl bg-gradient-to-r from-blue-400 via-indigo-500 to-violet-500 bg-clip-text font-heading text-4xl font-semibold uppercase leading-[0.95] tracking-[-0.04em] text-transparent sm:text-5xl">Web &amp; Media</h3><p class="mt-6 max-w-xl text-sm leading-7 text-muted-foreground sm:text-[15px]">Shape iTELF&#x27;s digital identity through design, technology, storytelling, photography, motion, video, and social media — where creativity meets execution.</p></div><div class="mt-auto pt-9"><div class="flex flex-wrap gap-2"><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(99, 102, 241, 0.25);color:rgba(99, 102, 241, 0.9)">Web Development</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(99, 102, 241, 0.25);color:rgba(99, 102, 241, 0.9)">UI / UX</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(99, 102, 241, 0.25);color:rgba(99, 102, 241, 0.9)">Motion Graphics</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(99, 102, 241, 0.25);color:rgba(99, 102, 241, 0.9)">Video Editing</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(99, 102, 241, 0.25);color:rgba(99, 102, 241, 0.9)">Photography</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(99, 102, 241, 0.25);color:rgba(99, 102, 241, 0.9)">Digital Marketing</span></div></div></div></div></div><div class="h-full" style="opacity:0;transform:translateY(20px)"><div class="group relative h-full min-h-[420px] overflow-hidden rounded-[30px] border border-border/70 bg-card/30 p-7 transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.12] sm:p-9" style="--domain-accent:244, 63, 94"><div class="pointer-events-none absolute -right-28 -top-28 h-72 w-72 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-[0.16]" style="background:rgb(244, 63, 94)"></div><div class="absolute inset-x-8 top-0 h-px opacity-40" style="background:linear-gradient(
+                        90deg,
+                        transparent,
+                        rgb(244, 63, 94),
+                        transparent
+                      )"></div><div class="pointer-events-none absolute -bottom-28 -right-28 h-72 w-72 rounded-full border border-dashed border-white/[0.06] transition-transform duration-700 group-hover:scale-110"></div><div class="pointer-events-none absolute -bottom-12 -right-12 h-44 w-44 rounded-full border border-white/[0.04]"></div><div class="relative z-10 flex h-full flex-col"><div class="flex items-start justify-between gap-5"><div class="flex h-12 w-12 items-center justify-center rounded-2xl border bg-background/40 backdrop-blur-xl" style="border-color:rgba(244, 63, 94, 0.22);color:rgb(244, 63, 94);background-color:rgba(244, 63, 94, 0.06)"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mic-vocal" aria-hidden="true"><path d="m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12"></path><path d="M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5"></path><circle cx="16" cy="7" r="5"></circle></svg></div><span class="font-mono text-[10px] tracking-[0.2em]" style="color:rgba(244, 63, 94, 0.7)">DOMAIN / <!-- -->04</span></div><div class="mt-10"><p class="mb-3 font-mono text-[10px] uppercase tracking-[0.2em]" style="color:rgb(244, 63, 94)">Bring minds together.</p><h3 class="max-w-xl bg-gradient-to-r from-rose-400 via-pink-500 to-fuchsia-500 bg-clip-text font-heading text-4xl font-semibold uppercase leading-[0.95] tracking-[-0.04em] text-transparent sm:text-5xl">Speakers &amp; Investors</h3><p class="mt-6 max-w-xl text-sm leading-7 text-muted-foreground sm:text-[15px]">Connect students with founders, speakers, investors, and industry leaders. Build relationships that bring expertise, opportunities, and new perspectives into the iTELF ecosystem.</p></div><div class="mt-auto pt-9"><div class="flex flex-wrap gap-2"><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(244, 63, 94, 0.25);color:rgba(244, 63, 94, 0.9)">Networking</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(244, 63, 94, 0.25);color:rgba(244, 63, 94, 0.9)">Outreach</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(244, 63, 94, 0.25);color:rgba(244, 63, 94, 0.9)">Speaker Relations</span><span class="border bg-background/20 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.13em] backdrop-blur-md transition-all duration-300" style="border-color:rgba(244, 63, 94, 0.25);color:rgba(244, 63, 94, 0.9)">Investor Connect</span></div></div></div></div></div></div></div></section><section id="events" class="relative scroll-mt-28 overflow-hidden px-4 pb-28 pt-24 sm:px-8 lg:pb-36 lg:pt-32"><div class="pointer-events-none absolute inset-0"><div class="absolute left-[20%] top-[42%] h-[420px] w-[420px] rounded-full bg-cyan-500/[0.04] blur-[130px]"></div><div class="absolute right-[17%] top-[38%] h-[420px] w-[420px] rounded-full bg-yellow-400/[0.035] blur-[140px]"></div></div><div class="relative mx-auto max-w-[1280px]"><div class="grid gap-8 lg:grid-cols-12 lg:items-end"><div class="lg:col-span-8" style="opacity:0;transform:translateY(24px)"><div class="mb-5 flex items-center gap-3"><span class="font-mono text-[10px] uppercase tracking-[0.22em] text-primary sm:text-xs">Flagship initiatives</span><div class="h-px w-14 bg-gradient-to-r from-primary/60 to-transparent"></div></div><h2 class="max-w-4xl font-heading text-4xl font-semibold leading-[1.03] tracking-[-0.04em] text-foreground sm:text-5xl lg:text-6xl">Built to move ideas<span class="block text-muted-foreground">beyond the classroom.</span></h2></div><div class="lg:col-span-4" style="opacity:0;transform:translateY(24px)"><p class="max-w-md text-sm leading-7 text-muted-foreground lg:ml-auto">Two of our flagship initiatives are being prepared for their next chapter. Stay tuned — SproutIT and Streams will be back soon.</p></div></div><div class="mt-16 grid grid-cols-1 gap-5 lg:grid-cols-2"><div class="h-full" style="opacity:0;transform:translateY(20px)"><article class="group relative flex min-h-[520px] h-full flex-col overflow-hidden rounded-[28px] border border-border/70 bg-card/25 p-7 transition-all duration-500 hover:-translate-y-1 sm:p-9" style="--accent:34, 211, 238"><div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden"><img src="./sproutit-logo.jpeg" alt="" class="absolute -right-10 bottom-8 w-[86%] sm:w-[82%] select-none opacity-[0.025] blur-[28px] saturate-150 transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:opacity-[0.05]"/><img src="./sproutit-logo.jpeg" alt="" draggable="false" class="absolute -right-10 bottom-8 w-[86%] sm:w-[82%] select-none object-contain opacity-[0.07] transition-all duration-700 ease-out group-hover:-translate-x-2 group-hover:-translate-y-1 group-hover:scale-[1.025] group-hover:opacity-[0.115]" style="mask-image:linear-gradient(125deg, transparent 0%, black 20%, black 74%, transparent 100%);-webkit-mask-image:linear-gradient(125deg, transparent 0%, black 20%, black 74%, transparent 100%)"/><div class="absolute inset-0 bg-gradient-to-br from-card/20 via-transparent to-background/10"></div><div class="absolute bottom-0 right-0 h-[62%] w-[64%] opacity-[0.045]" style="background-image:linear-gradient(rgba(34, 211, 238, .42) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(34, 211, 238, .42) 1px, transparent 1px);background-size:30px 30px;mask-image:radial-gradient(circle at 80% 82%, black, transparent 70%);-webkit-mask-image:radial-gradient(circle at 80% 82%, black, transparent 70%)"></div></div><div class="pointer-events-none absolute -right-32 -top-32 h-[360px] w-[360px] rounded-full opacity-0 blur-[120px] transition-opacity duration-700 group-hover:opacity-[0.14]" style="background:rgb(34, 211, 238)"></div><div class="absolute inset-x-10 top-0 h-px opacity-50" style="background:linear-gradient(
+                        90deg,
+                        transparent,
+                        rgb(34, 211, 238),
+                        transparent
+                      )"></div><span aria-hidden="true" class="pointer-events-none absolute -right-4 top-10 select-none font-heading text-[11rem] font-bold leading-none tracking-[-0.08em] opacity-[0.018] sm:text-[14rem]">01</span><div class="relative z-10 flex items-start justify-between gap-4"><div class="flex items-center gap-3"><span class="font-mono text-[11px] font-semibold tracking-[0.12em] text-foreground">// <!-- -->01</span><span class="text-border">·</span><span class="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Entrepreneurship</span></div><div class="flex h-10 w-10 items-center justify-center rounded-xl border" style="border-color:rgba(34, 211, 238, 0.22);background-color:rgba(34, 211, 238, 0.06);color:rgb(34, 211, 238)"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sprout" aria-hidden="true"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"></path><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"></path><path d="M5 21h14"></path></svg></div></div><div class="relative z-10 mt-12"><div class="inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.18em]" style="color:rgb(34, 211, 238);border-color:rgba(34, 211, 238, 0.28);background-color:rgba(34, 211, 238, 0.06);box-shadow:0 0 24px rgba(34, 211, 238, 0.08)"><span class="h-1.5 w-1.5 rounded-full" style="background:rgb(34, 211, 238);box-shadow:0 0 10px rgba(34, 211, 238, 0.7)"></span>Coming Soon</div><h3 class="mt-3 font-heading text-4xl font-semibold leading-none tracking-[-0.04em] sm:text-5xl" style="color:rgb(34, 211, 238)">SproutIT</h3><p class="mt-3 font-mono text-[10px] tracking-[0.18em] text-muted-foreground">Coming soon</p></div><div class="relative z-10 mt-8 grid flex-1 gap-7 sm:grid-cols-[1fr_180px]"><div><p class="max-w-md text-sm leading-7 text-muted-foreground sm:text-[15px]">SCIT&#x27;s flagship startup competition, where an idea on a napkin turns into a pitch worth backing. Teams build, iterate, and defend their venture in front of founders and investors.</p></div><div class="relative hidden items-center justify-center sm:flex"><div class="relative flex h-44 w-44 items-center justify-center"><div class="relative flex h-20 w-20 items-center justify-center rounded-[24px] border backdrop-blur-md" style="border-color:rgba(34, 211, 238, 0.25);background-color:rgba(34, 211, 238, 0.06)"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sprout" aria-hidden="true" style="color:rgb(34, 211, 238)"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"></path><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"></path><path d="M5 21h14"></path></svg><span class="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full" style="background:rgb(34, 211, 238);box-shadow:0 0 15px rgba(34, 211, 238, .7)"></span></div></div></div></div><div class="relative z-10 mt-8 border-t border-border/60 pt-6"><div class="flex items-center justify-between gap-4"><p class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-foreground">Returning soon</p><span class="h-1.5 w-1.5 rounded-full" style="background:rgb(34, 211, 238);box-shadow:0 0 15px rgba(34, 211, 238, 0.7)"></span></div></div></article></div><div class="h-full" style="opacity:0;transform:translateY(20px)"><article class="group relative flex min-h-[520px] h-full flex-col overflow-hidden rounded-[28px] border border-border/70 bg-card/25 p-7 transition-all duration-500 hover:-translate-y-1 sm:p-9" style="--accent:250, 204, 21"><div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden"><img src="./streams-logo.jpg" alt="" class="absolute -right-8 bottom-5 w-[78%] sm:w-[74%] select-none opacity-[0.025] blur-[28px] saturate-150 transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:opacity-[0.05]"/><img src="./streams-logo.jpg" alt="" draggable="false" class="absolute -right-8 bottom-5 w-[78%] sm:w-[74%] select-none object-contain opacity-[0.07] transition-all duration-700 ease-out group-hover:-translate-x-2 group-hover:-translate-y-1 group-hover:scale-[1.025] group-hover:opacity-[0.115]" style="mask-image:linear-gradient(125deg, transparent 0%, black 20%, black 74%, transparent 100%);-webkit-mask-image:linear-gradient(125deg, transparent 0%, black 20%, black 74%, transparent 100%)"/><div class="absolute inset-0 bg-gradient-to-br from-card/20 via-transparent to-background/10"></div><div class="absolute bottom-0 right-0 h-[62%] w-[64%] opacity-[0.045]" style="background-image:linear-gradient(rgba(250, 204, 21, .42) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(250, 204, 21, .42) 1px, transparent 1px);background-size:30px 30px;mask-image:radial-gradient(circle at 80% 82%, black, transparent 70%);-webkit-mask-image:radial-gradient(circle at 80% 82%, black, transparent 70%)"></div></div><div class="pointer-events-none absolute -right-32 -top-32 h-[360px] w-[360px] rounded-full opacity-0 blur-[120px] transition-opacity duration-700 group-hover:opacity-[0.14]" style="background:rgb(250, 204, 21)"></div><div class="absolute inset-x-10 top-0 h-px opacity-50" style="background:linear-gradient(
+                        90deg,
+                        transparent,
+                        rgb(250, 204, 21),
+                        transparent
+                      )"></div><span aria-hidden="true" class="pointer-events-none absolute -right-4 top-10 select-none font-heading text-[11rem] font-bold leading-none tracking-[-0.08em] opacity-[0.018] sm:text-[14rem]">02</span><div class="relative z-10 flex items-start justify-between gap-4"><div class="flex items-center gap-3"><span class="font-mono text-[11px] font-semibold tracking-[0.12em] text-foreground">// <!-- -->02</span><span class="text-border">·</span><span class="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Conversations</span></div><div class="flex h-10 w-10 items-center justify-center rounded-xl border" style="border-color:rgba(250, 204, 21, 0.22);background-color:rgba(250, 204, 21, 0.06);color:rgb(250, 204, 21)"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mic-vocal" aria-hidden="true"><path d="m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12"></path><path d="M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5"></path><circle cx="16" cy="7" r="5"></circle></svg></div></div><div class="relative z-10 mt-12"><div class="inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.18em]" style="color:rgb(250, 204, 21);border-color:rgba(250, 204, 21, 0.28);background-color:rgba(250, 204, 21, 0.06);box-shadow:0 0 24px rgba(250, 204, 21, 0.08)"><span class="h-1.5 w-1.5 rounded-full" style="background:rgb(250, 204, 21);box-shadow:0 0 10px rgba(250, 204, 21, 0.7)"></span>Coming Soon</div><h3 class="mt-3 font-heading text-4xl font-semibold leading-none tracking-[-0.04em] sm:text-5xl" style="color:rgb(250, 204, 21)">Streams by iTELF</h3><p class="mt-3 font-mono text-[10px] tracking-[0.18em] text-muted-foreground">Coming soon</p></div><div class="relative z-10 mt-8 grid flex-1 gap-7 sm:grid-cols-[1fr_180px]"><div><p class="max-w-md text-sm leading-7 text-muted-foreground sm:text-[15px]">Conversations with founders, operators, and leaders who talk candidly about the decisions, doubts, and turning points behind their work.</p></div><div class="relative hidden items-center justify-center sm:flex"><div class="relative flex h-44 w-44 items-center justify-center"><div class="absolute flex items-center gap-2 opacity-25"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-audio-lines" aria-hidden="true" style="color:rgb(250, 204, 21)"><path d="M2 10v3"></path><path d="M6 6v11"></path><path d="M10 3v18"></path><path d="M14 8v7"></path><path d="M18 5v13"></path><path d="M22 10v3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-audio-lines" aria-hidden="true" style="color:rgb(250, 204, 21)"><path d="M2 10v3"></path><path d="M6 6v11"></path><path d="M10 3v18"></path><path d="M14 8v7"></path><path d="M18 5v13"></path><path d="M22 10v3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-audio-lines" aria-hidden="true" style="color:rgb(250, 204, 21)"><path d="M2 10v3"></path><path d="M6 6v11"></path><path d="M10 3v18"></path><path d="M14 8v7"></path><path d="M18 5v13"></path><path d="M22 10v3"></path></svg></div><div class="relative flex h-20 w-20 items-center justify-center rounded-full border border-border bg-background/50 backdrop-blur-md"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mic-vocal" aria-hidden="true" style="color:rgb(250, 204, 21)"><path d="m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12"></path><path d="M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5"></path><circle cx="16" cy="7" r="5"></circle></svg></div></div></div></div><div class="relative z-10 mt-8 border-t border-border/60 pt-6"><div class="flex items-center justify-between gap-4"><p class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-foreground">Returning soon</p><span class="h-1.5 w-1.5 rounded-full" style="background:rgb(250, 204, 21);box-shadow:0 0 15px rgba(250, 204, 21, 0.7)"></span></div></div></article></div></div></div></section><section id="tedx" class="relative isolate overflow-hidden bg-[#020202] px-4 py-24 sm:px-8 lg:py-32"><div class="pointer-events-none absolute inset-0 -z-20 bg-[#020202]"></div><div class="relative mx-auto max-w-[1280px]"><div class="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-16"><div class="lg:col-span-5" style="opacity:0;transform:translateY(24px)"><div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-4 py-2"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles text-red-400" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span class="font-mono text-[9px] uppercase tracking-[0.2em] text-white/55 sm:text-[10px]">TEDxSIUHinjewadi</span><span class="h-3 w-px bg-white/15"></span><span class="font-mono text-[9px] uppercase tracking-[0.18em] text-red-400/80 sm:text-[10px]">Ideas worth spreading</span></div><h2 class="mt-8 max-w-2xl font-heading text-[3.35rem] font-semibold leading-[0.9] tracking-[-0.055em] text-white sm:text-7xl lg:text-[5.7rem]">Ideas that refuse<span class="relative mt-2 block text-red-400">to stay quiet.<span class="absolute -bottom-2 left-0 h-px w-[72%] origin-left bg-gradient-to-r from-red-400/90 via-red-500/40 to-transparent" style="transform:scaleX(0)"></span></span></h2><p class="mt-9 max-w-xl text-base leading-8 text-white/65 sm:text-lg">A platform for perspectives that challenge assumptions, stories that stay with you, and conversations capable of changing how a room sees the world.</p><p class="mt-4 max-w-xl text-sm leading-7 text-white/40">From discovering voices worth hearing to shaping speaker journeys and building the experience behind the stage, TEDxSIUHinjewadi brings together ideas, people, and moments designed to leave an impact long after the lights go down.</p><div class="mt-10 flex flex-wrap items-center gap-5"><a href="https://tedxsiuhinjewadi.scit.edu" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#650810] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_55px_rgba(255,0,30,.12)]">Enter the spotlight<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-right transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" aria-hidden="true"><path d="m7 7 10 10"></path><path d="M17 7v10H7"></path></svg></a><div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radio text-red-400" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"></path><path d="M19.075 4.933a10 10 0 0 1 0 14.134"></path><path d="M4.925 19.067a10 10 0 0 1 0-14.134"></path><path d="M7.753 16.239a6 6 0 0 1 0-8.478"></path><circle cx="12" cy="12" r="2"></circle></svg><span class="font-mono text-[9px] uppercase tracking-[0.2em] text-white/35">Ideas / Stories / Impact</span></div></div></div><div id="tedx-spotlight" class="relative lg:col-span-7" style="opacity:0;transform:translateY(18px) scale(0.96)"><div class="pointer-events-none absolute inset-[12%] rounded-full bg-red-600/10 blur-[90px]"></div><div class="relative mx-auto aspect-[1.68] w-full max-w-[760px] overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#050505] shadow-[0_40px_120px_rgba(0,0,0,.65)]"><div class="absolute inset-0 bg-gradient-to-b from-black via-black/20 to-black"></div><div class="absolute inset-x-0 top-[22%] h-[56%] overflow-hidden"><div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,18,42,.2),transparent_68%)]"></div><svg aria-hidden="true" viewBox="0 0 1200 420" preserveAspectRatio="none" class="absolute -inset-x-[8%] inset-y-0 h-full w-[116%]"><defs><linearGradient id="tedxRedWave" x1="0" x2="1"><stop offset="0" stop-color="#ff1636" stop-opacity="0"></stop><stop offset="0.18" stop-color="#ff1636" stop-opacity=".32"></stop><stop offset="0.5" stop-color="#ff1f3d" stop-opacity=".95"></stop><stop offset="0.82" stop-color="#ff1636" stop-opacity=".32"></stop><stop offset="1" stop-color="#ff1636" stop-opacity="0"></stop></linearGradient></defs><path d="M-40 245 C110 70 230 350 390 205 S680 65 850 225 S1050 340 1240 130" fill="none" stroke="url(#tedxRedWave)" stroke-width="5"></path><path d="M-40 285 C130 115 245 385 410 245 S690 110 865 265 S1070 375 1240 170" fill="none" stroke="#ff314d" stroke-opacity=".25" stroke-width="2"></path><path d="M-40 205 C130 35 250 315 405 175 S700 25 870 205 S1080 315 1240 105" fill="none" stroke="#ff6678" stroke-opacity=".16" stroke-width="1.5"></path><path d="M-40 325 C130 170 260 420 430 280 S710 155 890 315 S1070 410 1240 220" fill="none" stroke="#ff233f" stroke-opacity=".12" stroke-width="1"></path></svg></div><div aria-hidden="true" class="absolute inset-0 opacity-[0.22]" style="background-image:linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom, transparent 8%, black 24%, black 76%, transparent 92%);-webkit-mask-image:linear-gradient(to bottom, transparent 8%, black 24%, black 76%, transparent 92%)"></div><span class="absolute left-7 top-7 h-9 w-9 border-l border-t border-white/30"></span><span class="absolute right-7 top-7 h-9 w-9 border-r border-t border-white/30"></span><span class="absolute bottom-7 left-7 h-9 w-9 border-b border-l border-white/30"></span><span class="absolute bottom-7 right-7 h-9 w-9 border-b border-r border-white/30"></span><div class="absolute inset-x-[10%] top-1/2 z-10 flex -translate-y-1/2 items-center justify-center"><img alt="TEDxSIUHinjewadi" width="1000" height="178" decoding="async" data-nimg="1" class="h-auto w-full max-w-[82%] select-none object-contain" style="color:transparent" src="/tedx-logo.png"/></div></div></div></div><div class="mt-20 border-y border-white/[0.08] py-6 lg:mt-28" style="opacity:0;transform:translateY(15px)"><div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"><p class="font-mono text-[9px] uppercase tracking-[0.22em] text-white/30">TEDxSIUHinjewadi · independently organized TEDx event</p><div class="flex items-center gap-3"><span class="font-mono text-[9px] uppercase tracking-[0.2em] text-white/35">Curate</span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right text-red-400/70" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg><span class="font-mono text-[9px] uppercase tracking-[0.2em] text-white/35">Connect</span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right text-red-400/70" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg><span class="font-mono text-[9px] uppercase tracking-[0.2em] text-white/35">Inspire</span></div></div></div></div></section><section id="achievements" class="relative overflow-hidden px-4 py-24 sm:px-8 lg:py-36"><div class="pointer-events-none absolute inset-0"><div class="absolute -right-40 top-[18%] h-[600px] w-[600px] rounded-full bg-primary/[0.045] blur-[160px]"></div><div class="absolute -left-48 bottom-[10%] h-[500px] w-[500px] rounded-full bg-violet-500/[0.035] blur-[160px]"></div><div class="absolute right-[-10%] top-[36%] h-px w-[75%] -rotate-[12deg] bg-gradient-to-r from-transparent via-primary/10 to-transparent"></div></div><div class="relative mx-auto max-w-[1280px]"><div class="grid gap-10 lg:grid-cols-12 lg:items-end"><div class="lg:col-span-3" style="opacity:0;transform:translateY(24px)"><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up text-primary" aria-hidden="true"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg><span class="font-mono text-[10px] uppercase tracking-[0.24em] text-primary">Impact report</span></div></div><div class="lg:col-span-6" style="opacity:0;transform:translateY(24px)"><h2 class="font-heading text-4xl font-semibold leading-[1] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl">We measure<span class="block text-muted-foreground">what we move.</span></h2></div><div class="lg:col-span-3" style="opacity:0;transform:translateY(24px)"><p class="max-w-sm text-sm leading-7 text-muted-foreground lg:ml-auto">People reached. Ideas tested. Experiences created. Every number represents something that moved beyond intention and into execution.</p></div></div><div class="relative mt-20"><div class="flex items-center gap-4 border-y border-border/70 py-3"><span class="font-mono text-[8px] uppercase tracking-[0.22em] text-muted-foreground">SYS / IMPACT_METRICS</span><div class="h-px flex-1 bg-border/40"></div><span class="font-mono text-[8px] uppercase tracking-[0.22em] text-primary/70">LIVE</span><span class="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))]"></span></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"><div class="group relative border-b border-border/70 p-6 sm:p-8 lg:border-r lg:last:border-r-0" style="opacity:0;transform:translateY(20px)"><div class="mb-12 flex items-center justify-between"><span class="font-mono text-[9px] tracking-[0.2em] text-muted-foreground/60">01<!-- --> / <!-- -->METRIC</span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right text-muted-foreground/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden="true"><path d="M13 5H19V11"></path><path d="M19 5L5 19"></path></svg></div><div class="relative"><p class="font-heading text-[4.5rem] font-semibold leading-none tracking-[-0.07em] text-foreground sm:text-[5rem] lg:text-[5.5rem]"><span>0</span><span class="ml-1 text-primary">+</span></p><div class="absolute -left-4 top-1/2 h-14 w-32 -translate-y-1/2 bg-primary/[0.06] opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"></div></div><p class="mt-5 max-w-[12rem] text-xs leading-5 text-muted-foreground sm:text-sm">Students engaged across programs</p><div class="mt-8 flex items-center gap-1"><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span></div></div><div class="group relative border-b border-border/70 p-6 sm:p-8 lg:border-r lg:last:border-r-0" style="opacity:0;transform:translateY(20px)"><div class="mb-12 flex items-center justify-between"><span class="font-mono text-[9px] tracking-[0.2em] text-muted-foreground/60">02<!-- --> / <!-- -->METRIC</span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right text-muted-foreground/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden="true"><path d="M13 5H19V11"></path><path d="M19 5L5 19"></path></svg></div><div class="relative"><p class="font-heading text-[4.5rem] font-semibold leading-none tracking-[-0.07em] text-foreground sm:text-[5rem] lg:text-[5.5rem]"><span>0</span><span class="ml-1 text-primary">+</span></p><div class="absolute -left-4 top-1/2 h-14 w-32 -translate-y-1/2 bg-primary/[0.06] opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"></div></div><p class="mt-5 max-w-[12rem] text-xs leading-5 text-muted-foreground sm:text-sm">Founders &amp; industry mentors hosted</p><div class="mt-8 flex items-center gap-1"><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span></div></div><div class="group relative border-b border-border/70 p-6 sm:p-8 lg:border-r lg:last:border-r-0" style="opacity:0;transform:translateY(20px)"><div class="mb-12 flex items-center justify-between"><span class="font-mono text-[9px] tracking-[0.2em] text-muted-foreground/60">03<!-- --> / <!-- -->METRIC</span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right text-muted-foreground/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden="true"><path d="M13 5H19V11"></path><path d="M19 5L5 19"></path></svg></div><div class="relative"><p class="font-heading text-[4.5rem] font-semibold leading-none tracking-[-0.07em] text-foreground sm:text-[5rem] lg:text-[5.5rem]"><span>0</span><span class="ml-1 text-primary"> </span></p><div class="absolute -left-4 top-1/2 h-14 w-32 -translate-y-1/2 bg-primary/[0.06] opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"></div></div><p class="mt-5 max-w-[12rem] text-xs leading-5 text-muted-foreground sm:text-sm">Editions of SproutIT run to date</p><div class="mt-8 flex items-center gap-1"><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span></div></div><div class="group relative border-b border-border/70 p-6 sm:p-8 lg:border-r lg:last:border-r-0" style="opacity:0;transform:translateY(20px)"><div class="mb-12 flex items-center justify-between"><span class="font-mono text-[9px] tracking-[0.2em] text-muted-foreground/60">04<!-- --> / <!-- -->METRIC</span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-up-right text-muted-foreground/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden="true"><path d="M13 5H19V11"></path><path d="M19 5L5 19"></path></svg></div><div class="relative"><p class="font-heading text-[4.5rem] font-semibold leading-none tracking-[-0.07em] text-foreground sm:text-[5rem] lg:text-[5.5rem]"><span>0</span><span class="ml-1 text-primary"> </span></p><div class="absolute -left-4 top-1/2 h-14 w-32 -translate-y-1/2 bg-primary/[0.06] opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"></div></div><p class="mt-5 max-w-[12rem] text-xs leading-5 text-muted-foreground sm:text-sm">Episodes released on Streams</p><div class="mt-8 flex items-center gap-1"><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span><span class="h-[3px] flex-1 bg-primary" style="opacity:0.15"></span></div></div></div></div><div style="opacity:0;transform:translateY(24px)"><div class="relative border-b border-border/70 py-20 lg:py-28"><div class="grid gap-8 lg:grid-cols-12 lg:items-center"><div class="lg:col-span-2"><span class="font-mono text-[9px] uppercase tracking-[0.22em] text-primary">The equation</span></div><div class="lg:col-span-8"><p class="font-heading text-3xl font-medium leading-[1.15] tracking-[-0.035em] text-muted-foreground sm:text-4xl lg:text-5xl">Ideas are easy.<span class="text-foreground"> <!-- -->Execution creates momentum.</span><span class="text-primary"> <!-- -->Momentum creates impact.</span></p></div><div class="hidden justify-end lg:flex lg:col-span-2"><div class="flex h-16 w-16 items-center justify-center rounded-full border border-primary/20"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right text-primary" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div></div></div></div></div><div class="mt-24 lg:mt-32"><div class="grid gap-10 lg:grid-cols-12"><div class="lg:col-span-3"><div style="opacity:0;transform:translateY(24px)"><div class="lg:sticky lg:top-32"><div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles text-primary" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span class="font-mono text-[9px] uppercase tracking-[0.22em] text-primary">Growth log</span></div><h3 class="mt-5 font-heading text-3xl font-semibold tracking-[-0.035em] text-foreground">How we<span class="block text-muted-foreground">got here.</span></h3><p class="mt-5 max-w-xs text-sm leading-7 text-muted-foreground">Not a straight line. A series of experiments, decisions, conversations, and increasingly ambitious bets.</p></div></div></div><div class="lg:col-span-9"><div class="relative"><div class="absolute bottom-0 left-[17px] top-0 w-px bg-border/70 lg:hidden"></div><div class="space-y-5 lg:space-y-0"><div style="opacity:0;transform:translateY(24px)"><div class="relative lg:mb-4" style="margin-left:clamp(0px, 0%, 190px)"><div class="group relative grid min-h-[150px] grid-cols-[50px_1fr] border-t border-border/70 py-7 sm:grid-cols-[80px_1fr_auto]"><div><div class="relative flex h-9 w-9 items-center justify-center"><span class="absolute inset-0 rounded-full border border-primary/20 transition-transform duration-500 group-hover:scale-125"></span><span class="font-mono text-[9px] text-primary">01</span></div></div><div class="pr-4 sm:pr-10"><p class="font-mono text-[8px] uppercase tracking-[0.2em] text-muted-foreground/50">Milestone /<!-- -->01</p><h4 class="mt-3 font-heading text-xl font-semibold tracking-[-0.02em] text-foreground sm:text-2xl">SproutIT became SCIT&#x27;s flagship startup event</h4><p class="mt-3 max-w-xl text-sm leading-7 text-muted-foreground">What started as a single-day pitch competition grew into a multi-round program spanning ideation, mentorship, and a final pitch day.</p></div><div class="hidden items-center sm:flex"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right text-muted-foreground/30 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div><div class="absolute bottom-0 left-0 h-px w-[35%] origin-left bg-gradient-to-r from-primary/60 to-transparent" style="transform:scaleX(0)"></div></div></div></div><div style="opacity:0;transform:translateY(24px)"><div class="relative lg:mb-4" style="margin-left:clamp(0px, 7%, 190px)"><div class="group relative grid min-h-[150px] grid-cols-[50px_1fr] border-t border-border/70 py-7 sm:grid-cols-[80px_1fr_auto]"><div><div class="relative flex h-9 w-9 items-center justify-center"><span class="absolute inset-0 rounded-full border border-primary/20 transition-transform duration-500 group-hover:scale-125"></span><span class="font-mono text-[9px] text-primary">02</span></div></div><div class="pr-4 sm:pr-10"><p class="font-mono text-[8px] uppercase tracking-[0.2em] text-muted-foreground/50">Milestone /<!-- -->02</p><h4 class="mt-3 font-heading text-xl font-semibold tracking-[-0.02em] text-foreground sm:text-2xl">Streams by iTELF went live</h4><p class="mt-3 max-w-xl text-sm leading-7 text-muted-foreground">A podcast built to carry founder conversations beyond the campus — recorded, edited, and produced entirely by the team.</p></div><div class="hidden items-center sm:flex"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right text-muted-foreground/30 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div><div class="absolute bottom-0 left-0 h-px w-[35%] origin-left bg-gradient-to-r from-primary/60 to-transparent" style="transform:scaleX(0)"></div></div></div></div><div style="opacity:0;transform:translateY(24px)"><div class="relative lg:mb-4" style="margin-left:clamp(0px, 14%, 190px)"><div class="group relative grid min-h-[150px] grid-cols-[50px_1fr] border-t border-border/70 py-7 sm:grid-cols-[80px_1fr_auto]"><div><div class="relative flex h-9 w-9 items-center justify-center"><span class="absolute inset-0 rounded-full border border-primary/20 transition-transform duration-500 group-hover:scale-125"></span><span class="font-mono text-[9px] text-primary">03</span></div></div><div class="pr-4 sm:pr-10"><p class="font-mono text-[8px] uppercase tracking-[0.2em] text-muted-foreground/50">Milestone /<!-- -->03</p><h4 class="mt-3 font-heading text-xl font-semibold tracking-[-0.02em] text-foreground sm:text-2xl">A standing mentor network took shape</h4><p class="mt-3 max-w-xl text-sm leading-7 text-muted-foreground">Recurring relationships with founders and operators turned one-off talks into an ongoing pipeline of guidance for student teams.</p></div><div class="hidden items-center sm:flex"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right text-muted-foreground/30 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div><div class="absolute bottom-0 left-0 h-px w-[35%] origin-left bg-gradient-to-r from-primary/60 to-transparent" style="transform:scaleX(0)"></div></div></div></div></div><div class="absolute bottom-[5%] left-[4%] hidden w-px origin-bottom rotate-[-28deg] bg-gradient-to-t from-primary/5 via-primary/30 to-primary/60 lg:block" style="height:0px"></div></div></div></div></div></div></section><section id="gallery" class="relative scroll-mt-28 overflow-hidden px-4 py-20 sm:px-8 lg:py-24"><div class="pointer-events-none absolute inset-0"><div class="absolute left-1/2 top-1/2 h-[420px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.045] blur-[130px]"></div></div><div class="relative mx-auto max-w-[1280px]"><div style="opacity:0;transform:translateY(24px)"><div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"><div><div class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera text-primary" aria-hidden="true"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path><circle cx="12" cy="13" r="3"></circle></svg><span class="font-mono text-[9px] uppercase tracking-[0.22em] text-primary">Field archive</span><div class="h-px w-10 bg-primary/30"></div></div><h2 class="mt-4 font-heading text-3xl font-semibold tracking-[-0.035em] text-foreground sm:text-4xl">Moments in motion.</h2></div><p class="max-w-sm text-sm leading-6 text-muted-foreground">A glimpse into the people, ideas, and experiences shaping iTELF.</p></div></div><div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5"><div style="opacity:0;transform:translateY(20px)"><button type="button" aria-label="Enlarge SproutIT Pitch Day" class="group relative block aspect-[4/3] w-full overflow-hidden rounded-[24px] border border-white/10 bg-card/25 text-left shadow-[0_24px_70px_rgba(0,0,0,.22)] transition-all duration-500 hover:-translate-y-1.5 hover:border-white/25 hover:shadow-[0_30px_90px_rgba(0,0,0,.38)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background"><img alt="SproutIT Pitch Day" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/gallery/SproutIT_1.jpg"/><div class="absolute inset-0 bg-gradient-to-t opacity-80 mix-blend-color transition-opacity duration-500 group-hover:opacity-45 from-blue-500/40 via-indigo-500/30 to-transparent"></div><div class="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/10 to-black/10"></div><div class="absolute inset-0 ring-1 ring-inset ring-white/[0.06]"></div><div class="absolute left-4 right-4 top-4 flex items-center justify-between"><div class="flex items-center gap-2 rounded-full border border-white/10 bg-black/25 px-2.5 py-1.5 backdrop-blur-md"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crosshair text-white/65" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="22" x2="18" y1="12" y2="12"></line><line x1="6" x2="2" y1="12" y2="12"></line><line x1="12" x2="12" y1="6" y2="2"></line><line x1="12" x2="12" y1="22" y2="18"></line></svg><span class="font-mono text-[7px] uppercase tracking-[0.18em] text-white/65">01</span></div><div class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/25 text-white/75 backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:border-white/30 group-hover:bg-white group-hover:text-[#050816]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zoom-in" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></div></div><div class="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6"><div class="flex items-center gap-2"><span class="h-px w-5 bg-primary"></span><p class="font-mono text-[8px] uppercase tracking-[0.2em] text-white/65">Competition</p></div><h3 class="mt-2 font-heading text-lg font-semibold text-white sm:text-xl">SproutIT Pitch Day</h3></div></button></div><div style="opacity:0;transform:translateY(20px)"><button type="button" aria-label="Enlarge Ideas Take the Stage" class="group relative block aspect-[4/3] w-full overflow-hidden rounded-[24px] border border-white/10 bg-card/25 text-left shadow-[0_24px_70px_rgba(0,0,0,.22)] transition-all duration-500 hover:-translate-y-1.5 hover:border-white/25 hover:shadow-[0_30px_90px_rgba(0,0,0,.38)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background"><img alt="Ideas Take the Stage" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/gallery/SproutIT_2.jpg"/><div class="absolute inset-0 bg-gradient-to-t opacity-80 mix-blend-color transition-opacity duration-500 group-hover:opacity-45 from-cyan-400/35 via-blue-500/25 to-transparent"></div><div class="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/10 to-black/10"></div><div class="absolute inset-0 ring-1 ring-inset ring-white/[0.06]"></div><div class="absolute left-4 right-4 top-4 flex items-center justify-between"><div class="flex items-center gap-2 rounded-full border border-white/10 bg-black/25 px-2.5 py-1.5 backdrop-blur-md"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crosshair text-white/65" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="22" x2="18" y1="12" y2="12"></line><line x1="6" x2="2" y1="12" y2="12"></line><line x1="12" x2="12" y1="6" y2="2"></line><line x1="12" x2="12" y1="22" y2="18"></line></svg><span class="font-mono text-[7px] uppercase tracking-[0.18em] text-white/65">02</span></div><div class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/25 text-white/75 backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:border-white/30 group-hover:bg-white group-hover:text-[#050816]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zoom-in" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></div></div><div class="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6"><div class="flex items-center gap-2"><span class="h-px w-5 bg-primary"></span><p class="font-mono text-[8px] uppercase tracking-[0.2em] text-white/65">SproutIT</p></div><h3 class="mt-2 font-heading text-lg font-semibold text-white sm:text-xl">Ideas Take the Stage</h3></div></button></div><div style="opacity:0;transform:translateY(20px)"><button type="button" aria-label="Enlarge Streams Recording Session" class="group relative block aspect-[4/3] w-full overflow-hidden rounded-[24px] border border-white/10 bg-card/25 text-left shadow-[0_24px_70px_rgba(0,0,0,.22)] transition-all duration-500 hover:-translate-y-1.5 hover:border-white/25 hover:shadow-[0_30px_90px_rgba(0,0,0,.38)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background"><img alt="Streams Recording Session" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/gallery/streams_1.jpg"/><div class="absolute inset-0 bg-gradient-to-t opacity-80 mix-blend-color transition-opacity duration-500 group-hover:opacity-45 from-cyan-400/40 via-blue-500/20 to-transparent"></div><div class="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/10 to-black/10"></div><div class="absolute inset-0 ring-1 ring-inset ring-white/[0.06]"></div><div class="absolute left-4 right-4 top-4 flex items-center justify-between"><div class="flex items-center gap-2 rounded-full border border-white/10 bg-black/25 px-2.5 py-1.5 backdrop-blur-md"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crosshair text-white/65" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="22" x2="18" y1="12" y2="12"></line><line x1="6" x2="2" y1="12" y2="12"></line><line x1="12" x2="12" y1="6" y2="2"></line><line x1="12" x2="12" y1="22" y2="18"></line></svg><span class="font-mono text-[7px] uppercase tracking-[0.18em] text-white/65">03</span></div><div class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/25 text-white/75 backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:border-white/30 group-hover:bg-white group-hover:text-[#050816]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zoom-in" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></div></div><div class="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6"><div class="flex items-center gap-2"><span class="h-px w-5 bg-primary"></span><p class="font-mono text-[8px] uppercase tracking-[0.2em] text-white/65">Podcast</p></div><h3 class="mt-2 font-heading text-lg font-semibold text-white sm:text-xl">Streams Recording Session</h3></div></button></div><div style="opacity:0;transform:translateY(20px)"><button type="button" aria-label="Enlarge Conversations That Matter" class="group relative block aspect-[4/3] w-full overflow-hidden rounded-[24px] border border-white/10 bg-card/25 text-left shadow-[0_24px_70px_rgba(0,0,0,.22)] transition-all duration-500 hover:-translate-y-1.5 hover:border-white/25 hover:shadow-[0_30px_90px_rgba(0,0,0,.38)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background"><img alt="Conversations That Matter" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/gallery/streams_2.jpg"/><div class="absolute inset-0 bg-gradient-to-t opacity-80 mix-blend-color transition-opacity duration-500 group-hover:opacity-45 from-amber-400/30 via-orange-500/20 to-transparent"></div><div class="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/10 to-black/10"></div><div class="absolute inset-0 ring-1 ring-inset ring-white/[0.06]"></div><div class="absolute left-4 right-4 top-4 flex items-center justify-between"><div class="flex items-center gap-2 rounded-full border border-white/10 bg-black/25 px-2.5 py-1.5 backdrop-blur-md"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crosshair text-white/65" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="22" x2="18" y1="12" y2="12"></line><line x1="6" x2="2" y1="12" y2="12"></line><line x1="12" x2="12" y1="6" y2="2"></line><line x1="12" x2="12" y1="22" y2="18"></line></svg><span class="font-mono text-[7px] uppercase tracking-[0.18em] text-white/65">04</span></div><div class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/25 text-white/75 backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:border-white/30 group-hover:bg-white group-hover:text-[#050816]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zoom-in" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></div></div><div class="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6"><div class="flex items-center gap-2"><span class="h-px w-5 bg-primary"></span><p class="font-mono text-[8px] uppercase tracking-[0.2em] text-white/65">Streams</p></div><h3 class="mt-2 font-heading text-lg font-semibold text-white sm:text-xl">Conversations That Matter</h3></div></button></div><div style="opacity:0;transform:translateY(20px)"><button type="button" aria-label="Enlarge Ideas Worth Spreading" class="group relative block aspect-[4/3] w-full overflow-hidden rounded-[24px] border border-white/10 bg-card/25 text-left shadow-[0_24px_70px_rgba(0,0,0,.22)] transition-all duration-500 hover:-translate-y-1.5 hover:border-white/25 hover:shadow-[0_30px_90px_rgba(0,0,0,.38)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background"><img alt="Ideas Worth Spreading" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/gallery/tedx_1.jpg"/><div class="absolute inset-0 bg-gradient-to-t opacity-80 mix-blend-color transition-opacity duration-500 group-hover:opacity-45 from-red-500/40 via-rose-500/25 to-transparent"></div><div class="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/10 to-black/10"></div><div class="absolute inset-0 ring-1 ring-inset ring-white/[0.06]"></div><div class="absolute left-4 right-4 top-4 flex items-center justify-between"><div class="flex items-center gap-2 rounded-full border border-white/10 bg-black/25 px-2.5 py-1.5 backdrop-blur-md"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crosshair text-white/65" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="22" x2="18" y1="12" y2="12"></line><line x1="6" x2="2" y1="12" y2="12"></line><line x1="12" x2="12" y1="6" y2="2"></line><line x1="12" x2="12" y1="22" y2="18"></line></svg><span class="font-mono text-[7px] uppercase tracking-[0.18em] text-white/65">05</span></div><div class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/25 text-white/75 backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:border-white/30 group-hover:bg-white group-hover:text-[#050816]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zoom-in" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></div></div><div class="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6"><div class="flex items-center gap-2"><span class="h-px w-5 bg-primary"></span><p class="font-mono text-[8px] uppercase tracking-[0.2em] text-white/65">TEDxSIUHinjewadi</p></div><h3 class="mt-2 font-heading text-lg font-semibold text-white sm:text-xl">Ideas Worth Spreading</h3></div></button></div><div style="opacity:0;transform:translateY(20px)"><button type="button" aria-label="Enlarge Behind the Red Circle" class="group relative block aspect-[4/3] w-full overflow-hidden rounded-[24px] border border-white/10 bg-card/25 text-left shadow-[0_24px_70px_rgba(0,0,0,.22)] transition-all duration-500 hover:-translate-y-1.5 hover:border-white/25 hover:shadow-[0_30px_90px_rgba(0,0,0,.38)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background"><img alt="Behind the Red Circle" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/gallery/tedx_2.jpeg"/><div class="absolute inset-0 bg-gradient-to-t opacity-80 mix-blend-color transition-opacity duration-500 group-hover:opacity-45 from-red-500/40 via-fuchsia-500/20 to-transparent"></div><div class="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/10 to-black/10"></div><div class="absolute inset-0 ring-1 ring-inset ring-white/[0.06]"></div><div class="absolute left-4 right-4 top-4 flex items-center justify-between"><div class="flex items-center gap-2 rounded-full border border-white/10 bg-black/25 px-2.5 py-1.5 backdrop-blur-md"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crosshair text-white/65" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="22" x2="18" y1="12" y2="12"></line><line x1="6" x2="2" y1="12" y2="12"></line><line x1="12" x2="12" y1="6" y2="2"></line><line x1="12" x2="12" y1="22" y2="18"></line></svg><span class="font-mono text-[7px] uppercase tracking-[0.18em] text-white/65">06</span></div><div class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/25 text-white/75 backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:border-white/30 group-hover:bg-white group-hover:text-[#050816]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zoom-in" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></div></div><div class="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6"><div class="flex items-center gap-2"><span class="h-px w-5 bg-primary"></span><p class="font-mono text-[8px] uppercase tracking-[0.2em] text-white/65">TEDxSIUHinjewadi</p></div><h3 class="mt-2 font-heading text-lg font-semibold text-white sm:text-xl">Behind the Red Circle</h3></div></button></div></div><div style="opacity:0;transform:translateY(24px)"><div class="mt-7 flex items-center gap-4"><div class="h-px flex-1 bg-gradient-to-r from-transparent via-border to-border"></div><div class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span><span class="font-mono text-[8px] uppercase tracking-[0.2em] text-muted-foreground">Select a moment to view</span></div><div class="h-px flex-1 bg-gradient-to-r from-border via-border to-transparent"></div></div></div></div></section><section id="startup-india" aria-labelledby="startup-india-heading" class="relative mx-4 my-4 scroll-mt-28 overflow-hidden rounded-[2.5rem] bg-[#F8F8F4] px-6 py-20 sm:mx-8 sm:px-10 lg:py-28"><img alt="" aria-hidden="true" draggable="false" loading="lazy" decoding="async" data-nimg="fill" class=" pointer-events-none select-none object-cover object-[70%_center] opacity-80 scale-110 blur-[0.2px] transition-all duration-700 " style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://cdn.jsdelivr.net/gh/itelf-scit/ITELF-Website-Assets@main/assets/backgrounds/startup_section_bkg.png"/><div class="absolute inset-0 bg-white/15"></div><div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-[#1E4FD6]/5"></div><div class="pointer-events-none absolute left-0 top-0 h-1.5 w-full bg-gradient-to-r from-[#FF9933] via-white to-[#138808]"></div><div class="absolute inset-0 rounded-[2.5rem] ring-1 ring-black/5"></div><div class="absolute inset-0 rounded-[2.5rem] shadow-[inset_0_0_120px_rgba(255,255,255,0.12)]"></div><div class="pointer-events-none absolute inset-0"><div class="absolute -right-20 -top-20 h-[320px] w-[320px] rounded-full bg-[#1E4FD6]/10 blur-[120px]"></div><div class="absolute -bottom-20 -left-20 h-[300px] w-[300px] rounded-full bg-[#E7B24C]/10 blur-[120px]"></div></div><div class="relative z-20 mx-auto max-w-[1280px]"><div class="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16"><div class="lg:col-span-5"><div style="opacity:0;transform:translateY(24px)"><div class="inline-flex items-center gap-2 rounded-full border border-[#173B9B]/10 bg-white/70 px-4 py-2 shadow-sm backdrop-blur-xl"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check text-[#138808]" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="font-mono text-[9px] font-semibold uppercase tracking-[0.2em] text-[#26396A]">Official Government Resources</span></div></div><div style="opacity:0;transform:translateY(24px)"><h2 id="startup-india-heading" class="mt-7 max-w-xl font-heading text-[2.65rem] font-semibold leading-[0.98] tracking-[-0.045em] text-[#161616] sm:text-5xl lg:text-[4rem]">Your idea deserves<span class="mt-1 block text-[#1E4FD6]">more than a classroom.</span></h2></div><div style="opacity:0;transform:translateY(24px)"><p class="mt-7 max-w-lg text-base leading-7 text-[#4B4942] sm:text-lg sm:leading-8">Turn early ambition into a venture with access to recognition, funding, mentorship, learning, and government-backed support through Startup India.</p></div><div style="opacity:0;transform:translateY(24px)"><div class="mt-9 rounded-[30px] border border-white/90 bg-white/70 p-3 shadow-[0_22px_65px_rgba(30,55,110,.13)] backdrop-blur-xl"><a href="https://www.startupindia.gov.in/" target="_blank" rel="noopener noreferrer" aria-label="Explore Startup India — opens in a new tab" class="group relative flex min-h-[92px] w-full items-center overflow-hidden rounded-[22px] bg-[#173B9B] px-5 text-white shadow-[0_18px_45px_rgba(30,79,214,.28)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#1E4FD6]/25 sm:px-6" tabindex="0"><span class="absolute inset-0 translate-x-[-101%] bg-gradient-to-r from-[#1E4FD6] to-[#315FD8] transition-transform duration-500 group-hover:translate-x-0"></span><span class="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/12"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-landmark" aria-hidden="true"><path d="M10 18v-7"></path><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M3 22h18"></path><path d="M6 18v-7"></path></svg></span><span class="relative ml-4 text-left"><span class="block font-heading text-lg font-semibold">Explore Startup India</span><span class="mt-1 block text-xs text-white/70">Recognition, funding, schemes &amp; founder resources</span></span><span class="relative ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#173B9B] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></span></a><a href="https://www.msme.gov.in/" target="_blank" rel="noopener noreferrer" aria-label="Explore the Ministry of MSME — opens in a new tab" class="group mt-2 flex min-h-[78px] w-full items-center rounded-[22px] border border-[#173B9B]/10 bg-[#F5F7FF] px-5 text-[#172552] transition-all hover:border-[#173B9B]/25 hover:bg-white hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#1E4FD6]/20 sm:px-6" tabindex="0"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FF9933]/10 text-[#C66A13]"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2" aria-hidden="true"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg></span><span class="ml-4 text-left"><span class="block font-heading font-semibold">Discover MSME support</span><span class="mt-0.5 block text-xs text-[#5B6480]">Credit, training &amp; enterprise schemes</span></span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link ml-auto text-[#173B9B] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><div class="flex items-center justify-center gap-2 px-3 pb-1 pt-3 text-[#555247]"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check text-[#138808]" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="text-[11px] font-medium">Verified official Government of India portals</span></div></div></div></div><div class="lg:col-span-7"><div class="grid gap-4 sm:grid-cols-2"><article class="group relative min-h-[220px] overflow-hidden rounded-[28px] border border-white/80 bg-white/75 p-6 shadow-[0_18px_55px_rgba(30,55,110,.09)] backdrop-blur-xl transition-colors duration-300 hover:border-[#1E4FD6]/25 hover:bg-white/90 sm:p-7" style="opacity:0;transform:translateY(20px)"><div class="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#1E4FD6]/0 blur-2xl transition-colors duration-500 group-hover:bg-[#1E4FD6]/10"></div><span class="absolute right-6 top-6 font-mono text-[9px] tracking-[0.2em] text-[#1E4FD6]/45">01</span><div class="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-[#1E4FD6]/15 bg-[#1E4FD6]/[0.07] text-[#1E4FD6] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#1E4FD6] group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path d="m9 12 2 2 4-4"></path></svg></div><h3 class="relative mt-6 font-heading text-xl font-semibold tracking-[-0.02em] text-[#181818]">Get Recognized</h3><p class="relative mt-3 text-sm leading-6 text-[#5B584F]">Unlock DPIIT recognition, simpler compliance, self-certification, and eligible tax benefits.</p><div class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#1E4FD6] to-[#E7B24C] transition-all duration-500 group-hover:w-full"></div></article><article class="group relative min-h-[220px] overflow-hidden rounded-[28px] border border-white/80 bg-white/75 p-6 shadow-[0_18px_55px_rgba(30,55,110,.09)] backdrop-blur-xl transition-colors duration-300 hover:border-[#1E4FD6]/25 hover:bg-white/90 sm:p-7" style="opacity:0;transform:translateY(20px)"><div class="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#1E4FD6]/0 blur-2xl transition-colors duration-500 group-hover:bg-[#1E4FD6]/10"></div><span class="absolute right-6 top-6 font-mono text-[9px] tracking-[0.2em] text-[#1E4FD6]/45">02</span><div class="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-[#1E4FD6]/15 bg-[#1E4FD6]/[0.07] text-[#1E4FD6] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#1E4FD6] group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-landmark" aria-hidden="true"><path d="M10 18v-7"></path><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M3 22h18"></path><path d="M6 18v-7"></path></svg></div><h3 class="relative mt-6 font-heading text-xl font-semibold tracking-[-0.02em] text-[#181818]">Access Capital</h3><p class="relative mt-3 text-sm leading-6 text-[#5B584F]">Discover seed funding, credit support, and government-backed programs built for early-stage ventures.</p><div class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#1E4FD6] to-[#E7B24C] transition-all duration-500 group-hover:w-full"></div></article><article class="group relative min-h-[220px] overflow-hidden rounded-[28px] border border-white/80 bg-white/75 p-6 shadow-[0_18px_55px_rgba(30,55,110,.09)] backdrop-blur-xl transition-colors duration-300 hover:border-[#1E4FD6]/25 hover:bg-white/90 sm:p-7" style="opacity:0;transform:translateY(20px)"><div class="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#1E4FD6]/0 blur-2xl transition-colors duration-500 group-hover:bg-[#1E4FD6]/10"></div><span class="absolute right-6 top-6 font-mono text-[9px] tracking-[0.2em] text-[#1E4FD6]/45">03</span><div class="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-[#1E4FD6]/15 bg-[#1E4FD6]/[0.07] text-[#1E4FD6] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#1E4FD6] group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open" aria-hidden="true"><path d="M12 5v16"></path><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"></path></svg></div><h3 class="relative mt-6 font-heading text-xl font-semibold tracking-[-0.02em] text-[#181818]">Learn to Build</h3><p class="relative mt-3 text-sm leading-6 text-[#5B584F]">Use founder courses, playbooks, templates, and practical resources from idea validation to fundraising.</p><div class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#1E4FD6] to-[#E7B24C] transition-all duration-500 group-hover:w-full"></div></article><article class="group relative min-h-[220px] overflow-hidden rounded-[28px] border border-white/80 bg-white/75 p-6 shadow-[0_18px_55px_rgba(30,55,110,.09)] backdrop-blur-xl transition-colors duration-300 hover:border-[#1E4FD6]/25 hover:bg-white/90 sm:p-7" style="opacity:0;transform:translateY(20px)"><div class="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#1E4FD6]/0 blur-2xl transition-colors duration-500 group-hover:bg-[#1E4FD6]/10"></div><span class="absolute right-6 top-6 font-mono text-[9px] tracking-[0.2em] text-[#1E4FD6]/45">04</span><div class="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-[#1E4FD6]/15 bg-[#1E4FD6]/[0.07] text-[#1E4FD6] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#1E4FD6] group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll-text" aria-hidden="true"><path d="M15 12h-5"></path><path d="M15 8h-5"></path><path d="M19 17V5a2 2 0 0 0-2-2H4"></path><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"></path></svg></div><h3 class="relative mt-6 font-heading text-xl font-semibold tracking-[-0.02em] text-[#181818]">Find Your Scheme</h3><p class="relative mt-3 text-sm leading-6 text-[#5B584F]">Navigate national and sector-specific schemes that can help your startup launch and scale with confidence.</p><div class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#1E4FD6] to-[#E7B24C] transition-all duration-500 group-hover:w-full"></div></article></div></div></div><div class="mt-10" style="opacity:0;transform:translateY(24px)"><div class="relative overflow-hidden rounded-[30px] border border-white/80 bg-[#111C3D]/95 px-6 py-7 text-white shadow-[0_24px_70px_rgba(17,28,61,.22)] sm:px-8 lg:px-10"><div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1E4FD6]/25 via-transparent to-[#E7B24C]/15"></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles absolute -right-4 -top-5 h-28 w-28 text-white/[0.035]" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><div class="relative grid gap-7 lg:grid-cols-[0.85fr_1.5fr] lg:items-center"><div class="flex items-start gap-4"><div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-[#F5C65B]"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg></div><div><p class="font-mono text-[8px] uppercase tracking-[0.22em] text-[#F5C65B]">Your founder journey</p><p class="mt-2 max-w-sm font-heading text-xl font-semibold leading-tight sm:text-2xl">From a campus idea to a venture built for the real world.</p></div></div><div class="grid gap-3 sm:grid-cols-3"><div class="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-4 backdrop-blur-md"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 font-mono text-[8px] text-[#F5C65B]">01</span><span class="text-sm font-medium text-white/80">Shape the idea</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-auto hidden h-3.5 w-3.5 text-white/25 sm:block" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div><div class="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-4 backdrop-blur-md"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 font-mono text-[8px] text-[#F5C65B]">02</span><span class="text-sm font-medium text-white/80">Validate the opportunity</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-auto hidden h-3.5 w-3.5 text-white/25 sm:block" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div><div class="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-4 backdrop-blur-md"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 font-mono text-[8px] text-[#F5C65B]">03</span><span class="text-sm font-medium text-white/80">Build the venture</span></div></div></div></div></div></div></section></div></div><!--$--><!--/$--></main><footer id="contact" class="relative scroll-mt-28 border-t border-border px-4 pb-10 pt-20 sm:px-8"><div class="mx-auto max-w-[1280px]"><div style="opacity:0;transform:translateY(24px)"><div class="rounded-3xl border border-border bg-card p-7 backdrop-blur-2xl sm:p-10 lg:p-12"><div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16"><div class="max-w-lg"><p class="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/70">Contact iTELF</p><h3 class="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Have something to build?</h3><p class="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">Have an idea, collaboration, event query, or just want to connect with iTELF? Drop us a message and we&#x27;ll get back to you.</p><a class="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-primary" href="mailto:itelf@scit.edu">itelf@scit.edu<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div><form class="w-full max-w-xl"><div class="grid gap-3 sm:grid-cols-2"><label class="block"><span class="sr-only">Name</span><input type="text" required="" maxLength="100" placeholder="Your name" autoComplete="name" class="h-12 w-full rounded-2xl border border-border bg-black/20 px-4 text-sm text-foreground outline-none placeholder:text-muted-foreground transition focus:border-primary/60 focus:ring-2 focus:ring-primary/10 disabled:cursor-not-allowed disabled:opacity-60" name="name"/></label><label class="block"><span class="sr-only">Email</span><input type="email" required="" maxLength="254" placeholder="Your email" autoComplete="email" class="h-12 w-full rounded-2xl border border-border bg-black/20 px-4 text-sm text-foreground outline-none placeholder:text-muted-foreground transition focus:border-primary/60 focus:ring-2 focus:ring-primary/10 disabled:cursor-not-allowed disabled:opacity-60" name="email"/></label></div><label class="mt-3 block"><span class="sr-only">Message</span><textarea name="message" required="" maxLength="2000" rows="4" placeholder="Tell us what you have in mind..." class="w-full resize-none rounded-2xl border border-border bg-black/20 px-4 py-3 text-sm leading-6 text-foreground outline-none placeholder:text-muted-foreground transition focus:border-primary/60 focus:ring-2 focus:ring-primary/10 disabled:cursor-not-allowed disabled:opacity-60"></textarea></label><div class="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"><div class="min-h-[65px]"><div class="cf-turnstile" data-sitekey="0x4AAAAAAEQOJXt4NGS9kAaN" data-theme="dark" data-size="normal"></div></div><button type="submit" class="group inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-6 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_12px_40px_rgba(59,130,246,0.25)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_50px_rgba(59,130,246,0.34)] disabled:cursor-not-allowed disabled:opacity-60">Send Message<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg></button></div><div aria-live="polite" aria-atomic="true" class="mt-3 min-h-5 text-xs"></div></form></div></div></div><div class="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-3"><div><a class="flex items-center gap-3" href="/"><img alt="iTELF Logo" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="h-10 w-10 object-contain" style="color:transparent" src="https://cdn.jsdelivr.net/gh/itelf-scit/itelf-scit.github.io@main/src/images/iTELF-logo.png"/><div class="leading-none"><p class="text-base font-bold text-foreground">iTELF</p><p class="mt-1 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">SCIT Pune</p></div></a><p class="mt-5 max-w-xs text-sm leading-6 text-muted-foreground">The Entrepreneurship Cell of Symbiosis Centre for Information Technology, Pune.</p><div class="mt-6 flex items-center gap-3"><a href="#" aria-label="Instagram" class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white/[0.03] text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:text-foreground"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="17" width="17" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a><a href="#" aria-label="LinkedIn" class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white/[0.03] text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:text-foreground"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="17" width="17" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a><a href="#" aria-label="YouTube" class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white/[0.03] text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:text-foreground"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="17" width="17" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a></div></div><div><p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Explore</p><nav class="mt-5 flex flex-col gap-3"><a class="w-fit text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground" href="/#home">Home</a><a class="w-fit text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground" href="/#scit">SCIT</a><a class="w-fit text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground" href="/#about">About</a><a class="w-fit text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground" href="/#events">Events</a><a class="w-fit text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground" href="/#team">Team</a><a class="w-fit text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground" href="/#gallery">Gallery</a></nav></div><div><p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Visit</p><address class="mt-5 max-w-[16rem] text-sm not-italic leading-6 text-muted-foreground">Symbiosis Centre for Information Technology<br/>Plot 15, Rajiv Gandhi InfoTech Park, Hinjawadi,<br/>Pune – 411057</address></div></div><div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row"><p>© <!-- -->2026<!-- --> iTELF, SCIT Pune. All rights reserved.</p><p>Built by the iTELF Tech &amp; Digital team.</p></div></div></footer><script src="/_next/static/chunks/webpack-3d9ffdbdaaca7c5d.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[24500,[\"446\",\"static/chunks/53c13509-36d5bb7207c66d18.js\",\"223\",\"static/chunks/223-9b9bf513e34d1a5b.js\",\"239\",\"static/chunks/239-c9c901f67bc16075.js\",\"619\",\"static/chunks/619-1108b4c084a63a2d.js\",\"234\",\"static/chunks/234-97aeb90adef45147.js\",\"77\",\"static/chunks/77-3d50aca1f23682cf.js\",\"177\",\"static/chunks/app/layout-f12606d209bd75f5.js\"],\"default\"]\n3:I[9766,[],\"\"]\n4:I[98924,[],\"\"]\n5:I[71305,[\"446\",\"static/chunks/53c13509-36d5bb7207c66d18.js\",\"223\",\"static/chunks/223-9b9bf513e34d1a5b.js\",\"239\",\"static/chunks/239-c9c901f67bc16075.js\",\"619\",\"static/chunks/619-1108b4c084a63a2d.js\",\"234\",\"static/chunks/234-97aeb90adef45147.js\",\"77\",\"static/chunks/77-3d50aca1f23682cf.js\",\"177\",\"static/chunks/app/layout-f12606d209bd75f5.js\"],\"default\"]\n6:I[98314,[\"223\",\"static/chunks/223-9b9bf513e34d1a5b.js\",\"239\",\"static/chunks/239-c9c901f67bc16075.js\",\"619\",\"static/chunks/619-1108b4c084a63a2d.js\",\"234\",\"static/chunks/234-97aeb90adef45147.js\",\"630\",\"static/chunks/630-ab7776196e19012b.js\",\"974\",\"static/chunks/app/page-dd3415c883f31047.js\"],\"default\"]\n7:I[36320,[\"223\",\"static/chunks/223-9b9bf513e34d1a5b.js\",\"239\",\"static/chunks/239-c9c901f67bc16075.js\",\"619\",\"static/chunks/619-1108b4c084a63a2d.js\",\"234\",\"static/chunks/234-97aeb90adef45147.js\",\"630\",\"static/chunks/630-ab7776196e19012b.js\",\"974\",\"static/chunks/app/page-dd3415c883f31047.js\"],\"default\"]\n8:I[21072,[\"223\",\"static/chunks/223-9b9bf513e34d1a5b.js\",\"239\",\"static/chunks/239-c9c901f67bc16075.js\",\"619\",\"static/chunks/619-1108b4c084a63a2d.js\",\"234\",\"static/chunks/234-97aeb90adef45147.js\",\"630\",\"static/chunks/630-ab7776196e19012b.js\",\"974\",\"static/chunks/app/page-dd3415c883f31047.js\"],\"default\"]\n9:I[69416,[\"223\",\"static/chunks/223-9b9bf513e34d1a5b.js\",\"239\",\"static/chunks/239-c9c901f67bc16075.js\",\"619\",\"static/chunks/619-1108b4c084a63a2d.js\",\"234\",\"static/chunks/234-97aeb90adef45147.js\",\"630\",\"static/chunks/630-ab7776196e19012b.js\",\"974\",\"static/chunks/app/page-dd3415c883f31047.js\"],\"default\"]\na:I[23464,[\"223\",\"static/chunks/223-9b9bf513e34d1a5b.js\",\"239\",\"stat"])</script><script>self.__next_f.push([1,"ic/chunks/239-c9c901f67bc16075.js\",\"619\",\"static/chunks/619-1108b4c084a63a2d.js\",\"234\",\"static/chunks/234-97aeb90adef45147.js\",\"630\",\"static/chunks/630-ab7776196e19012b.js\",\"974\",\"static/chunks/app/page-dd3415c883f31047.js\"],\"default\"]\nb:I[61504,[\"223\",\"static/chunks/223-9b9bf513e34d1a5b.js\",\"239\",\"static/chunks/239-c9c901f67bc16075.js\",\"619\",\"static/chunks/619-1108b4c084a63a2d.js\",\"234\",\"static/chunks/234-97aeb90adef45147.js\",\"630\",\"static/chunks/630-ab7776196e19012b.js\",\"974\",\"static/chunks/app/page-dd3415c883f31047.js\"],\"default\"]\nc:I[52806,[\"223\",\"static/chunks/223-9b9bf513e34d1a5b.js\",\"239\",\"static/chunks/239-c9c901f67bc16075.js\",\"619\",\"static/chunks/619-1108b4c084a63a2d.js\",\"234\",\"static/chunks/234-97aeb90adef45147.js\",\"630\",\"static/chunks/630-ab7776196e19012b.js\",\"974\",\"static/chunks/app/page-dd3415c883f31047.js\"],\"default\"]\nd:I[51629,[\"223\",\"static/chunks/223-9b9bf513e34d1a5b.js\",\"239\",\"static/chunks/239-c9c901f67bc16075.js\",\"619\",\"static/chunks/619-1108b4c084a63a2d.js\",\"234\",\"static/chunks/234-97aeb90adef45147.js\",\"630\",\"static/chunks/630-ab7776196e19012b.js\",\"974\",\"static/chunks/app/page-dd3415c883f31047.js\"],\"default\"]\ne:I[71034,[\"223\",\"static/chunks/223-9b9bf513e34d1a5b.js\",\"239\",\"static/chunks/239-c9c901f67bc16075.js\",\"619\",\"static/chunks/619-1108b4c084a63a2d.js\",\"234\",\"static/chunks/234-97aeb90adef45147.js\",\"630\",\"static/chunks/630-ab7776196e19012b.js\",\"974\",\"static/chunks/app/page-dd3415c883f31047.js\"],\"default\"]\nf:I[24431,[],\"OutletBoundary\"]\n11:I[15278,[],\"AsyncMetadataOutlet\"]\n13:I[24431,[],\"ViewportBoundary\"]\n15:I[24431,[],\"MetadataBoundary\"]\n16:\"$Sreact.suspense\"\n18:I[57150,[],\"\"]\n:HL[\"/_next/static/media/22a5144ee8d83bca-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/36966cca54120369-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/7d4881bb7e1bf84d-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/73317f0232bc45be.css\",\"style\"]\n:HL[\"/_next/static/css/b530f2d182671b20.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"AW78PhUc2rLRsDucb8Lpv\",\"p\":\"\",\"c\":[\"\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/73317f0232bc45be.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/b530f2d182671b20.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"suppressHydrationWarning\":true,\"className\":\"__variable_246ccd __variable_c29908 __variable_6b9622\",\"children\":[\"$\",\"body\",null,{\"className\":\" min-h-screen bg-background text-foreground antialiased overflow-x-hidden font-sans \",\"children\":[[\"$\",\"$L2\",null,{}],[\"$\",\"main\",null,{\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"$L5\",null,{}]]}]}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"div\",null,{\"className\":\"home-page relative isolate overflow-hidden\",\"children\":[[\"$\",\"div\",null,{\"aria-hidden\":\"true\",\"className\":\"fluid-background fluid-background--light\",\"style\":{\"--fluid-image\":\"url(\\\"/images/itelf-fluid-bg.png\\\")\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"fluid-background__image\"}],[\"$\",\"div\",null,{\"className\":\"fluid-background__image fluid-background__image--drift\"}],[\"$\",\"div\",null,{\"className\":\"fluid-background__wash\"}],[\"$\",\"div\",null,{\"className\":\"fluid-background__vignette\"}]]}],[\"$\",\"div\",null,{\"className\":\"relative z-10\",\"children\":[[\"$\",\"$L6\",null,{}],[\"$\",\"$L7\",null,{}],[\"$\",\"$L8\",null,{}],[\"$\",\"$L9\",null,{}],[\"$\",\"$La\",null,{}],[\"$\",\"$Lb\",null,{}],[\"$\",\"$Lc\",null,{}],[\"$\",\"$Ld\",null,{}],[\"$\",\"$Le\",null,{}]]}]]}],null,[\"$\",\"$Lf\",null,{\"children\":[\"$L10\",[\"$\",\"$L11\",null,{\"promise\":\"$@12\"}]]}]]}],{},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$L13\",null,{\"children\":\"$L14\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]],[\"$\",\"$L15\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$16\",null,{\"fallback\":null,\"children\":\"$L17\"}]}]}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$18\",[]],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"14:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n10:null\n"])</script><script>self.__next_f.push([1,"19:I[80622,[],\"IconMark\"]\n12:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"iTELF | SCIT Pune\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Innovation. Leadership. Entrepreneurship. The official Entrepreneurship Cell of Symbiosis Centre for Information Technology, Pune.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}],[\"$\",\"$L19\",\"3\",{}]],\"error\":null,\"digest\":\"$undefined\"}\n"])</script><script>self.__next_f.push([1,"17:\"$12:metadata\"\n"])</script></body></html>
