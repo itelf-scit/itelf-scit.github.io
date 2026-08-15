@@ -3,7 +3,7 @@ name: Deploy iTELF Website
 on:
   push:
     branches:
-      - main
+      - prod-check
 
   workflow_dispatch:
 
@@ -25,17 +25,56 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # -----------------------------------------
+      # Checkout production test branch
+      # -----------------------------------------
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          ref: prod-check
 
+      # -----------------------------------------
+      # Setup Node.js
+      # -----------------------------------------
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # -----------------------------------------
+      # Install dependencies
+      # -----------------------------------------
+      - name: Install Dependencies
+        run: npm ci
+
+      # -----------------------------------------
+      # Build static Next.js website
+      # -----------------------------------------
+      - name: Build Website
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+        run: npm run build
+
+      # -----------------------------------------
+      # Configure GitHub Pages
+      # -----------------------------------------
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
+      # -----------------------------------------
+      # Upload ONLY the static export
+      # -----------------------------------------
       - name: Upload Website
         uses: actions/upload-pages-artifact@v4
         with:
-          path: .
+          path: ./out
 
+      # -----------------------------------------
+      # Deploy
+      # -----------------------------------------
       - name: Deploy Website
         id: deployment
         uses: actions/deploy-pages@v4
