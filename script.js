@@ -1,8 +1,41 @@
 (function(){
   'use strict';
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const header = document.querySelector('.site-header');
   const toggle = document.getElementById('navToggle');
   const menu = document.getElementById('navMenu');
+
+  // Hanging navigation: visible near the top, hides on downward scroll,
+  // and returns when the user scrolls upward.
+  if (header) {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateNav = function(){
+      const currentY = window.scrollY;
+      const delta = currentY - lastScrollY;
+
+      if (currentY <= 24) {
+        header.classList.remove('nav-hidden');
+      } else if (delta > 8) {
+        header.classList.add('nav-hidden');
+        if (menu) menu.classList.remove('open');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      } else if (delta < -8) {
+        header.classList.remove('nav-hidden');
+      }
+
+      lastScrollY = currentY;
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', function(){
+      if (!ticking) {
+        window.requestAnimationFrame(updateNav);
+        ticking = true;
+      }
+    }, { passive:true });
+  }
 
   if(toggle && menu){
     toggle.addEventListener('click', function(){
