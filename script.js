@@ -1,139 +1,70 @@
-/* =========================================================
-   iTELF — script.js
-   Minimal vanilla JS, no dependencies.
-   1) Mobile nav toggle
-   2) Board load-in sequence (threads draw, cards settle)
-   3) Card hover/focus -> highlight connected threads, dim rest
-========================================================= */
+(function(){
+  'use strict';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
 
-(function () {
-  "use strict";
-
-  var prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-  /* ---------------------------------------------------------
-     1) Mobile nav toggle
-  --------------------------------------------------------- */
-  var navToggle = document.getElementById("navToggle");
-  var navMenu = document.getElementById("navMenu");
-
-  if (navToggle && navMenu) {
-    navToggle.addEventListener("click", function () {
-      var isOpen = navMenu.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", String(isOpen));
+  if(toggle && menu){
+    toggle.addEventListener('click', function(){
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
     });
-
-    navMenu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        navMenu.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
-  /* ---------------------------------------------------------
-     2) Board load-in sequence
-  --------------------------------------------------------- */
-  var board = document.getElementById("board");
-
-  if (board) {
-    var threads = board.querySelectorAll(".thread");
-    var cards = board.querySelectorAll(".board-card");
-
-    if (prefersReducedMotion) {
-      threads.forEach(function (t) { t.classList.add("drawn"); });
-      cards.forEach(function (c) { c.classList.add("settled"); });
-    } else {
-      // Draw threads first (single orchestrated stroke animation)
-      threads.forEach(function (t) {
-        t.classList.add("drawn");
+  const board = document.getElementById('board');
+  if(board){
+    const threads = Array.from(board.querySelectorAll('.thread'));
+    const cards = Array.from(board.querySelectorAll('.board-card'));
+    function reveal(){
+      threads.forEach(function(thread){
+        thread.style.transition = 'stroke-dashoffset 1.15s cubic-bezier(.22,1,.36,1)';
+        thread.style.strokeDashoffset = '0';
       });
-
-      // Cards settle in shortly after, staggered slightly
-      cards.forEach(function (card, i) {
-        setTimeout(function () {
-          card.classList.add("settled");
-        }, 250 + i * 90);
+      cards.forEach(function(card,index){
+        window.setTimeout(function(){ card.classList.add('settled'); }, reduced ? 0 : 220 + index * 90);
       });
     }
-
-    /* -------------------------------------------------------
-       3) Hover/focus -> connect + dim
-       Each thread has data-pair="a-b" referencing card indices.
-       Hovering/focusing a card highlights threads touching it
-       and dims unrelated cards.
-    ------------------------------------------------------- */
-    var threadList = Array.prototype.slice.call(threads);
-
-    function setActiveCard(index) {
-      board.classList.add("dimming");
-
-      cards.forEach(function (card) {
-        var cardIndex = card.getAttribute("data-card");
-        card.classList.toggle("card-active", cardIndex === String(index));
-      });
-
-      threadList.forEach(function (thread) {
-        var pair = thread.getAttribute("data-pair") || "";
-        var touches = pair.split("-").indexOf(String(index)) !== -1;
-        thread.classList.toggle("active", touches);
-      });
+    requestAnimationFrame(reveal);
+    function active(index){
+      board.classList.add('dimming');
+      cards.forEach(function(card){card.classList.toggle('card-active', card.dataset.card === index);});
+      threads.forEach(function(thread){thread.classList.toggle('active', (thread.dataset.pair || '').split('-').includes(index));});
     }
-
-    function clearActiveCard() {
-      board.classList.remove("dimming");
-      cards.forEach(function (card) {
-        card.classList.remove("card-active");
-      });
-      threadList.forEach(function (thread) {
-        thread.classList.remove("active");
-      });
+    function clear(){
+      board.classList.remove('dimming');
+      cards.forEach(function(card){card.classList.remove('card-active');});
+      threads.forEach(function(thread){thread.classList.remove('active');});
     }
-
-    cards.forEach(function (card) {
-      var index = card.getAttribute("data-card");
-
-      card.addEventListener("mouseenter", function () {
-        setActiveCard(index);
-      });
-      card.addEventListener("mouseleave", clearActiveCard);
-
-      card.addEventListener("focus", function () {
-        setActiveCard(index);
-      });
-      card.addEventListener("blur", clearActiveCard);
+    cards.forEach(function(card){
+      card.tabIndex = 0;
+      card.addEventListener('mouseenter', function(){active(card.dataset.card);});
+      card.addEventListener('mouseleave', clear);
+      card.addEventListener('focus', function(){active(card.dataset.card);});
+      card.addEventListener('blur', clear);
     });
   }
-})();
-/* =========================================================
-   DOMAIN ACCORDION
-========================================================= */
 
-const domainRows = document.querySelectorAll(".domain-row");
+  if(reduced || !window.gsap || !window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
 
-domainRows.forEach((row) => {
-  const trigger = row.querySelector(".domain-trigger");
-
-  trigger.setAttribute("aria-expanded", "false");
-
-  trigger.addEventListener("click", () => {
-    const isOpen = row.classList.contains("is-open");
-
-    domainRows.forEach((item) => {
-      item.classList.remove("is-open");
-
-      const itemTrigger = item.querySelector(".domain-trigger");
-
-      if (itemTrigger) {
-        itemTrigger.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    if (!isOpen) {
-      row.classList.add("is-open");
-      trigger.setAttribute("aria-expanded", "true");
-    }
+  gsap.utils.toArray('.sprout-step').forEach(function(step,index){
+    gsap.fromTo(step,{x:70,opacity:.15},{x:0,opacity:1,ease:'none',scrollTrigger:{trigger:step,start:'top 88%',end:'top 55%',scrub:true}});
   });
-});
+
+  gsap.utils.toArray('.stream-line').forEach(function(line){
+    gsap.fromTo(line,{x:50,opacity:.2},{x:0,opacity:1,ease:'none',scrollTrigger:{trigger:line,start:'top 88%',end:'top 55%',scrub:true}});
+  });
+
+  gsap.from('.tedx-word',{x:-120,opacity:.1,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.tedx',start:'top 75%',toggleActions:'play none none reverse'}});
+  gsap.utils.toArray('.gallery-tile').forEach(function(tile){
+    gsap.fromTo(tile,{scale:.88,opacity:.25},{scale:1,opacity:1,ease:'none',scrollTrigger:{trigger:tile,start:'top 95%',end:'bottom 30%',scrub:true}});
+  });
+
+  gsap.from('.about-manifesto',{opacity:.1,y:35,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.about',start:'top 75%',toggleActions:'play none none reverse'}});
+})();
