@@ -1,0 +1,379 @@
+/* =========================================================
+   RESPONSIVE.CSS
+   iTELF — HERO + NAV ONLY
+   ---------------------------------------------------------
+   This file intentionally contains only responsive overrides
+   for the institutional/nav area and the hero section.
+   Base styling remains isolated in style.css.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   NAV — TABLET / SMALL LAPTOP
+   --------------------------------------------------------- */
+@media (max-width: 1180px) and (min-width: 761px) {
+  .institutional-bar {
+    padding-inline: 1.5rem;
+  }
+
+  .subsite-label {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .site-nav-wrap {
+    max-width: calc(100vw - 1.5rem);
+  }
+
+  .nav-links a {
+    padding-inline: 0.85rem;
+    font-size: 0.79rem;
+  }
+}
+
+/* ---------------------------------------------------------
+   HERO — TABLET / SMALL LAPTOP
+   --------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    max-width: 760px;
+  }
+
+  .board-neon-frame {
+    width: min(100%, 700px);
+  }
+
+  .hero-flight {
+    top: 0;
+    left: -4%;
+    right: auto;
+    width: 104%;
+    opacity: 0.72;
+  }
+
+  .hero-light-sweep {
+    bottom: 12%;
+    left: -34%;
+    width: 165%;
+    opacity: 0.58;
+  }
+}
+
+/* ---------------------------------------------------------
+   HERO — LARGE DESKTOP
+   --------------------------------------------------------- */
+@media (min-width: 1400px) {
+  .board-neon-frame {
+    width: 610px;
+  }
+
+  .board {
+    height: 420px;
+    min-height: 420px;
+  }
+}
+
+/* ---------------------------------------------------------
+   NAV + HERO — PORTRAIT DEVICES
+   --------------------------------------------------------- */
+@media (max-width: 760px) and (orientation: portrait) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  .institutional-bar {
+    min-height: 76px;
+    padding: 1rem 1.25rem;
+  }
+
+  .site-nav-wrap {
+    top: 72px;
+    width: calc(100vw - 1.5rem);
+    max-width: 480px;
+  }
+
+  .site-nav {
+    width: 100%;
+    min-height: 54px;
+    padding: 0.25rem;
+    border-radius: 15px;
+  }
+
+  .nav-toggle {
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  .nav-links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 0.5rem);
+    height: auto;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    padding: 0.5rem;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background: var(--navy);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a,
+  .nav-links a:last-child {
+    border-bottom: 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 4.5rem 1.25rem 5.5rem;
+  }
+
+  .hero-brandmark {
+    width: clamp(155px, 48vw, 220px);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-kicker {
+    max-width: 42ch;
+  }
+
+  .hero-headline {
+    font-size: clamp(3.6rem, 15vw, 5.8rem);
+  }
+
+  .hero-subhead {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .board-neon-frame {
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .board {
+    height: 360px;
+    min-height: 360px;
+    border-radius: 15px;
+  }
+
+  .board-card {
+    width: 128px;
+    min-height: 112px;
+    padding: 0.85rem;
+  }
+
+  .board-card p {
+    font-size: 0.76rem;
+  }
+
+  .board-card .card-tag {
+    margin-top: 0.95rem;
+    font-size: 0.55rem;
+  }
+
+  .card-pin {
+    width: 10px;
+    height: 10px;
+  }
+
+  .board-card[data-card="1"] { top: 15% !important; left: 7% !important; }
+  .board-card[data-card="2"] { top: 10% !important; left: 51% !important; }
+  .board-card[data-card="3"] { top: 41% !important; left: 31% !important; }
+  .board-card[data-card="4"] { top: 61% !important; left: 8% !important; }
+  .board-card[data-card="5"] { top: 59% !important; left: 54% !important; }
+
+  .hero-flight {
+    top: 0;
+    left: -6%;
+    right: auto;
+    width: 106%;
+    opacity: 0.44;
+  }
+
+  .hero-light-sweep {
+    bottom: 10%;
+    left: -58%;
+    width: 210%;
+    height: 125px;
+    filter: blur(24px);
+    opacity: 0.46;
+  }
+}
+
+/* ---------------------------------------------------------
+   NAV + HERO — LANDSCAPE DEVICES
+   --------------------------------------------------------- */
+@media (max-width: 1100px) and (orientation: landscape) {
+  .institutional-bar {
+    min-height: 64px;
+    padding: 0.7rem 1.25rem;
+  }
+
+  .site-nav-wrap {
+    top: 58px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 3.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(3.4rem, 7vw, 6rem);
+  }
+
+  .board-neon-frame {
+    width: min(100%, 620px);
+  }
+
+  .board {
+    height: 390px;
+    min-height: 390px;
+  }
+
+  .hero-flight {
+    top: 0;
+    left: -4%;
+    width: 104%;
+  }
+}
+
+/* ---------------------------------------------------------
+   SHORT LANDSCAPE SCREENS
+   --------------------------------------------------------- */
+@media (max-width: 1100px) and (orientation: landscape) and (max-height: 620px) {
+  .institutional-bar {
+    min-height: 56px;
+  }
+
+  .site-nav-wrap {
+    top: 52px;
+  }
+
+  .hero {
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-brandmark {
+    width: clamp(125px, 18vw, 180px);
+    margin-bottom: 1rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+  }
+
+  .board {
+    height: 310px;
+    min-height: 310px;
+  }
+
+  .board-card {
+    width: 118px;
+    min-height: 100px;
+    padding: 0.7rem;
+  }
+
+  .hero-flight {
+    opacity: 0.62;
+  }
+}
+
+/* ---------------------------------------------------------
+   VERY SMALL PORTRAIT PHONES
+   --------------------------------------------------------- */
+@media (max-width: 460px) and (orientation: portrait) {
+  .institutional-bar {
+    gap: 0.75rem;
+  }
+
+  .back-to-scit span:last-child {
+    display: none;
+  }
+
+  .back-to-scit {
+    width: 40px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .symbiosis-logo {
+    height: 34px;
+    max-width: 140px;
+  }
+
+  .hero {
+    padding-inline: 1.1rem;
+  }
+
+  .board {
+    height: 355px;
+    min-height: 355px;
+  }
+
+  .board-card {
+    width: 124px;
+    min-height: 108px;
+    padding: 0.78rem;
+  }
+
+  .board-card p {
+    font-size: 0.7rem;
+  }
+
+  .board-card[data-card="1"] { left: 4% !important; }
+  .board-card[data-card="2"] { left: 49% !important; }
+  .board-card[data-card="3"] { left: 27% !important; }
+  .board-card[data-card="4"] { left: 4% !important; }
+  .board-card[data-card="5"] { left: 51% !important; }
+}
+
+/* ---------------------------------------------------------
+   ACCESSIBILITY / MOTION
+   --------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-light-sweep,
+  .hero-flight {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

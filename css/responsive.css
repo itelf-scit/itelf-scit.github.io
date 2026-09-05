@@ -1,0 +1,489 @@
+/* =========================================================
+   RESPONSIVE.CSS
+   iTELF — NAV + HERO ONLY
+   ---------------------------------------------------------
+   Only responsive overrides live here.
+   Base design remains in css/style.css.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   01. GLOBAL CONSTRAINTS
+   --------------------------------------------------------- */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.site-header,
+.hero,
+.site-nav-wrap,
+.site-nav,
+.hero-inner,
+.board-neon-frame {
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   02. TABLET / SMALL LAPTOP NAV
+   --------------------------------------------------------- */
+@media (max-width: 1180px) {
+  .institutional-bar {
+    padding-inline: clamp(1rem, 3vw, 2rem);
+  }
+
+  .site-nav-wrap {
+    max-width: calc(100vw - 1.5rem);
+  }
+
+  .nav-links a {
+    padding-inline: clamp(0.8rem, 1.8vw, 1.1rem);
+    font-size: 0.82rem;
+  }
+}
+
+/* ---------------------------------------------------------
+   03. TABLET / SMALL LAPTOP HERO
+   --------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 760px;
+  }
+
+  .board-neon-frame {
+    width: min(100%, 640px);
+    justify-self: center;
+  }
+}
+
+/* ---------------------------------------------------------
+   04. PORTRAIT DEVICES — MASTER LAYOUT
+   --------------------------------------------------------- */
+@media (max-width: 1024px) and (orientation: portrait) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  /* Institutional strip stays compact and never competes with the hero. */
+  .institutional-bar {
+    width: 100%;
+    min-height: 72px;
+    padding: 0.7rem 1rem;
+  }
+
+  .back-to-scit {
+    min-height: 42px;
+    width: 42px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .back-to-scit span:last-child {
+    display: none;
+  }
+
+  /* Hanging nav becomes a small floating control, not a full-width bar. */
+  .site-nav-wrap {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    width: 60px !important;
+    max-width: 60px !important;
+    margin: 0;
+    transform: translateX(-50%) !important;
+  }
+
+  .site-header.nav-hidden .site-nav-wrap {
+    transform: translate(-50%, -150%) !important;
+  }
+
+  .site-nav {
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+    min-height: 56px;
+    height: 56px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 17px;
+  }
+
+  .nav-toggle {
+    display: block;
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    margin: 0;
+    border-radius: 12px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 0.65rem);
+    left: 50%;
+    width: min(290px, calc(100vw - 2rem));
+    min-height: 0;
+    height: auto;
+    max-height: calc(100svh - 92px);
+    padding: 0.45rem;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    transform: translateX(-50%);
+    overflow-y: auto;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 14px;
+    background: var(--navy);
+    box-shadow: 0 20px 45px rgba(0,0,0,.34);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a,
+  .nav-links a:last-child {
+    min-height: 46px;
+    border: 0;
+    border-radius: 9px;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.78rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Hero: one-column flow with stable side padding. */
+  .hero {
+    min-height: auto;
+    padding: clamp(5rem, 10vw, 6.5rem) clamp(1rem, 5vw, 2rem) clamp(3.5rem, 8vw, 5rem);
+  }
+
+  .hero-inner {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(2.5rem, 7vw, 4rem);
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 760px;
+    margin-inline: auto;
+  }
+
+  .hero-brandmark {
+    width: clamp(155px, 34vw, 230px);
+    margin-bottom: clamp(1.2rem, 4vw, 1.8rem);
+  }
+
+  .hero-kicker {
+    max-width: 48ch;
+    margin-bottom: clamp(1.2rem, 4vw, 1.7rem);
+    font-size: clamp(.62rem, 1.65vw, .72rem);
+    line-height: 1.5;
+  }
+
+  .hero-headline {
+    width: 100%;
+    max-width: 10ch;
+    margin-bottom: 1.5rem;
+    font-size: clamp(3rem, 10.6vw, 5.7rem);
+    line-height: .91;
+    letter-spacing: -.075em;
+  }
+
+  .hero-subhead {
+    max-width: 58ch;
+    font-size: clamp(.92rem, 2vw, 1.08rem);
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    margin-top: 1.6rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  /* Same SVG, treated as a bounded decorative background on portrait. */
+  .hero-flight {
+    top: 0;
+    left: -8%;
+    width: 116%;
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+    object-position: 38% center;
+    opacity: .30;
+    filter: none;
+  }
+
+  /* Board uses viewport-relative sizing so medium and small phones both fit. */
+  .board-neon-frame {
+    width: min(100%, 620px);
+    justify-self: center;
+    padding: clamp(5px, 1.5vw, 8px);
+    border-radius: clamp(17px, 4vw, 24px);
+  }
+
+  .board {
+    width: 100%;
+    height: clamp(300px, 82vw, 420px);
+    min-height: 300px;
+    border-radius: clamp(12px, 2.8vw, 16px);
+  }
+
+  .board-card {
+    width: clamp(104px, 22vw, 136px);
+    min-height: clamp(92px, 20vw, 118px);
+    padding: clamp(.58rem, 2vw, .85rem);
+  }
+
+  .board-card p {
+    font-size: clamp(.62rem, 1.7vw, .78rem);
+    line-height: 1.28;
+  }
+
+  .board-card .card-tag {
+    margin-top: .65rem;
+    font-size: clamp(.45rem, 1.25vw, .55rem);
+  }
+
+  /* Preserve the user's board composition while keeping every card in-frame. */
+  .board-card[data-card="1"] { top: 12% !important; left: 6% !important; }
+  .board-card[data-card="2"] { top: 8% !important; left: 58% !important; }
+  .board-card[data-card="3"] { top: 38% !important; left: 31% !important; }
+  .board-card[data-card="4"] { top: 65% !important; left: 6% !important; }
+  .board-card[data-card="5"] { top: 63% !important; left: 57% !important; }
+}
+
+/* ---------------------------------------------------------
+   05. SMALL PORTRAIT PHONES
+   --------------------------------------------------------- */
+@media (max-width: 600px) and (orientation: portrait) {
+  .institutional-bar {
+    min-height: 64px;
+    padding-inline: .8rem;
+  }
+
+  .site-nav-wrap {
+    top: 8px;
+  }
+
+  .site-nav {
+    width: 56px !important;
+    min-width: 56px !important;
+    max-width: 56px !important;
+    min-height: 52px;
+    height: 52px;
+    padding: 4px;
+    border-radius: 15px;
+  }
+
+  .nav-toggle {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+  }
+
+  .hero {
+    padding: 4.6rem .85rem 3.5rem;
+  }
+
+  .hero-inner {
+    gap: 2.7rem;
+  }
+
+  .hero-brandmark {
+    width: 160px;
+  }
+
+  .hero-kicker {
+    max-width: 35ch;
+    font-size: .62rem;
+    letter-spacing: .13em;
+  }
+
+  .hero-headline {
+    max-width: 9.6ch;
+    font-size: clamp(2.8rem, 12vw, 4.2rem);
+    line-height: .9;
+  }
+
+  .hero-subhead {
+    font-size: .92rem;
+  }
+
+  .hero-flight {
+    left: -10%;
+    width: 120%;
+    object-position: 34% center;
+    opacity: .22;
+  }
+
+  .board-neon-frame {
+    width: min(100%, 500px);
+  }
+
+  .board {
+    height: clamp(300px, 88vw, 350px);
+  }
+
+  .board-card {
+    width: clamp(100px, 29vw, 116px);
+    min-height: 92px;
+    padding: .6rem;
+  }
+
+  .board-card p {
+    font-size: clamp(.58rem, 2.2vw, .68rem);
+  }
+
+  .board-card[data-card="1"] { top: 13% !important; left: 4% !important; }
+  .board-card[data-card="2"] { top: 8% !important; left: 53% !important; }
+  .board-card[data-card="3"] { top: 39% !important; left: 28% !important; }
+  .board-card[data-card="4"] { top: 64% !important; left: 4% !important; }
+  .board-card[data-card="5"] { top: 62% !important; left: 52% !important; }
+}
+
+/* ---------------------------------------------------------
+   06. VERY SMALL PORTRAIT PHONES
+   --------------------------------------------------------- */
+@media (max-width: 390px) and (orientation: portrait) {
+  .hero {
+    padding-inline: .72rem;
+  }
+
+  .hero-headline {
+    max-width: 9.1ch;
+    font-size: clamp(2.55rem, 11.8vw, 3.55rem);
+  }
+
+  .hero-flight {
+    left: -12%;
+    width: 124%;
+    object-position: 31% center;
+    opacity: .19;
+  }
+
+  .board {
+    height: 300px;
+  }
+
+  .board-card {
+    width: 98px;
+    min-height: 88px;
+    padding: .55rem;
+  }
+}
+
+/* ---------------------------------------------------------
+   07. LANDSCAPE DEVICES
+   --------------------------------------------------------- */
+@media (max-width: 1100px) and (orientation: landscape) {
+  .institutional-bar {
+    min-height: 64px;
+    padding: .6rem clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .site-nav-wrap {
+    top: 58px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: clamp(3.7rem, 8vw, 5.5rem) clamp(1.2rem, 3vw, 2rem) 4rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: minmax(0, .92fr) minmax(360px, 1.08fr);
+    align-items: center;
+    gap: clamp(1.5rem, 3vw, 2.8rem);
+  }
+
+  .hero-headline {
+    font-size: clamp(3rem, 7vw, 6rem);
+  }
+
+  .hero-flight {
+    top: 0;
+    left: -6%;
+    width: 108%;
+    height: auto;
+    max-width: none;
+    opacity: .58;
+    object-fit: initial;
+  }
+
+  .board-neon-frame {
+    width: min(100%, 600px);
+  }
+
+  .board {
+    height: clamp(300px, 52vw, 390px);
+    min-height: 300px;
+  }
+}
+
+/* ---------------------------------------------------------
+   08. SHORT LANDSCAPE SCREENS
+   --------------------------------------------------------- */
+@media (max-width: 1100px) and (orientation: landscape) and (max-height: 620px) {
+  .institutional-bar {
+    min-height: 56px;
+  }
+
+  .site-nav-wrap {
+    top: 50px;
+  }
+
+  .hero {
+    padding-top: 2.7rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-brandmark {
+    width: clamp(120px, 18vw, 175px);
+    margin-bottom: .8rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.6rem, 6vw, 4.7rem);
+  }
+
+  .board {
+    height: 290px;
+    min-height: 290px;
+  }
+}
+
+/* ---------------------------------------------------------
+   09. MOTION / ACCESSIBILITY
+   --------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-light-sweep,
+  .hero-flight {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
