@@ -1,5 +1,17 @@
-# iTELF / SCIT Header Update
+# iTELF site — responsive pass
 
-- Removed the SCIT item from the hanging navigation.
-- Replaced the upper masthead with a Back to SCIT Home control and a Symbiosis logo slot.
-- To add the official Symbiosis logo later, replace the contents of `.symbiosis-logo-slot` in `index.html` with the supplied `<img>`.
+This build keeps the existing desktop composition and adds a full responsive pass across:
+- Header / navigation
+- Hero + idea board
+- About
+- SPROUT'IT
+- STREAMS
+- TEDxSIUHinjewadi
+- Gallery
+- Domains
+- Closing CTA
+- Footer
+
+Responsive rules are consolidated as final overrides in `css/responsive.css`.
+
+The STREAMS orbit overlay remains disabled, matching the latest visual direction.

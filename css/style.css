@@ -983,82 +983,378 @@ div {
    10. STREAMS
    --------------------------------------------------------- */
 
-.streams-layout {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(3rem, 8vw, 9rem);
-  align-items: start;
+.streams {
+  position: relative;
+  min-height: 920px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(49, 88, 134, 0.2), transparent 35%),
+    #030b15;
 }
 
-.streams-title {
-  position: sticky;
-  top: 7rem;
-  align-self: start;
+.streams-bg,
+.streams-shade,
+.streams-grid-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
-.streams-title h2 {
-  color: var(--navy);
+.streams-bg {
+  z-index: -3;
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(0, 0, 0, 0.98) 0 13%, rgba(0, 9, 19, 0.96) 27%, rgba(5, 30, 57, 0.86) 49%, rgba(10, 55, 98, 0.62) 72%, rgba(16, 71, 124, 0.42) 100%),
+    linear-gradient(135deg, #02060d 0%, #06172b 42%, #0a3762 100%);
+  overflow: hidden;
+  opacity: 1;
+  filter: none;
+  transform: none;
 }
 
-.streams-title .section-kicker {
-  color: #717985;
+/* Keep the Streams brandmark independent from the background scaling so it
+   stays correctly sized when the section becomes a tall vertical stack. */
+.streams-bg::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(210px, 24vw, 360px);
+  aspect-ratio: 354 / 291;
+  transform: translate(-50%, -50%);
+  background: url('../src/images/Streams-2025.png') center / contain no-repeat;
+  /* The source PNG has a black matte. Screen blending removes that matte
+     visually so only the Streams artwork sits over the blue gradient. */
+  mix-blend-mode: screen;
+  opacity: 0.22;
+  filter: saturate(0.88) brightness(1.08);
+  pointer-events: none;
 }
 
-.streams-content {
-  max-width: 780px;
+/* Decorative orbit markup is intentionally disabled. */
+.streams-orbit {
+  display: none !important;
 }
 
-.streams-lead {
-  max-width: 58ch;
-  margin-bottom: 2.5rem;
-  color: #4f5965;
-  font-size: clamp(1.05rem, 1.45vw, 1.2rem);
-  line-height: 1.75;
+
+.streams-shade {
+  z-index: -2;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.06) 0 30%, rgba(2, 8, 15, 0.18) 60%, rgba(2, 8, 15, 0.34) 100%),
+    linear-gradient(180deg, rgba(1, 5, 11, 0.12), rgba(1, 5, 11, 0.02) 52%, rgba(1, 5, 11, 0.24));
+}
+
+.streams-grid-lines {
+  z-index: -1;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(131, 170, 216, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(131, 170, 216, 0.14) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 86%, transparent);
+}
+
+.streams-inner {
+  position: relative;
+  z-index: 1;
+  padding-top: clamp(6rem, 9vw, 8.5rem);
+  padding-bottom: clamp(5rem, 8vw, 7.5rem);
+}
+
+.streams-header {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.streams-header .section-kicker {
+  margin: 1.35rem 0 1rem;
+  color: rgba(223, 232, 242, 0.68);
+}
+
+.streams-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 32px;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(220, 169, 76, 0.38);
+  border-radius: 999px;
+  color: #f2cf89;
+  background: rgba(3, 13, 25, 0.58);
+  box-shadow: 0 0 30px rgba(222, 168, 69, 0.08);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.streams-badge span {
+  width: 22px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #dba94f);
+}
+
+.streams-badge span:last-child {
+  background: linear-gradient(90deg, #dba94f, transparent);
+}
+
+.streams-header h2 {
+  max-width: 11ch;
+  margin-inline: auto;
+  color: #f5f8fc;
+  font-size: clamp(3.4rem, 7vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.92;
+}
+
+.streams-header h2 span {
+  color: transparent;
+  background: linear-gradient(105deg, #b9d6ff 10%, #6e9ee8 38%, #efc56f 78%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@media (min-width: 1200px) {
+  .streams-header h2 {
+    font-size: clamp(3.8rem, 6.2vw, 5.65rem);
+    max-width: 11ch;
+    text-wrap: balance;
+  }
+}
+
+.streams-deck {
+  width: min(760px, 100%);
+  margin: 1.6rem auto 0;
+  color: rgba(211, 222, 235, 0.78);
+  font-size: clamp(0.98rem, 1.3vw, 1.15rem);
+  line-height: 1.8;
+}
+
+.streams-stage {
+  position: relative;
+  width: min(1180px, 100%);
+  margin: clamp(3.5rem, 6vw, 5.5rem) auto 0;
 }
 
 .stream-lines {
-  border-top: 1px solid var(--line);
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
 }
 
 .stream-line {
-  min-height: 110px;
-  padding: 1.4rem 0;
-  display: grid;
-  grid-template-columns: 125px minmax(0, 1fr) auto;
-  gap: 1rem;
+  --stream-accent: #7ab2ff;
+  position: relative;
+  min-height: 355px;
+  padding: 1.45rem 1.65rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: transform 0.42s var(--ease);
+}
+
+.stream-line + .stream-line {
+  border-left: 1px solid rgba(132, 161, 194, 0.12);
+}
+
+.stream-line::before,
+.stream-line::after {
+  display: none;
+}
+
+.stream-line:hover,
+.stream-line:focus-within {
+  transform: translateY(-6px);
+}
+
+.stream-line-top {
+  width: 100%;
+  display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--line);
-  transition:
-    padding 0.35s var(--ease),
-    background 0.35s var(--ease);
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.stream-line:hover {
-  padding-inline: 0.85rem;
-  background: rgba(36, 59, 97, 0.04);
+.stream-number {
+  color: color-mix(in srgb, var(--stream-accent) 75%, white 25%);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
 }
 
-.stream-line span {
-  color: var(--red);
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
+.stream-label {
+  padding: 0.28rem 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--stream-accent) 45%, transparent);
+  border-radius: 999px;
+  color: rgba(230, 237, 247, 0.78);
+  background: rgba(255,255,255,0.025);
+  font-size: 0.62rem;
+  font-weight: 800;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.stream-line strong {
-  color: var(--navy);
-  font-size: clamp(1.25rem, 2vw, 1.9rem);
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+.stream-icon {
+  width: 56px;
+  height: 56px;
+  margin: 2.2rem 0 1.5rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--stream-accent) 72%, transparent);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--stream-accent) 8%, rgba(5, 15, 27, 0.92));
+  box-shadow: 0 0 30px color-mix(in srgb, var(--stream-accent) 12%, transparent);
 }
 
-.stream-line i {
-  color: #8893a0;
-  font-size: 0.72rem;
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+.stream-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--stream-accent);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.stream-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.stream-copy h3 {
+  color: #f4f8fd;
+  font-size: clamp(1.2rem, 1.65vw, 1.5rem);
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.stream-copy p {
+  margin-top: 0.8rem;
+  color: rgba(194, 208, 223, 0.72);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.stream-arrow {
+  position: relative;
+  z-index: 1;
+  width: 42px;
+  height: 42px;
+  margin-top: auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--stream-accent) 70%, transparent);
+  border-radius: 50%;
+  color: var(--stream-accent);
+  background: rgba(4, 11, 20, 0.48);
+  font-size: 1rem;
+  transition: transform 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease);
+}
+
+.stream-line:hover .stream-arrow,
+.stream-line:focus-within .stream-arrow {
+  transform: rotate(7deg) translate(2px, -2px);
+  color: #08101a;
+  background: var(--stream-accent);
+}
+
+.stream-line--listen { --stream-accent: #71b0ff; }
+.stream-line--question { --stream-accent: #bb8aff; }
+.stream-line--challenge { --stream-accent: #efc06f; }
+.stream-line--carry { --stream-accent: #62d8c4; }
+
+.streams-footer {
+  width: min(900px, 100%);
+  margin: 1.2rem auto 0;
+  padding: 1.1rem 1.2rem 1.1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  border: 1px solid rgba(139, 173, 210, 0.17);
+  border-radius: 20px;
+  background: rgba(4, 12, 22, 0.58);
+  box-shadow: inset 0 1px rgba(255,255,255,0.035);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.streams-footer-copy {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.streams-footer-copy p {
+  color: rgba(207, 219, 232, 0.72);
+  font-size: 0.86rem;
+}
+
+.streams-footer-copy strong {
+  color: #f1ca78;
+}
+
+.streams-pulse {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border: 1px solid rgba(232, 193, 106, 0.3);
+  border-radius: 50%;
+}
+
+.streams-pulse i {
+  width: 3px;
+  height: 10px;
+  border-radius: 999px;
+  background: #e9bf66;
+  animation: streamsPulse 1.15s ease-in-out infinite;
+}
+
+.streams-pulse i:nth-child(2) { animation-delay: 0.12s; }
+.streams-pulse i:nth-child(3) { animation-delay: 0.24s; }
+.streams-pulse i:nth-child(4) { animation-delay: 0.36s; }
+
+.streams-cta {
+  flex: 0 0 auto;
+  min-height: 48px;
+  padding-inline: 1.05rem;
+  border-color: rgba(226, 182, 89, 0.36);
+  color: #f4ce84;
+  background: rgba(217, 169, 70, 0.06);
+}
+
+.streams-cta:hover,
+.streams-cta:focus-visible {
+  border-color: #e0b55f;
+  background: rgba(217, 169, 70, 0.12);
+}
+
+
+@keyframes streamsPulse {
+  0%, 100% { transform: scaleY(0.6); opacity: 0.55; }
+  50% { transform: scaleY(1.4); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stream-line,
+  .streams-pulse i {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* ---------------------------------------------------------
@@ -1413,3 +1709,93 @@ div {
 /* ---------------------------------------------------------
    20. HANGING NAV RESPONSIVE TUNING
    --------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   STREAMS — vertical editorial stack
+   --------------------------------------------------------- */
+.stream-lines {
+  width: min(920px, 100%);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.stream-line {
+  min-height: 0;
+  padding: 2rem 0 2.1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "top arrow"
+    "copy arrow";
+  column-gap: clamp(1.25rem, 4vw, 4rem);
+  align-items: center;
+  overflow: visible;
+  border: 0;
+  border-bottom: 1px solid rgba(132, 161, 194, 0.16);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: padding 0.35s var(--ease), background 0.35s var(--ease);
+}
+
+.stream-line:first-child {
+  border-top: 1px solid rgba(132, 161, 194, 0.16);
+}
+
+.stream-line + .stream-line {
+  border-left: 0;
+}
+
+.stream-line:hover,
+.stream-line:focus-within {
+  transform: none;
+  padding-inline: 0.8rem;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--stream-accent) 7%, transparent), transparent 58%);
+}
+
+.stream-line-top {
+  width: auto;
+  grid-area: top;
+  justify-content: flex-start;
+  margin-bottom: 0.55rem;
+}
+
+.stream-label {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--stream-accent);
+  background: transparent;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.stream-copy {
+  grid-area: copy;
+  max-width: 690px;
+}
+
+.stream-copy h3 {
+  font-size: clamp(1.55rem, 2.7vw, 2.45rem);
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+}
+
+.stream-copy p {
+  max-width: 58ch;
+  margin-top: 0.7rem;
+  font-size: 0.97rem;
+  line-height: 1.7;
+}
+
+.stream-arrow {
+  grid-area: arrow;
+  align-self: center;
+  margin-top: 0;
+}
+
