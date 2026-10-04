@@ -15,3 +15,6 @@ This build keeps the existing desktop composition and adds a full responsive pas
 Responsive rules are consolidated as final overrides in `css/responsive.css`.
 
 The STREAMS orbit overlay remains disabled, matching the latest visual direction.
+
+- TEDxSIUHinjewadi section revamped with a strict red / black / white palette, supplied TEDxSIUHinjewadi logo, and direct link to https://tedxsiuhinjewadi.scit.edu/.
+- STREAMS CTA updated from “Talk to iTELF” to “Contact Us”.

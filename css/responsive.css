@@ -1463,3 +1463,158 @@ body {
   }
 }
 
+
+/* ---------------------------------------------------------
+   15. TEDx RED / BLACK / WHITE RESPONSIVE OVERRIDES
+   --------------------------------------------------------- */
+.tedx {
+  --tedx-red: #eb0029;
+  --tedx-black: #050505;
+  --tedx-white: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .tedx-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    min-height: auto;
+  }
+
+  .tedx-visual {
+    min-height: 0;
+    padding: 2rem;
+  }
+
+  .tedx-logo-link {
+    width: min(100%, 680px);
+  }
+
+  .tedx-copy h2 {
+    max-width: 16ch;
+  }
+}
+
+@media (max-width: 720px) {
+  .tedx .section-inner {
+    padding-top: clamp(4.5rem, 14vw, 6rem);
+    padding-bottom: clamp(4rem, 13vw, 5.5rem);
+  }
+
+  .tedx-layout {
+    gap: 2.5rem;
+  }
+
+  .tedx-visual {
+    padding: 1.5rem 1rem 1.75rem;
+    border-left-width: 4px;
+  }
+
+  .tedx-red-bar {
+    width: 56%;
+    height: 3px;
+  }
+
+  .tedx-logo-link {
+    width: min(100%, 620px);
+  }
+
+  .tedx-visual-note {
+    margin-top: 1rem;
+    font-size: .61rem;
+    line-height: 1.5;
+  }
+
+  .tedx-copy h2 {
+    max-width: 100%;
+    margin-bottom: 1.1rem;
+    font-size: clamp(2.7rem, 12vw, 4.3rem);
+    line-height: .94;
+  }
+
+  .tedx-lead {
+    margin-bottom: 1.8rem;
+    font-size: .95rem;
+    line-height: 1.7;
+  }
+
+  .tedx-points {
+    grid-template-columns: 1fr;
+    margin-bottom: 1.8rem;
+  }
+
+  .tedx-points > div,
+  .tedx-points > div:nth-child(2),
+  .tedx-points > div:last-child {
+    min-height: 0;
+    padding: 1rem 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.14);
+  }
+
+  .tedx-points > div:last-child {
+    border-bottom: 0;
+  }
+
+  .tedx-points strong {
+    font-size: .76rem;
+  }
+
+  .tedx-points span {
+    font-size: .86rem;
+    line-height: 1.55;
+  }
+
+  .tedx-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: .9rem;
+  }
+
+  .tedx-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tedx-inline-link {
+    align-self: flex-start;
+    font-size: .69rem;
+  }
+
+  .tedx-bg-word {
+    right: -17vw;
+    font-size: 9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .tedx .section-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .tedx-visual {
+    padding-inline: .85rem;
+  }
+
+  .tedx-logo {
+    width: 100%;
+  }
+
+  .tedx-copy h2 {
+    font-size: clamp(2.45rem, 13vw, 3.35rem);
+  }
+
+  .tedx-points span {
+    font-size: .82rem;
+  }
+}
+
+@media (max-height: 700px) and (orientation: landscape) {
+  .tedx-layout {
+    min-height: auto;
+  }
+
+  .tedx-visual {
+    min-height: 0;
+  }
+}

@@ -90,7 +90,7 @@
     gsap.fromTo(line,{x:50,opacity:.2},{x:0,opacity:1,ease:'none',scrollTrigger:{trigger:line,start:'top 88%',end:'top 55%',scrub:true}});
   });
 
-  gsap.from('.tedx-word',{x:-120,opacity:.1,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.tedx',start:'top 75%',toggleActions:'play none none reverse'}});
+  gsap.from('.tedx-visual',{x:-90,opacity:.12,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.tedx',start:'top 75%',toggleActions:'play none none reverse'}});
   gsap.utils.toArray('.gallery-tile').forEach(function(tile){
     gsap.fromTo(tile,{scale:.88,opacity:.25},{scale:1,opacity:1,ease:'none',scrollTrigger:{trigger:tile,start:'top 95%',end:'bottom 30%',scrub:true}});
   });
