@@ -79,6 +79,45 @@
     });
   }
 
+  document.querySelectorAll('.gl-carousel').forEach(function(carousel){
+    const track = carousel.querySelector('.gl-carousel-track');
+    const controls = carousel.querySelector('.gl-carousel-controls');
+    const pause = controls.querySelector('[data-carousel="pause"]');
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let paused = motion.matches;
+    let visible = false;
+    controls.hidden = false;
+    function updatePause(){ pause.textContent = paused ? 'Play' : 'Pause'; }
+    function move(direction){
+      const end = track.scrollWidth - track.clientWidth;
+      const step = track.querySelector('img').getBoundingClientRect().width + 16;
+      let target = track.scrollLeft + direction * step;
+      if(direction > 0 && track.scrollLeft >= end - 2) target = 0;
+      if(direction < 0 && track.scrollLeft <= 2) target = end;
+      track.scrollTo({left: Math.max(0, Math.min(end, target)), behavior: motion.matches ? 'instant' : 'smooth'});
+    }
+    updatePause();
+    controls.addEventListener('click', function(event){
+      const button = event.target.closest('button');
+      if(!button) return;
+      if(button.dataset.carousel === 'pause') paused = !paused;
+      else {
+        paused = true;
+        move(button.dataset.carousel === 'next' ? 1 : -1);
+      }
+      updatePause();
+    });
+    track.addEventListener('pointerdown', function(){ paused = true; updatePause(); });
+    track.addEventListener('keydown', function(){ paused = true; updatePause(); });
+    motion.addEventListener('change', function(){
+      if(motion.matches) { paused = true; updatePause(); }
+    });
+    new IntersectionObserver(function(entries){ visible = entries[0].isIntersecting; }, {threshold: .25}).observe(carousel);
+    window.setInterval(function(){
+      if(!paused && visible && !document.hidden && !carousel.matches(':hover') && !carousel.contains(document.activeElement)) move(1);
+    }, 4500);
+  });
+
   if(reduced || !window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
 
@@ -87,9 +126,6 @@
   });
 
   gsap.from('.tedx-visual',{x:-90,opacity:.12,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.tedx',start:'top 75%',toggleActions:'play none none reverse'}});
-  gsap.utils.toArray('.gallery-tile').forEach(function(tile){
-    gsap.fromTo(tile,{scale:.88,opacity:.25},{scale:1,opacity:1,ease:'none',scrollTrigger:{trigger:tile,start:'top 95%',end:'bottom 30%',scrub:true}});
-  });
 
   gsap.from('.about-manifesto',{opacity:.1,y:35,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.about',start:'top 75%',toggleActions:'play none none reverse'}});
 })();

@@ -424,27 +424,145 @@
       </div>
     </section>
 
-    <section class="gallery chapter gallery-chapter" id="gallery">
+    <section class="gallery chapter gallery-chapter" id="gallery" aria-labelledby="gallery-title">
+      <style>
+        #gallery.gallery {
+          --gl-bg: #f3f1ec;
+          --gl-ink: #141414;
+          --gl-mute: rgba(20, 20, 20, .55);
+          --gl-line: rgba(20, 20, 20, .14);
+          --gl-accent: var(--red, #d4372c);
+          padding: clamp(80px, 11vw, 150px) 0;
+          background: var(--gl-bg);
+          color: var(--gl-ink);
+          font-family: "Geist", system-ui, sans-serif;
+        }
+        #gallery h2, #gallery figure, #gallery figcaption { margin: 0; }
+
+        #gallery .gl-title {
+          margin-bottom: clamp(48px, 7vw, 96px);
+          font-size: clamp(2.8rem, 6vw, 5rem);
+          font-weight: 800;
+          line-height: .95;
+          letter-spacing: -.05em;
+        }
+        #gallery .gl-title span { color: var(--gl-accent); }
+
+        #gallery .gl-set {
+          display: grid;
+          grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+          gap: clamp(24px, 4vw, 64px);
+          padding: 24px 0 clamp(56px, 7vw, 96px);
+          border-top: 1px solid var(--gl-line);
+          counter-increment: gl;
+        }
+        #gallery .gl-sets { counter-reset: gl; }
+        #gallery .gl-set:last-child { padding-bottom: 0; }
+
+        #gallery .gl-set figcaption {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          font-size: clamp(1.25rem, 2vw, 1.6rem);
+          font-weight: 700;
+          letter-spacing: -.03em;
+          line-height: 1.1;
+        }
+        #gallery .gl-set figcaption::before {
+          content: counter(gl, decimal-leading-zero);
+          font-size: .8rem;
+          font-weight: 400;
+          letter-spacing: 0;
+          font-variant-numeric: tabular-nums;
+          color: var(--gl-mute);
+        }
+
+        #gallery .gl-photos {
+          display: grid;
+          grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+          grid-auto-rows: clamp(200px, 24vw, 360px);
+          gap: clamp(10px, 1.2vw, 16px);
+        }
+        #gallery .gl-set:nth-child(even) .gl-photos {
+          grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        }
+        #gallery .gl-frame {
+          overflow: hidden;
+          background: var(--gl-line);
+        }
+        #gallery .gl-frame img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 1.2s cubic-bezier(.2, .7, .2, 1);
+        }
+        #gallery .gl-frame:hover img { transform: scale(1.04); }
+
+        @media (max-width: 860px) {
+          #gallery .gl-set { grid-template-columns: 1fr; gap: 20px; }
+          #gallery .gl-set figcaption { flex-direction: row; align-items: baseline; gap: 14px; }
+        }
+        @media (max-width: 560px) {
+          #gallery .gl-photos,
+          #gallery .gl-set:nth-child(even) .gl-photos {
+            grid-template-columns: 1fr;
+            grid-auto-rows: auto;
+          }
+          #gallery .gl-frame { aspect-ratio: 4 / 3; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          #gallery .gl-frame img { transition: none; }
+        }
+      </style>
+
       <div class="section-inner">
-        <div class="wide-heading gallery-heading">
-          <p class="section-kicker">A visual archive of the work</p>
-          <h2>People showed up.<br><span>Things got built.</span></h2>
-        </div>
-        <div class="gallery-grid" id="galleryGrid">
-          <figure class="gallery-tile tall"><img src="src/gallery/SproutIT_2.jpg" alt="SproutIT event">
-            <figcaption>SPROUT'IT</figcaption>
+        <h2 class="gl-title" id="gallery-title">Gallery<span>.</span></h2>
+
+        <div class="gl-sets">
+          <figure class="gl-set">
+            <figcaption id="sprout-gallery-label">Sprout'IT</figcaption>
+            <div class="gl-carousel" role="region" aria-roledescription="carousel" aria-labelledby="sprout-gallery-label">
+              <div class="gl-carousel-track" id="sprout-gallery-track" tabindex="0" aria-label="Sprout’IT photos; scroll to browse">
+                  <img src="https://cdn.jsdelivr.net/gh/itelf-scit/ITELF-Website-Assets@main/assets/Sprout_IT/gallery/SproutIT_1.jpg" alt="Illuminated Sprout IT letters and handmade event displays" loading="lazy" decoding="async">
+                  <img src="https://cdn.jsdelivr.net/gh/itelf-scit/ITELF-Website-Assets@main/assets/Sprout_IT/gallery/SproutIT_2.jpeg" alt="The Sprout’IT organising team at SCIT" loading="lazy" decoding="async">
+                  <img src="https://cdn.jsdelivr.net/gh/itelf-scit/ITELF-Website-Assets@main/assets/Sprout_IT/gallery/All/All_1.jpg" alt="A moment from the Sprout’IT event archive" loading="lazy" decoding="async">
+                  <img src="https://cdn.jsdelivr.net/gh/itelf-scit/ITELF-Website-Assets@main/assets/Sprout_IT/gallery/All/All_2.JPG" alt="A gathering from the Sprout’IT event archive" loading="lazy" decoding="async">
+              </div>
+              <div class="gl-carousel-controls" hidden>
+                <button type="button" data-carousel="previous" aria-controls="sprout-gallery-track">Previous</button>
+                <button type="button" data-carousel="pause" aria-controls="sprout-gallery-track">Pause</button>
+                <button type="button" data-carousel="next" aria-controls="sprout-gallery-track">Next</button>
+              </div>
+            </div>
           </figure>
-          <figure class="gallery-tile"><img src="src/gallery/streams_1.jpg" alt="STREAMS event">
+
+          <figure class="gl-set">
             <figcaption>STREAMS</figcaption>
+            <div class="gl-photos">
+              <div class="gl-frame">
+                <img src="src/gallery/streams_1.jpg" alt="The STREAMS team with a guest holding a certificate"
+                  width="4032" height="3024" loading="lazy" decoding="async">
+              </div>
+              <div class="gl-frame">
+                <img src="src/gallery/streams_2.jpg" alt="A guest and host recording a STREAMS conversation"
+                  width="3384" height="1830" loading="lazy" decoding="async">
+              </div>
+            </div>
           </figure>
-          <figure class="gallery-tile"><img src="src/gallery/tedx_1.jpg" alt="TEDx installation">
+
+          <figure class="gl-set">
             <figcaption>TEDxSIUHinjewadi</figcaption>
-          </figure>
-          <figure class="gallery-tile wide"><img src="src/gallery/streams_2.jpg" alt="STREAMS audience">
-            <figcaption>CONVERSATIONS IN MOTION</figcaption>
-          </figure>
-          <figure class="gallery-tile tall"><img src="src/gallery/tedx_2.jpeg" alt="TEDx team">
-            <figcaption>THE PEOPLE BEHIND IT</figcaption>
+            <div class="gl-photos">
+              <div class="gl-frame">
+                <img src="src/gallery/tedx_1.jpg" alt="A speaker on the TEDxSIUHinjewadi stage"
+                  width="6000" height="3368" loading="lazy" decoding="async">
+              </div>
+              <div class="gl-frame">
+                <img src="src/gallery/tedx_2.jpeg" alt="The TEDxSIUHinjewadi organising team together on stage"
+                  width="1174" height="960" loading="lazy" decoding="async">
+              </div>
+            </div>
           </figure>
         </div>
       </div>
