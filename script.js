@@ -82,10 +82,6 @@
   if(reduced || !window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.utils.toArray('.sprout-step').forEach(function(step,index){
-    gsap.fromTo(step,{x:70,opacity:.15},{x:0,opacity:1,ease:'none',scrollTrigger:{trigger:step,start:'top 88%',end:'top 55%',scrub:true}});
-  });
-
   gsap.utils.toArray('.stream-line').forEach(function(line){
     gsap.fromTo(line,{x:50,opacity:.2},{x:0,opacity:1,ease:'none',scrollTrigger:{trigger:line,start:'top 88%',end:'top 55%',scrub:true}});
   });

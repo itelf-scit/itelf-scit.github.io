@@ -152,43 +152,172 @@
       </div>
     </section>
 
-    <section class="sprout chapter dark-chapter" id="sprout">
-      <div class="section-inner sprout-layout">
-        <div class="sprout-intro reveal-stack">
-          <p class="section-kicker">Where ideas are tested in the real world</p>
-          <h2>SPROUT'IT turns <span>curiosity</span> into competition.</h2>
-          <p>SCIT's flagship entrepreneurship platform, hosted by iTELF, brings student teams into rooms with founders,
-            investors, mentors and problems that demand more than a classroom answer.</p>
-          <a class="text-link" href="https://sproutit.scit.edu/" target="_blank" rel="noopener noreferrer">Explore
-            SPROUT'IT <span>→</span></a>
-        </div>
+    <section class="sprout chapter" id="sprout" aria-labelledby="sprout-title">
+      <style>
+        #sprout.sprout {
+          --sp-bg: #141414;
+          --sp-ink: #ece8df;
+          --sp-mute: rgba(236, 232, 223, .58);
+          --sp-line: rgba(236, 232, 223, .14);
+          --sp-accent: #9fd36f;
+          position: relative;
+          overflow: hidden;
+          padding: clamp(72px, 10vw, 140px) 0;
+          background: var(--sp-bg);
+          color: var(--sp-ink);
+          font-family: "Geist", system-ui, sans-serif;
+        }
+        #sprout p, #sprout h2, #sprout h3, #sprout ol { margin: 0; }
 
-        <div class="sprout-rail" aria-label="SPROUT'IT journey">
-          <article class="sprout-step is-featured">
-            <span class="sprout-step-number">01</span>
-            <div><strong>Imagine</strong>
-              <p>Start with a problem worth solving and the nerve to frame it differently.</p>
-            </div>
-          </article>
-          <article class="sprout-step">
-            <span class="sprout-step-number">02</span>
-            <div><strong>Shape</strong>
-              <p>Pressure-test the idea with business thinking, models and market logic.</p>
-            </div>
-          </article>
-          <article class="sprout-step biznovator-step">
-            <span class="sprout-step-number">03</span>
-            <div><strong>Biznovator</strong>
-              <p>The headline pitch arena where innovative ideas meet investors and real feedback.</p>
-            </div>
-            <span class="step-accent">Pitch →</span>
-          </article>
-          <article class="sprout-step">
-            <span class="sprout-step-number">04</span>
-            <div><strong>Deliver</strong>
-              <p>Move from a promising concept to a proposition people can actually believe in.</p>
-            </div>
-          </article>
+
+        #sprout .sp-title {
+          display: flex;
+          justify-content: center;
+          line-height: 1;
+        }
+        #sprout .sp-title img {
+          width: min(100%, 900px);
+          height: auto;
+        }
+
+
+        #sprout .sp-body {
+          display: grid;
+          grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+          gap: clamp(40px, 7vw, 120px);
+          padding-top: clamp(48px, 7vw, 96px);
+        }
+
+        #sprout .sp-edition h3 img {
+          display: block;
+          width: min(100%, 380px);
+          height: auto;
+          filter: brightness(0) invert(1);
+        }
+        #sprout .sp-theme {
+          margin-top: 14px;
+          font-weight: 500;
+          color: var(--sp-accent);
+        }
+        #sprout .sp-desc {
+          margin-top: 24px;
+          max-width: 34ch;
+          line-height: 1.6;
+          color: var(--sp-mute);
+        }
+        #sprout .sp-link {
+          display: inline-flex;
+          gap: 10px;
+          margin-top: 36px;
+          padding-bottom: 6px;
+          border-bottom: 1px solid var(--sp-accent);
+          color: var(--sp-ink);
+          font-weight: 600;
+          text-decoration: none;
+        }
+        #sprout .sp-link span { transition: transform .3s ease; }
+        #sprout .sp-link:hover span { transform: translateX(4px); }
+
+        #sprout .sp-events {
+          list-style: none;
+          padding: 0;
+          counter-reset: sp;
+          border-bottom: 1px solid var(--sp-line);
+        }
+        #sprout .sp-events li {
+          counter-increment: sp;
+          display: grid;
+          grid-template-columns: 3rem minmax(0, 1fr) auto;
+          align-items: baseline;
+          gap: 12px;
+          padding: 22px 0;
+          border-top: 1px solid var(--sp-line);
+        }
+        #sprout .sp-events li::before {
+          content: counter(sp, decimal-leading-zero);
+          font-size: .8rem;
+          font-variant-numeric: tabular-nums;
+          color: var(--sp-mute);
+          transition: color .3s ease;
+        }
+        #sprout .sp-events li:hover::before { color: var(--sp-accent); }
+        #sprout .sp-events h3 {
+          font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+          font-weight: 600;
+          letter-spacing: -.02em;
+        }
+        #sprout .sp-events p {
+          font-size: .9rem;
+          color: var(--sp-mute);
+          text-align: right;
+        }
+
+        #sprout .sp-events .sp-lead {
+          grid-template-columns: 3rem minmax(0, 1fr);
+          padding: 28px 0 32px;
+        }
+        #sprout .sp-lead h3 {
+          font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+          font-weight: 700;
+          letter-spacing: -.035em;
+        }
+        #sprout .sp-lead h3 small {
+          margin-left: 14px;
+          font-size: .7rem;
+          font-weight: 500;
+          letter-spacing: .16em;
+          text-transform: uppercase;
+          vertical-align: middle;
+          color: var(--sp-accent);
+        }
+        #sprout .sp-lead p {
+          grid-column: 2;
+          margin-top: 8px;
+          text-align: left;
+          font-size: 1rem;
+        }
+
+        @media (max-width: 860px) {
+          #sprout .sp-body { grid-template-columns: 1fr; }
+          }
+        @media (max-width: 560px) {
+          #sprout .sp-events li,
+          #sprout .sp-events .sp-lead { grid-template-columns: 2.25rem minmax(0, 1fr); }
+          #sprout .sp-events p { grid-column: 2; text-align: left; }
+          #sprout .sp-lead h3 small { display: block; margin: 8px 0 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          #sprout * { transition: none !important; }
+        }
+      </style>
+
+      <div class="section-inner">
+        <h2 class="sp-title" id="sprout-title">
+          <img src="https://cdn.jsdelivr.net/gh/itelf-scit/ITELF-Website-Assets@main/assets/Event_Logos/SproutIT_white.png"
+            alt="Sprout'IT" loading="lazy" decoding="async">
+        </h2>
+
+        <div class="sp-body">
+          <div class="sp-edition">
+            <h3>
+              <img src="https://cdn.jsdelivr.net/gh/itelf-scit/ITELF-Website-Assets@main/assets/Event_Logos/creatiflect_logo_black.png"
+                alt="Creatiflect" loading="lazy" decoding="async">
+            </h3>
+            <p class="sp-theme">Creation. Reflection. Inflection.</p>
+            <p class="sp-desc">Pitch a venture, build a product, negotiate a crisis. Five competitions that put ideas in front of real business problems.</p>
+            <a class="sp-link" href="https://sproutit.scit.edu/" target="_blank" rel="noopener noreferrer">Explore Sprout'IT <span>→</span></a>
+          </div>
+
+          <ol class="sp-events" aria-label="2026 competitions">
+            <li class="sp-lead">
+              <h3>Biznovator <small>Flagship</small></h3>
+              <p>Your venture. An investor panel. A seven-minute pitch.</p>
+            </li>
+            <li><h3>Entre-MUN</h3><p>Diplomacy &amp; debate</p></li>
+            <li><h3>Product Genesis</h3><p>Product design &amp; strategy</p></li>
+            <li><h3>The Crisis Case</h3><p>Decisions under pressure</p></li>
+            <li><h3>Corporate Decoder</h3><p>Clues, logic &amp; investigation</p></li>
+          </ol>
         </div>
       </div>
     </section>
@@ -321,41 +450,130 @@
       </div>
     </section>
 
-    <section class="domains chapter dark-chapter" id="domains">
-      <div class="section-inner domains-layout">
-        <div class="wide-heading domain-heading">
-          <p class="section-kicker">Where you can make the work happen</p>
-          <h2>Different skills.<br><span>One shared direction.</span></h2>
-        </div>
-        <div class="domain-list">
-          <details class="domain-row">
-            <summary><span>01</span><strong>Sponsorship</strong><em>Face the world.</em><b>+</b></summary>
-            <div>
-              <p>Build client relationships, sharpen persuasion and negotiation, and represent the committee in
-                conversations that happen beyond campus.</p>
-            </div>
-          </details>
-          <details class="domain-row">
-            <summary><span>02</span><strong>Creatives</strong><em>Shape how ideas are seen.</em><b>+</b></summary>
-            <div>
-              <p>Turn concepts into visual experiences through design, storytelling, content and the details that make
-                an event recognisable.</p>
-            </div>
-          </details>
-          <details class="domain-row">
-            <summary><span>03</span><strong>Marketing</strong><em>Make people care.</em><b>+</b></summary>
-            <div>
-              <p>Find the right audience, shape the message and build momentum around everything the ecosystem creates.
-              </p>
-            </div>
-          </details>
-          <details class="domain-row">
-            <summary><span>04</span><strong>Operations</strong><em>Make the impossible run.</em><b>+</b></summary>
-            <div>
-              <p>Coordinate people, timelines and moving parts to transform a plan into an experience that works in the
-                real world.</p>
-            </div>
-          </details>
+    <section class="domains chapter" id="domains" aria-labelledby="domains-title">
+      <style>
+        #domains.domains {
+          --dm-bg: var(--navy-deep);
+          --dm-ink: var(--white);
+          --dm-mute: #bdc7d1;
+          --dm-line: var(--line-dark);
+          --dm-accent: var(--red);
+          padding: clamp(80px, 11vw, 150px) 0;
+          background: var(--dm-bg);
+          color: var(--dm-ink);
+          font-family: "Geist", system-ui, sans-serif;
+        }
+        #domains p, #domains h2, #domains h3 { margin: 0; }
+
+        #domains .dm-layout {
+          display: grid;
+          grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+          gap: clamp(40px, 7vw, 120px);
+          align-items: start;
+        }
+
+        #domains .dm-header {
+          position: sticky;
+          top: 120px;
+        }
+        #domains .dm-header h2 {
+          font-size: clamp(2.8rem, 6vw, 5rem);
+          font-weight: 800;
+          line-height: .95;
+          letter-spacing: -.05em;
+        }
+        #domains .dm-header h2 span { color: var(--dm-accent); }
+        #domains .dm-header p {
+          margin-top: 20px;
+          font-size: clamp(1rem, 1.4vw, 1.15rem);
+          color: var(--dm-mute);
+        }
+
+        #domains .dm-roster {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          column-gap: clamp(32px, 4vw, 64px);
+          counter-reset: dm;
+        }
+        #domains .dm-entry {
+          counter-increment: dm;
+          position: relative;
+          padding: 28px 0 clamp(48px, 5vw, 72px);
+          border-top: 1px solid var(--dm-line);
+        }
+        #domains .dm-entry::before {
+          content: "";
+          position: absolute;
+          top: -1px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: var(--dm-accent);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+        }
+        #domains .dm-entry:hover::before { transform: scaleX(1); }
+        #domains .dm-entry::after {
+          content: counter(dm, decimal-leading-zero);
+          position: absolute;
+          top: 30px;
+          right: 0;
+          font-size: .8rem;
+          font-variant-numeric: tabular-nums;
+          color: var(--dm-mute);
+        }
+        #domains .dm-entry h3 {
+          max-width: 14ch;
+          padding-right: 2.5rem;
+          font-size: clamp(1.5rem, 2.4vw, 2rem);
+          font-weight: 700;
+          line-height: 1.1;
+          letter-spacing: -.035em;
+        }
+        #domains .dm-entry p {
+          margin-top: 16px;
+          max-width: 36ch;
+          line-height: 1.6;
+          color: var(--dm-mute);
+        }
+
+        @media (max-width: 900px) {
+          #domains .dm-layout { grid-template-columns: 1fr; }
+          #domains .dm-header { position: static; }
+        }
+        @media (max-width: 600px) {
+          #domains .dm-roster { grid-template-columns: 1fr; }
+          #domains .dm-entry { padding-bottom: 40px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          #domains .dm-entry::before { transition: none; }
+        }
+      </style>
+
+      <div class="section-inner dm-layout">
+        <header class="dm-header">
+          <h2 id="domains-title">Our domains<span>.</span></h2>
+          <p>The teams behind iTELF.</p>
+        </header>
+
+        <div class="dm-roster">
+          <article class="dm-entry">
+            <h3>Speaker &amp; Investor Collaborations</h3>
+            <p>Connect with speakers and investors, manage invitations, and coordinate their participation.</p>
+          </article>
+          <article class="dm-entry">
+            <h3>Web and Media</h3>
+            <p>Design event creatives, manage social media, and keep our websites up to date.</p>
+          </article>
+          <article class="dm-entry">
+            <h3>Events</h3>
+            <p>Plan and run events, from the first idea to logistics, volunteer coordination and execution.</p>
+          </article>
+          <article class="dm-entry">
+            <h3>Sponsorship</h3>
+            <p>Build sponsor relationships, develop proposals, and deliver on partnership commitments.</p>
+          </article>
         </div>
       </div>
     </section>

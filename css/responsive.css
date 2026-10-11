@@ -695,9 +695,7 @@ body {
   }
 
   .about-layout,
-  .sprout-layout,
-  .tedx-layout,
-  .domains-layout {
+  .tedx-layout {
     grid-template-columns: 1fr;
     gap: clamp(2.5rem, 6vw, 4rem);
   }
@@ -712,14 +710,9 @@ body {
     font-size: clamp(2.25rem, 6vw, 4.5rem);
   }
 
-  .sprout-intro,
   .tedx-copy,
   .tedx-copy > p:not(.section-kicker) {
     max-width: 760px;
-  }
-
-  .sprout-rail {
-    width: 100%;
   }
 
   .tedx-layout {
@@ -932,48 +925,17 @@ body {
     row-gap: .6rem;
   }
 
-  /* SPROUT'IT */
-  .sprout-layout {
-    gap: 2.5rem;
-  }
-
-  .sprout-intro h2,
+  /* Chapter typography */
   .tedx-copy h2,
-  .domain-heading h2,
   .action-inner h2 {
     margin-bottom: 1.35rem;
     font-size: clamp(2.7rem, 12vw, 4.3rem);
     line-height: .94;
   }
 
-  .sprout-intro > p:not(.section-kicker),
   .tedx-copy > p:not(.section-kicker) {
     font-size: .95rem;
     line-height: 1.7;
-  }
-
-  .sprout-step {
-    min-height: 0;
-    grid-template-columns: 42px minmax(0, 1fr);
-    gap: .75rem;
-    padding: 1.25rem 0;
-  }
-
-  .sprout-step .step-accent {
-    grid-column: 2;
-    justify-self: start;
-    margin-top: .35rem;
-  }
-
-  .sprout-step strong {
-    font-size: clamp(1.35rem, 6vw, 1.85rem);
-    line-height: 1.08;
-  }
-
-  .sprout-step p {
-    margin-top: .55rem;
-    font-size: .88rem;
-    line-height: 1.6;
   }
 
   /* STREAMS */
@@ -1164,41 +1126,18 @@ body {
   }
 
   /* DOMAINS */
-  .domains-layout {
-    gap: 2.5rem;
+  .domains-header {
+    flex-direction: column;
+    gap: .75rem;
   }
 
-  .domain-row summary {
-    min-height: 70px;
-    padding: 1rem 0;
-    grid-template-columns: 34px minmax(0,1fr) 20px;
+  .domain-entry {
+    grid-template-columns: 1fr;
     gap: .65rem;
   }
 
-  .domain-row summary span {
-    font-size: .68rem;
-  }
-
-  .domain-row summary strong {
-    font-size: clamp(1.15rem, 5.8vw, 1.65rem);
-  }
-
-  .domain-row summary em {
-    grid-column: 2;
-    grid-row: 2;
-    font-size: .76rem;
-    line-height: 1.35;
-  }
-
-  .domain-row summary b {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-  }
-
-  .domain-row > div {
-    padding: 0 0 1.35rem 34px;
-    font-size: .88rem;
-    line-height: 1.6;
+  .domain-entry p {
+    font-size: .95rem;
   }
 
   /* CTA */
@@ -1294,10 +1233,8 @@ body {
   }
 
   .about-manifesto,
-  .sprout-intro h2,
   .streams-header h2,
   .tedx-copy h2,
-  .domain-heading h2,
   .action-inner h2,
   .gallery-heading h2 {
     font-size: clamp(2.4rem, 12.2vw, 3.5rem);
@@ -1377,9 +1314,7 @@ body {
   }
 
   .about-layout,
-  .sprout-layout,
-  .tedx-layout,
-  .domains-layout {
+  .tedx-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1616,5 +1551,81 @@ body {
 
   .tedx-visual {
     min-height: 0;
+  }
+}
+
+/* Sprout'IT editorial layout */
+@media (max-width: 900px) {
+  .sprout-feature {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  }
+
+  .sprout-programme {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .sprout .sprout-editorial {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .sprout-masthead {
+    font-size: .58rem;
+    letter-spacing: .08em;
+  }
+
+  .sprout-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-block: 1.7rem;
+  }
+
+  .sprout-heading h2 {
+    font-size: clamp(3rem, 13.7vw, 5.5rem);
+  }
+
+  .sprout-heading > p br {
+    display: none;
+  }
+
+  .sprout-feature,
+  .sprout-programme {
+    grid-template-columns: 1fr;
+  }
+
+  .sprout-brand {
+    min-height: 0;
+    padding: 2.5rem 2rem;
+    aspect-ratio: 16 / 10;
+  }
+
+  .sprout-edition {
+    padding: 1.75rem;
+  }
+
+  .sprout-edition h3 {
+    margin-top: .85rem;
+    font-size: 2.5rem;
+  }
+
+  .sprout-description {
+    max-width: 42ch;
+    margin-block: 1.25rem 1.5rem;
+  }
+
+  .sprout-programme {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .sprout-events {
+    gap: 1.5rem 1rem;
+  }
+
+  .sprout-events h3 {
+    font-size: .9rem;
   }
 }
