@@ -37,7 +37,7 @@
         <nav class="nav-links" id="navMenu">
           <a href="#about">About iTELF</a>
           <a href="#sprout">SPROUT'IT</a>
-          <a href="#streams">STREAMS</a>
+          <a href="/iTELF/streams/">STREAMS</a>
           <a href="#tedx">TEDxSIUHinjewadi</a>
           <a href="#domains">Domains</a>
         </nav>
@@ -78,7 +78,7 @@
 
           <div class="hero-actions">
             <a href="#about" class="btn btn-primary">Explore iTELF <span>→</span></a>
-            <a href="#streams" class="btn btn-secondary">Discover STREAMS</a>
+            <a href="/iTELF/streams/" class="btn btn-secondary">Discover STREAMS</a>
           </div>
         </div>
 
@@ -192,7 +192,6 @@
           display: block;
           width: min(100%, 380px);
           height: auto;
-          filter: brightness(0) invert(1);
         }
         #sprout .sp-theme {
           margin-top: 14px;
@@ -378,12 +377,23 @@
           </div>
         </div>
 
-        <div class="streams-footer">
-          <div class="streams-footer-copy">
-            <span class="streams-pulse" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-            <p><strong>Listen.</strong> Question. Challenge. Carry it forward.</p>
+        <div class="streams-footer streams-footer--feature" aria-label="Explore STREAMS episodes">
+          <a class="streams-feature-art" href="/iTELF/streams/" aria-label="Visit the STREAMS episode page">
+            <img src="src/images/streams-anime-studio.png" alt="" loading="lazy" decoding="async">
+            <span class="streams-feature-art-label">STREAMS <span>BY iTELF</span></span>
+          </a>
+
+          <div class="streams-footer-main">
+            <p class="streams-footer-kicker">THE STREAMS EPISODE HUB</p>
+            <h3>There’s always more to the story.</h3>
+            <p class="streams-footer-description">
+              Explore the conversations featured on our website, discover fresh perspectives, and check back as new episodes are added.
+            </p>
+            <div class="streams-footer-bottom">
+              <p class="streams-footer-note"><span aria-hidden="true"></span> New conversations will appear here as they’re published.</p>
+              <a class="btn streams-cta" href="/iTELF/streams/">Discover episodes <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
-          <a class="btn streams-cta" href="mailto:itelf@scit.edu">Contact Us <span>→</span></a>
         </div>
       </div>
     </section>
@@ -697,28 +707,53 @@
     </section>
 
     <section class="action-section chapter">
-      <div class="action-bg"></div>
+      <div class="action-bg" aria-hidden="true"></div>
       <div class="section-inner action-inner">
-        <p>Ideas have a habit of finding the right people.</p>
-        <h2>Maybe the next one<br>finds <span>you.</span></h2>
-        <a href="mailto:itelf@scit.edu" class="btn btn-primary">Contact Us <span>→</span></a>
+        <div class="action-copy">
+          <p>Ideas have a habit of finding the right people.</p>
+          <h2>Maybe the next one<br>finds <span>you.</span></h2>
+          <a href="mailto:itelf@scit.edu" class="btn btn-primary">Contact Us <span>→</span></a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-main section-inner">
-      <div><a href="#top" class="footer-brand"><img src="src/images/iTELF-logo.png" alt="iTELF logo"></a>
+      <div class="footer-brand-block">
+        <a href="#top" class="footer-brand" aria-label="iTELF home">
+          <img src="src/images/iTELF-logo.png" alt="iTELF logo">
+        </a>
         <p>Entrepreneurship and leadership experiences at Symbiosis Centre for Information Technology, Pune.</p>
       </div>
-      <div class="footer-links"><a href="#about">About iTELF</a><a href="#sprout">SPROUT'IT</a><a
-          href="#streams">STREAMS</a><a href="#tedx">TEDxSIUHinjewadi</a></div>
-      <div class="footer-links"><a href="https://www.scit.edu/" target="_blank" rel="noopener noreferrer">SCIT
-          Pune</a><a href="https://sproutit.scit.edu/" target="_blank" rel="noopener noreferrer">SPROUT'IT</a><a
-          href="https://tedxsiuhinjewadi.scit.edu/" target="_blank" rel="noopener noreferrer">TEDxSIUHinjewadi</a></div>
+
+      <div class="footer-column">
+        <h2 class="footer-heading">Explore</h2>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#about">About iTELF</a>
+          <a href="https://sproutit.scit.edu/" target="_blank" rel="noopener noreferrer">SPROUT'IT <span aria-hidden="true">↗</span></a>
+          <a href="/iTELF/streams/">STREAMS</a>
+          <a href="https://tedxsiuhinjewadi.scit.edu/" target="_blank" rel="noopener noreferrer">TEDxSIUHinjewadi <span aria-hidden="true">↗</span></a>
+          <a href="https://www.scit.edu/" target="_blank" rel="noopener noreferrer">SCIT Pune <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+
+      <div class="footer-column footer-contact">
+        <h2 class="footer-heading">Get in touch</h2>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">Phone</span>
+            <!-- Replace this placeholder with the official iTELF phone number. -->
+            <span class="footer-contact-value footer-phone-placeholder">Add phone number</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">Email</span>
+            <a class="footer-contact-value" href="mailto:itelf@scit.edu">itelf@scit.edu</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© Symbiosis Centre for Information Technology</span><a href="#top">Back to top
-        ↑</a></div>
+    <div class="footer-bottom"><span>© Symbiosis Centre for Information Technology</span><a href="#top">Back to top ↑</a></div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
