@@ -209,3 +209,65 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--s-teal); outlin
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+
+/* STREAMS-only footer wordmark and closing prompt. */
+.footer-discovery {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: min(var(--s-max), 100%);
+  min-height: clamp(235px, 25vw, 330px);
+  margin: 0 auto;
+  padding: clamp(2.6rem, 6vw, 4.6rem) 0 clamp(2.2rem, 4vw, 3rem);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.footer-discovery-wordmark {
+  position: absolute;
+  z-index: -1;
+  top: 49%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(229, 238, 245, .075);
+  font-size: clamp(6rem, 22vw, 18rem);
+  font-weight: 900;
+  letter-spacing: -.095em;
+  line-height: .76;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+.footer-discovery-content {
+  width: min(100%, 1180px);
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: .9rem;
+  padding: 0 clamp(.15rem, 1vw, .9rem);
+}
+.footer-discovery-kicker {
+  margin: 0;
+  color: #b2c1cc;
+  font-size: clamp(.76rem, 1.2vw, .9rem);
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.footer-discovery-status {
+  min-height: 1.4em;
+  margin: 0;
+  color: #8599a7;
+  font-size: .76rem;
+  line-height: 1.5;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .footer-discovery { min-height: 220px; padding: 2.5rem 0 2rem; }
+  .footer-discovery-wordmark { font-size: clamp(5rem, 23vw, 8rem); }
+  .footer-discovery-content { gap: .75rem; }
+  .footer-discovery-kicker { max-width: 280px; font-size: .67rem; }
+  .footer-discovery-status { max-width: 280px; font-size: .69rem; }
+}

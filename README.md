@@ -39,3 +39,8 @@ The home-page STREAMS section includes a prominent anime-art feature panel linki
 The “From the room — A conversation can stay with you” photo-gallery section has been removed from `streams/index.html`, along with its section-specific CSS and carousel JavaScript. The homepage episode CTA remains in place.
 
 Logo correction: the Sprout/Creatiflect section now references the verified asset `creatiflect_logo_black.png`, which includes the red thread and red accent lettering. The logo-specific CSS filter override has been removed; unrelated hero and footer logo filters remain unchanged.
+
+
+## Latest footer adjustment
+
+Removed only the search form from the STREAMS footer. The oversized “streams” wordmark, “Keep the conversation going” heading, supporting caption, contact information, Back to iTELF link, copyright, and SCIT link remain. Search-only CSS and JavaScript were removed as unused.
