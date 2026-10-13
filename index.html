@@ -37,6 +37,7 @@
         <nav class="nav-links" id="navMenu">
           <a href="#about">About iTELF</a>
           <a href="#sprout">SPROUT'IT</a>
+          <a class="nav-resource-link" href="#startup-resources"><span aria-hidden="true">↳</span> Startup Resources</a>
           <a href="/iTELF/streams/">STREAMS</a>
           <a href="#tedx">TEDxSIUHinjewadi</a>
           <a href="#domains">Domains</a>
@@ -276,14 +277,182 @@
           font-size: 1rem;
         }
 
+        /* SPROUT founder resource directory */
+        #sprout .sp-resource-hub {
+          margin-top: clamp(56px, 8vw, 100px);
+          padding: clamp(24px, 4vw, 44px);
+          border: 1px solid var(--sp-line);
+          background: linear-gradient(135deg, rgba(159,211,111,.08), rgba(255,255,255,.018) 50%, rgba(159,211,111,.04));
+        }
+        #sprout .sp-resource-head {
+          display: flex;
+          justify-content: space-between;
+          align-items: end;
+          gap: 28px;
+          padding-bottom: 28px;
+          border-bottom: 1px solid var(--sp-line);
+        }
+        #sprout .sp-resource-kicker {
+          color: var(--sp-accent);
+          font-size: .72rem;
+          font-weight: 700;
+          letter-spacing: .16em;
+          text-transform: uppercase;
+        }
+        #sprout .sp-resource-head h3 {
+          margin-top: 12px;
+          max-width: 16ch;
+          font-size: clamp(2rem, 4.4vw, 3.75rem);
+          font-weight: 600;
+          line-height: .98;
+          letter-spacing: -.055em;
+        }
+        #sprout .sp-resource-intro {
+          max-width: 65ch;
+          margin-top: 16px !important;
+          color: var(--sp-mute);
+          font-size: .96rem;
+          line-height: 1.75;
+        }
+        #sprout .sp-resource-suggest {
+          flex: 0 0 auto;
+          display: inline-flex;
+          align-items: center;
+          gap: 9px;
+          padding: 12px 15px;
+          border: 1px solid var(--sp-line);
+          color: var(--sp-ink);
+          text-decoration: none;
+          font-size: .8rem;
+          font-weight: 600;
+        }
+        #sprout .sp-resource-suggest:hover,
+        #sprout .sp-resource-suggest:focus-visible { border-color: var(--sp-accent); }
+        #sprout .sp-resource-tools {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(210px, .34fr);
+          gap: 12px;
+          margin: 24px 0 16px;
+        }
+        #sprout .sp-resource-search-wrap { position: relative; }
+        #sprout .sp-resource-search-wrap label {
+          position: absolute;
+          width: 1px; height: 1px;
+          padding: 0; margin: -1px; overflow: hidden;
+          clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+        #sprout .sp-resource-search,
+        #sprout .sp-resource-filter {
+          width: 100%; min-height: 50px;
+          border: 1px solid rgba(236,232,223,.22);
+          border-radius: 0;
+          padding: 13px 15px;
+          background: #101310;
+          color: var(--sp-ink);
+          font: inherit;
+          font-size: .86rem;
+        }
+        #sprout .sp-resource-search::placeholder { color: rgba(236,232,223,.45); }
+        #sprout .sp-resource-search:focus-visible,
+        #sprout .sp-resource-filter:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 2px; }
+        #sprout .sp-resource-results-meta {
+          display: flex;
+          justify-content: space-between;
+          gap: 16px;
+          margin: 0 0 14px !important;
+          color: var(--sp-mute);
+          font-size: .76rem;
+        }
+        #sprout .sp-resource-grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 1px;
+          background: var(--sp-line);
+          border: 1px solid var(--sp-line);
+        }
+        #sprout .sp-resource-card {
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 23px 21px 21px;
+          background: #191d19;
+          transition: background .2s ease, transform .2s ease;
+        }
+        #sprout .sp-resource-card:hover { background: #20271f; }
+        #sprout .sp-resource-category {
+          color: var(--sp-accent);
+          font-size: .64rem;
+          font-weight: 700;
+          letter-spacing: .12em;
+          line-height: 1.5;
+          text-transform: uppercase;
+        }
+        #sprout .sp-resource-card h4 {
+          margin: 12px 0 0;
+          font-size: 1.1rem;
+          font-weight: 600;
+          line-height: 1.25;
+          letter-spacing: -.025em;
+        }
+        #sprout .sp-resource-card p {
+          margin-top: 10px !important;
+          color: var(--sp-mute);
+          font-size: .82rem;
+          line-height: 1.65;
+          text-align: left;
+        }
+        #sprout .sp-resource-audience {
+          margin-top: 12px !important;
+          color: #c0c9b6 !important;
+          font-size: .72rem !important;
+        }
+        #sprout .sp-resource-action {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin-top: auto;
+          padding-top: 22px;
+          color: var(--sp-ink);
+          font-size: .78rem;
+          font-weight: 600;
+          text-decoration: none;
+        }
+        #sprout .sp-resource-action span { color: var(--sp-accent); transition: transform .2s ease; }
+        #sprout .sp-resource-action:hover span { transform: translate(3px,-2px); }
+        #sprout .sp-resource-empty {
+          grid-column: 1 / -1;
+          padding: 28px;
+          background: #191d19;
+          color: var(--sp-mute);
+          font-size: .9rem;
+          line-height: 1.6;
+        }
+        #sprout .sp-resource-disclaimer {
+          max-width: 100ch;
+          margin-top: 16px !important;
+          color: rgba(236,232,223,.48);
+          font-size: .7rem;
+          line-height: 1.7;
+        }
+        #sprout .sp-resource-disclaimer a { color: var(--sp-ink); }
+        @media (max-width: 900px) {
+          #sprout .sp-resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
         @media (max-width: 860px) {
           #sprout .sp-body { grid-template-columns: 1fr; }
-          }
+        }
         @media (max-width: 560px) {
           #sprout .sp-events li,
           #sprout .sp-events .sp-lead { grid-template-columns: 2.25rem minmax(0, 1fr); }
           #sprout .sp-events p { grid-column: 2; text-align: left; }
           #sprout .sp-lead h3 small { display: block; margin: 8px 0 0; }
+          #sprout .sp-resource-hub { padding: 18px; }
+          #sprout .sp-resource-head { align-items: flex-start; flex-direction: column; gap: 18px; }
+          #sprout .sp-resource-tools { grid-template-columns: minmax(0, 1fr); }
+          #sprout .sp-resource-grid { grid-template-columns: minmax(0, 1fr); }
+          #sprout .sp-resource-results-meta { flex-direction: column; gap: 5px; }
+          #sprout .sp-resource-card { padding: 21px 18px; }
         }
         @media (prefers-reduced-motion: reduce) {
           #sprout * { transition: none !important; }
@@ -318,6 +487,38 @@
             <li><h3>Corporate Decoder</h3><p>Clues, logic &amp; investigation</p></li>
           </ol>
         </div>
+
+        <section class="sp-resource-hub" id="startup-resources" aria-labelledby="startup-resources-title">
+          <div class="sp-resource-head">
+            <div>
+              <p class="sp-resource-kicker">For founders, beyond the event</p>
+              <h3 id="startup-resources-title">Your next move starts here.</h3>
+              <p class="sp-resource-intro">A practical directory of official startup portals, benefits, funding calls, incubators and founder support. Search by need, compare routes and continue directly with the organisation that runs each programme.</p>
+            </div>
+            <a class="sp-resource-suggest" href="mailto:itelf@scit.edu?subject=Startup%20resource%20directory%20suggestion">Suggest a resource <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="sp-resource-tools">
+            <div class="sp-resource-search-wrap">
+              <label for="startup-resource-search">Search startup resources</label>
+              <input class="sp-resource-search" id="startup-resource-search" type="search" placeholder="Search funding, DPIIT, mentoring, patents…" autocomplete="off">
+            </div>
+            <select class="sp-resource-filter" id="startup-resource-filter" aria-label="Filter startup resources by category">
+              <option value="all">All resource categories</option>
+              <option value="Recognition & compliance">Recognition &amp; compliance</option>
+              <option value="Funding & grants">Funding &amp; grants</option>
+              <option value="Incubation & mentoring">Incubation &amp; mentoring</option>
+              <option value="IP & protection">IP &amp; protection</option>
+              <option value="Market access & learning">Market access &amp; learning</option>
+              <option value="Maharashtra ecosystem">Maharashtra ecosystem</option>
+              <option value="Sector-specific support">Sector-specific support</option>
+            </select>
+          </div>
+          <p class="sp-resource-results-meta"><span id="startup-resource-count" aria-live="polite">Loading resources…</span><span>Official portals only</span></p>
+          <div class="sp-resource-grid" id="startup-resource-grid" aria-live="polite" aria-busy="true">
+            <p class="sp-resource-empty">Loading the startup resource directory…</p>
+          </div>
+          <p class="sp-resource-disclaimer">This directory is a self-serve starting point, not a promise of funding or eligibility. Schemes, benefits, deadlines and application routes can change; confirm current criteria on the official website before applying. iTELF does not administer these programmes. Resource catalogue last reviewed 13 October 2026.</p>
+        </section>
       </div>
     </section>
 
@@ -742,9 +943,8 @@
         <h2 class="footer-heading">Get in touch</h2>
         <div class="footer-contact-list">
           <div class="footer-contact-item">
-            <span class="footer-contact-label">Phone</span>
-            <!-- Replace this placeholder with the official iTELF phone number. -->
-            <span class="footer-contact-value footer-phone-placeholder">Add phone number</span>
+            <span class="footer-contact-label">Phone · Vaidik</span>
+            <a class="footer-contact-value" href="tel:+919054323204">90543 23204</a>
           </div>
           <div class="footer-contact-item">
             <span class="footer-contact-label">Email</span>

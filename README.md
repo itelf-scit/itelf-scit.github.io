@@ -1,46 +1,22 @@
-# iTELF site — responsive pass
+# iTELF static website — rebuilt from the supplied baseline ZIP
 
-This build keeps the existing desktop composition and adds a full responsive pass across:
-- Header / navigation
-- Hero + idea board
-- About
-- SPROUT'IT
-- STREAMS
-- TEDxSIUHinjewadi
-- Gallery
-- Domains
-- Closing CTA
-- Footer
+This project uses the supplied `iTELF_STREAMS_No_Search_Bar(2).zip` as the structural baseline. Existing homepage layout, CSS responsive rules, local images, and the STREAMS page design are retained.
 
-Responsive rules are consolidated as final overrides in `css/responsive.css`.
+## Included updates
 
-The STREAMS orbit overlay remains disabled, matching the latest visual direction.
+- SPROUT startup resource directory with search/category filters and a 10-item catalogue in `src/data/startup-resources.json`.
+- An embedded fallback catalogue in `script.js`, so the directory renders immediately even if the JSON request fails. The JSON file is used when available and remains the editable source.
+- Homepage footer contact: Vaidik, 90543 23204, and itelf@scit.edu.
+- STREAMS footer contact: Vaidik, 90543 23204, and itelf@scit.edu.
+- STREAMS subpage retained with its own `streams/index.html`, `streams/streams.css`, and `streams/streams.js`; the removed search bar and “From the room” gallery remain removed.
+- The anime-style STREAMS hero illustration remains at `src/images/streams-anime-studio.png`.
+- Homepage hero board cards are restored via a small staggered entrance, so their original CSS opacity/settled states are initialized. Pointer hover restores the active-card interaction.
+- The existing floating navigation fade behaviour uses the `.site-header.nav-hidden` CSS state on scroll direction. No ScrollTrigger pin is added to the hero or content sections.
 
-- TEDxSIUHinjewadi section revamped with a strict red / black / white palette, supplied TEDxSIUHinjewadi logo, and direct link to https://tedxsiuhinjewadi.scit.edu/.
-- STREAMS CTA updated from “Talk to iTELF” to “Contact Us”.
+## Run locally with Apache
 
+Place the project in `E:/Portfolio/itelf-scit.github.io` if that is the configured document root, or under the `iTELF` folder at the configured site root. Use the URL that matches your local Apache mapping, commonly `http://localhost/iTELF/` and `http://localhost/iTELF/streams/`.
 
-## STREAMS subpage
+## Update the resource directory
 
-The standalone podcast-style landing page is in `streams/` with its own `index.html`, `streams.css`, and `streams.js`. The main page links to `streams/` from the navigation, hero CTA, STREAMS section CTA, and footer. The subpage reuses the existing images in `src/` and links back to the iTELF home page.
-
-### STREAMS hero artwork
-
-The STREAMS subpage hero image is currently loaded from `../src/images/streams-anime-studio.png`. To switch to a CDN later, update the `src` attribute on the hero image in `streams/index.html`; the rest of the section does not depend on the image location.
-
-
-## Main-page STREAMS episode CTA
-
-The home-page STREAMS section includes a prominent anime-art feature panel linking to `/iTELF/streams/`. It invites visitors to explore the STREAMS page and check back as new episodes are added. Update the image later by changing `src/images/streams-anime-studio.png` or swapping its image URL in `index.html`.
-
-
-### Latest STREAMS page edit
-
-The “From the room — A conversation can stay with you” photo-gallery section has been removed from `streams/index.html`, along with its section-specific CSS and carousel JavaScript. The homepage episode CTA remains in place.
-
-Logo correction: the Sprout/Creatiflect section now references the verified asset `creatiflect_logo_black.png`, which includes the red thread and red accent lettering. The logo-specific CSS filter override has been removed; unrelated hero and footer logo filters remain unchanged.
-
-
-## Latest footer adjustment
-
-Removed only the search form from the STREAMS footer. The oversized “streams” wordmark, “Keep the conversation going” heading, supporting caption, contact information, Back to iTELF link, copyright, and SCIT link remain. Search-only CSS and JavaScript were removed as unused.
+Edit `src/data/startup-resources.json`. The UI renders the embedded fallback list instantly and updates from the JSON catalogue when it is available. Keep each resource's `name`, `category`, `summary`, `audience`, `url`, and optional `tags` fields. The directory points to official portals; current eligibility, open calls, benefits, and deadlines should be confirmed on the owning organisation's website.

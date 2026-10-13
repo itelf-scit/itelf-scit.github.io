@@ -291,6 +291,17 @@ div {
   background: rgba(0, 0, 0, 0.14);
 }
 
+.nav-links .nav-resource-link {
+  padding-inline: .9rem;
+  font-size: .76rem;
+  font-weight: 600;
+  background: rgba(0, 0, 0, .08);
+}
+.nav-resource-link span { margin-right: .35rem; color: rgba(255,255,255,.72); }
+@media (max-width: 1180px) {
+  .nav-links .nav-resource-link { padding-inline: .7rem; font-size: .73rem; }
+}
+
 .nav-toggle {
   display: none;
   width: 44px;

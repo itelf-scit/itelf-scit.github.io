@@ -127,7 +127,11 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--s-teal); outlin
 .footer-brand-block > p { max-width: 390px; margin: 1.2rem 0 0; color: #91a5b3; font-size: .85rem; line-height: 1.8; }
 .footer-contact { display: grid; justify-items: start; gap: .65rem; }
 .footer-label { margin: 0; color: #91a5b3; font-size: .7rem; font-weight: 650; letter-spacing: .14em; text-transform: uppercase; }
-.footer-email { display: inline-flex; align-items: center; gap: .6rem; font-size: clamp(1.3rem, 2vw, 1.75rem); font-weight: 600; letter-spacing: -.04em; }
+.footer-contact-person { margin: .3rem 0 0; color: #91a5b3; font-size: .82rem; font-weight: 500; }
+.footer-phone { display: inline-flex; align-items: center; gap: .6rem; color: var(--s-ink); font-size: 1rem; font-weight: 650; letter-spacing: -.02em; }
+.footer-phone span { color: var(--s-teal); font-size: .82rem; }
+.footer-phone:hover { color: var(--s-teal); }
+.footer-email { display: inline-flex; align-items: center; gap: .6rem; font-size: clamp(1.15rem, 1.7vw, 1.5rem); font-weight: 600; letter-spacing: -.04em; }
 .footer-email span { color: var(--s-teal); font-size: 1rem; transition: transform .3s var(--s-ease); }
 .footer-email:hover span { transform: translate(3px, -3px); }
 .footer-back { display: inline-flex; align-items: center; gap: .65rem; margin-top: .6rem; color: var(--s-mute); font-size: .82rem; }

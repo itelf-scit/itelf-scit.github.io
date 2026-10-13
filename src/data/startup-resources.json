@@ -1,0 +1,158 @@
+{
+  "updated": "2026-10-13",
+  "resources": [
+    {
+      "name": "Startup India Portal",
+      "category": "Market access & learning",
+      "summary": "A central starting point for founder learning, startup programmes, ecosystem connections, updates and support resources.",
+      "audience": "Founders exploring the Indian startup ecosystem",
+      "url": "https://www.startupindia.gov.in/",
+      "tags": [
+        "learning",
+        "mentorship",
+        "network",
+        "programmes",
+        "ecosystem",
+        "founders"
+      ]
+    },
+    {
+      "name": "DPIIT Startup Recognition",
+      "category": "Recognition & compliance",
+      "summary": "Check current eligibility, required information and the official application route for DPIIT startup recognition.",
+      "audience": "Eligible incorporated startups; recognition is subject to current criteria",
+      "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+      "tags": [
+        "DPIIT",
+        "recognition",
+        "tax",
+        "compliance",
+        "registration",
+        "certificate"
+      ]
+    },
+    {
+      "name": "Central Government Schemes for Startups",
+      "category": "Funding & grants",
+      "summary": "Browse central-government programmes and compare their objectives, eligibility conditions and application information.",
+      "audience": "Founders looking for a scheme that matches their stage and sector",
+      "url": "https://www.startupindia.gov.in/content/sih/en/government-schemes.html",
+      "tags": [
+        "funding",
+        "grant",
+        "benefits",
+        "schemes",
+        "government",
+        "subsidy"
+      ]
+    },
+    {
+      "name": "NIDHI-PRAYAS Prototype Support",
+      "category": "Funding & grants",
+      "summary": "Explore DST support that helps innovators turn technology ideas into working prototypes through participating PRAYAS centres.",
+      "audience": "Innovators, student founders and early-stage teams with a prototype need",
+      "url": "https://nidhi.dst.gov.in/schemes-programmes/nidhiprayas/",
+      "tags": [
+        "prototype",
+        "proof of concept",
+        "DST",
+        "grant",
+        "technology",
+        "early stage",
+        "NIDHI"
+      ]
+    },
+    {
+      "name": "Udyam MSME Registration",
+      "category": "Recognition & compliance",
+      "summary": "The Government of India's official, free and paperless Udyam registration portal for eligible micro, small and medium enterprises.",
+      "audience": "Businesses that meet the applicable MSME classification and registration requirements",
+      "url": "https://udyamregistration.gov.in/",
+      "tags": [
+        "MSME",
+        "Udyam",
+        "registration",
+        "compliance",
+        "free",
+        "enterprise"
+      ]
+    },
+    {
+      "name": "Startup Intellectual Property Protection (SIPP)",
+      "category": "IP & protection",
+      "summary": "Read official notices and scheme documents and review facilitator information for startup patent, design and trademark support. Check current validity and terms before relying on benefits.",
+      "audience": "Startups considering protection for inventions, designs or trademarks",
+      "url": "https://ipindia.gov.in/page-content/startups-intellectual-property-protection-sipp",
+      "tags": [
+        "IP",
+        "IPR",
+        "patent",
+        "trademark",
+        "design",
+        "protection",
+        "facilitator"
+      ]
+    },
+    {
+      "name": "Maharashtra & State Startup Policies",
+      "category": "Maharashtra ecosystem",
+      "summary": "Compare notified startup policies by state and open the Maharashtra policy information from the official Startup India directory.",
+      "audience": "Founders based in Maharashtra or evaluating state-specific support",
+      "url": "https://www.startupindia.gov.in/content/sih/en/startup-scheme/state-startup-policies.html",
+      "tags": [
+        "Maharashtra",
+        "state policy",
+        "state schemes",
+        "regional support",
+        "incentives"
+      ]
+    },
+    {
+      "name": "Atal Incubation Centres",
+      "category": "Incubation & mentoring",
+      "summary": "Learn about Atal Innovation Mission's incubation-centre ecosystem and explore relevant centre and programme information. Application windows can vary; check the latest notice.",
+      "audience": "Founders seeking incubation, facilities, mentors or ecosystem partners",
+      "url": "https://aim.gov.in/aic-overview.php",
+      "tags": [
+        "AIM",
+        "incubator",
+        "incubation",
+        "mentoring",
+        "facilities",
+        "innovation"
+      ]
+    },
+    {
+      "name": "MeitY Startup Hub",
+      "category": "Incubation & mentoring",
+      "summary": "Explore the Ministry of Electronics and IT's startup ecosystem and technology-focused programmes; eligibility and open calls differ by programme.",
+      "audience": "Digital, software, electronics and technology-led startups",
+      "url": "https://portal.meity.gov.in/",
+      "tags": [
+        "MeitY",
+        "technology",
+        "IT",
+        "digital",
+        "software",
+        "incubator",
+        "mentorship"
+      ]
+    },
+    {
+      "name": "BIRAC Biotechnology Ignition Grant (BIG)",
+      "category": "Sector-specific support",
+      "summary": "Explore BIRAC's biotech proof-of-concept support, programme guidance and call announcements. Confirm the latest deadline and eligibility on the official scheme page.",
+      "audience": "Biotechnology, life-sciences and related science-led innovators",
+      "url": "https://www.birac.nic.in/big.php",
+      "tags": [
+        "BIRAC",
+        "biotech",
+        "healthcare",
+        "life sciences",
+        "grant",
+        "proof of concept",
+        "research"
+      ]
+    }
+  ]
+}
